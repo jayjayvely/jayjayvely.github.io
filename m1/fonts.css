@@ -1,0 +1,10 @@
+@charset "utf-8";
+@font-face {
+    font-family: "nsfont";
+    src: url("./font/NanumSquareEB.eot?#iefix") format("ebedded-opentype"),
+        url("NanumSquareEB.woff") format("woff"),
+        url("NanumSquareEB.otf") format("opentype"),
+        url("NanumSquareEB.eot") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}

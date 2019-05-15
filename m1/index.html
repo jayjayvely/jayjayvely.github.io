@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- 웹표준 구현이 가능한 최신 브라우저로 브라우징할 수 있도록 설정 -->
+    <meta http-equiv="X-UA-Compativle" content="IE=edge, chrom=1">
+    
+    <!-- 스마트기기에서 화면의 크기를 물리적 크기에 맞추어 출력 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <!-- 스마트기기에서 화면을 풀스크린으로 보이기 위한 설정 -->
+    <meta name="mobile-web-app-capable" content="yes"> <!-- 비 ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- ios -->
+    
+    <!-- 웹앱 또는 모바일 웹 사이트 등의 사이트 정보를 기록 -->
+    <meta name="title" content="유성구청"><!-- 검색창에 보이는 타이틀 -->
+    <meta name="keywords" content="대전, 유성, 유성소개, 유성구, 유성이, 국화축제, 유성온천"> <!--검색 키워드 -->
+    <meta name="description" content="다 함께 더 좋은 유성 입니다."><!--사이트 설명 -->
+    <meta name="author" content="Jay"><!-- 제작자 -->
+    
+    <!-- 파비콘 설정(32x32):favicon.png를 만들고 난 후 툴을 이용해 ico를 만든다 -->
+    <link rel="icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <!--상대경로(./)로 꼭 써주자! 리눅스나 메킨토시에서 인식을 못할 수 있다 -->
+    <!--메타포아이콘 : 16x16, 24x24, 32x32(가장많이씀), 48x48, 64x64, 72x72, (96x96은 잘 안쓴다),
+    114x114, 128x128, ~ 512x512(가장큼), png형태 1개 이상, ico형태 1개, 파일이름은 무조건 favicon 으로 저장해야 한다 -->
+    <!--png일 때는 type을 꼭 써주는 게 좋다 -->
+    
+    <!-- 플러그인 연결방식 - CDN, 다운로드 받아 연결하는 두가지방식, 연결순서를 기억하자! -->
+    <!-- https가 다 들어가게 써주기! -->
+    <!-- jquery 연결 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 다운로드 받아 연결 <script src="./js/jquery-3.4.1.js"></script> -->
+    
+    <!-- 부트스트랩 연결 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    <!-- fontawesome, xeicon 연결 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    
+    <title>대전광역시 유성구</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="fonts.css">
+    
+    <style>
+        * { margin: 0; padding: 0; } /* m0 p0 w100% h100% %는 써줘야된다 안쓰면 다 px */
+        body,html { width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif;}
+        ul { list-style: none; }
+        a { text-decoration: none; }
+        .ck_item, .ra_item { display: none; }
+        .container { width: 100%; height: 100%; clear: both; padding: 0;}
+        .hd { height: 60px; width: 100%; background: #fff;}
+        .abs_item { width: 100%; height: 100%; position: absolute; left: 0;}
+        .logo { display: block; width: 100px; height: auto; margin-left: 93px; margin-top: 13px; }
+        .logo img{ width: 100px; height: auto; }
+        
+/*        오른쪽 상단 아이콘*/
+        .share_btn, .order_btn, .login_btn { display: block; width: 30px; height: 30px; color: #223f8c; line-height: 30px; text-align: center; font-size: 24px; position: absolute; top: 18px; }
+        .login_btn { right: 13px; }
+        .order_btn { right: 43px; }
+        .share_btn { right: 73px; }
+        
+        .order_frame, .sns_frame {position: fixed; top: 0; left: 0; z-index: 990; width: 100%; height: 100%; background: rgba(0,0,0,.5); display: none; }
+        #ck2:checked ~ .sns_frame { display: block; }
+        #ck3:checked ~ .order_frame { display: block; }
+        .sns_box { width: 80px; height: 80px; margin: 0 auto; margin-top: 160px;}
+        .sns_box li{ height: 40px; width: 40px; line-height: 40px; float: left;  background: #fff; }
+        .sns_box li a{ display: block; color: #333; font-size: 22px; line-height: 40px; text-align: center; color: #333;}
+        .ck2_close, .ck3_close{ position: absolute; right: 20px; top: 60px; display: block; width: 40px; height: 40px; background-repeat: no-repeat; background-position: center center; background-size: 20px auto; background-image: url("./img/img_closs_n.png"); }
+        
+        .order_box { width: 280px; height: 400px; margin: 0 auto; margin-top: 100px; }
+        .order_box img {display: block; width: 100%; height: auto; }
+       
+        
+        
+/*        왼쪽에서 나오는 메뉴*/
+        .lst_btn, .close_btn{ display: block; width: 48px; height: 48px; background-repeat: no-repeat; background-position: center center; background-size: 25px auto; text-indent: -9999px; }
+        .lst_btn { position: absolute; background-image: url("./img/top_botton.png"); left: 5px; top: 5px;}
+        .close_btn { float: right; background-image: url("./img/img_closs_n.png");}
+        .log_box { clear:both; width: 100px; height: 100px; border-radius: 53px; border: 2px solid #223f8c; background-color: #fff; margin: 40px auto; background-image: url("./img/ys22.png"); background-position: center center; background-repeat: no-repeat; background-size: cover; }
+        .left { width: 100%; height: 100%; position: fixed; left: -100%; top: 0;
+            background: rgba(0,0,0,0); z-index: 999; transition: 1s;}
+        .collap_wrap{width: 80%;height: 100%; background: #7599ab;}
+        #ck1:checked ~ .left { left: 0; background: rgba(0,0,0,.5);}
+/*        + 는 바로아래동생(붙어있는동생) ~는 떨어져있는 동생*/
+        
+        .gnb .dep1 { text-indent:20px; color: #fff; line-height: 30px; font-size: 1.25em;}
+        .gnb .dep1 a { display: block; color: #4f4f90; line-height: 30px; text-indent: 50px; }
+        .sub{ height: 0; overflow: hidden; transition: 1s; opacity: 0; padding-bottom: 15px; }
+        .ra_item:checked ~ .sub { height: auto; opacity: 1;}
+        .ra_item:checked ~ label { color: #f3ec1f;}
+        .gnb .dep1 label {border-bottom: 1px dotted #fff;}
+
+/*        contents*/
+        .contents {width: 100%; height: 90%;}
+        .main_box {width: 100%; height: 100%;}
+        .main_box li { float: left; background-position: left bottom; background-repeat: no-repeat; }
+        .main_box li.item1 {width: 100%; height: 80%; background-color: #223f8c; background-image: url("./img/ys2.png"),url("./img/vision.png"); background-size: auto 55%, 60% auto; background-position: 10% 105%, 85% 30%; text-align: left; padding-left: 20px;}
+        .main_box li.item2 { clear: both; width: 33.33%; height: 20%; background-color: #7599ab; border-right: 1px solid #fff; text-align: center; }
+        .main_box li.item3 { width: 33.33%; height: 20%; background-color: #7599ab; border-right: 1px solid #fff;  text-align: center;}
+        .main_box li.item4 { width: 33.33%; height: 20%; background-color: #7599ab;  text-align: center;}
+        
+        .thum_tit { font-family: "nsfont",'Noto Sans KR', sans-serif; color: #fff; }
+        .thum_com { color: #fff; }
+        .xicon {font-size: 2.5em;}
+        
+        
+        .main_tit{ font-size: 1.4em; text-indent: 24px; line-height: 40px; }
+        .mv_box { width: 90%; min-height: 200px; position: relative; margin: 10px auto; }
+/*        min-height를 꼭 넣어주자*/
+        .mv_box a { display: block; width: 100%; height: auto; }
+        .mv_box a img{ display: block; width: 100%; height: auto; }
+        #video_frame { position: absolute; top: 0; left: 0; display: none; }
+        #video_frame:target { display: block; }
+        
+        .ft { height: 100px; background: #eee; border-top: 1px solid #ccc; }
+        .fnb { clear: both; width: 200px; margin: 0 auto; padding-top: 10px; }
+        .fnb li { float:left; padding: 6px; }
+        .fnb li.item1 a:after {content: "|"; padding-left: 15px; }
+        .copyright {clear: both; text-align: center; color: #333; line-height: 2.4; }
+        
+        
+    </style>
+</head>
+<body>
+    <!-- div.container>header.hd+main.contents+footer.ft -->
+<!--    input[type=checkbox]#ck1-->
+    <input type="checkbox" id="ck1" class="ck_item">
+    
+    <div class="container">
+        <header class="hd">
+            <div class="abs_item">
+                <a href="index.html" class="logo">
+                    <img src="./img/logo.jpg" alt="로고">
+                </a>
+            </div>
+            
+<!--            label.lst[for=ck1]{목록}-->
+            <label for="ck1" class="lst_btn">목록</label>
+            
+            <label for="ck2" class="share_btn">
+                <i class="xi-share-alt-o"></i>
+            </label>
+            <label for="ck3" class="order_btn">
+                <i class="xi-flag-o"></i>
+            </label>
+            <a href="login.html" class="login_btn">
+                <i class="xi-profile"></i>
+            </a>
+        </header>
+        <main class="contents">
+<!--           ul.main_box>li.item$*4>a>h3.thum_tit+p.thum_com-->
+           <ul class="main_box">
+               <li class="item1">
+                    <a href="">
+                       <h3 class="thum_tit">대전광역시 유성구</h3>
+                       <p class="thum_com">다 함께 더 좋은 유성을 만들어갑니다</p>
+                   </a>
+                </li>
+               <li class="item2">
+                    <a href="">
+                       <h3 class="thum_tit xicon"><i class="xi-slideshare"></i></h3>
+                       <p class="thum_com">유성구소개</p>
+                   </a>
+                </li>
+               <li class="item3">
+                    <a href="">
+                       <h3 class="thum_tit xicon"><i class="xi-map-o"></i></h3>
+                       <p class="thum_com">유성구소식</p>
+                   </a>
+                </li>
+                <li class="item4">
+                    <a href="">
+                       <h3 class="thum_tit xicon"><i class="xi-walk"></i></h3>
+                       <p class="thum_com">도시/생활</p>
+                   </a>
+                </li>
+           </ul>
+            <h3 class="main_tit">유성구청 미디어</h3>
+            <div class="mv_box">
+                <a href="#video_frame">
+                    <img src="./img/fastival.png" alt="유성온천문화축제 홍보동영상" width="100%">
+                </a>
+                <div id="video_frame">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/N6-PTIYbKPk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                </div>
+                <p>2019 유성온천문화축제 홍보동영상</p>
+            </div>
+            
+        <footer class="ft">
+            <ul class="fnb">
+                <li class="item1"><a href="">이용약관</a></li>
+                <li class="item2"><a href="">개인정보처리방침</a></li>
+            </ul>
+            <p class="copyright">&copy; All Copyrights by Jay</p>
+<!--            &copy; ⓒ-->
+        </footer>
+        </main>
+        
+    </div>
+<!--    aside.left>nav.gnb>ul>li.dep1.item$*3>label[for=ra1]  $:자동증가-->
+    <aside class="left" id="collap">
+      <div class="collap_wrap">
+       <label for="ck1" class="close_btn">닫기</label>
+       <div class="log_box">
+           
+       </div>
+       <div class="breadcrumb"> <!--현채창의 위치 표시-->
+           Home
+       </div>
+        <nav class="gnb">
+           <input type="radio" name="rdo" id="ra0" class="ra_item" checked> <!-- 시작과 동시에 체크되도록 -->
+            <ul>
+                <li class="dep1 item1">
+<!--                  input[type=radio][name=rdo]#ra1.ra_item-->
+                   <input type="radio" name="rdo" id="ra1" class="ra_item">
+                    <label for="ra1">유성구소개</label>
+<!--                    ul.sub>li*3>a[href=sub1.html#page1]-->
+                    <ul class="sub">
+                        <li><a href="sub1.html#page1">유성의 상징</a></li>
+                        <li><a href="sub1.html#page2">일반현황</a></li>
+                        <li><a href="sub1.html#page3">유성통계</a></li>
+                    </ul>
+                </li>
+                <li class="dep1 item2">
+                   <input type="radio" name="rdo" id="ra2" class="ra_item">
+                    <label for="ra2">유성구소식</label>
+                    <ul class="sub">
+                        <li><a href="sub2.html#page1">구정소식</a></li>
+                        <li><a href="sub2.html#page2">공고</a></li>
+                    </ul>
+                </li>
+                <li class="dep1 item3">
+                   <input type="radio" name="rdo" id="ra3" class="ra_item">
+                    <label for="ra3">유성라이프</label>
+                    <ul class="sub">
+                        <li><a href="sub3.html#page1">건강도시 유성</a></li>
+                        <li><a href="sub3.html#page2">복지</a></li>
+                        <li><a href="sub3.html#page3">교육</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </aside>
+    
+    <input type="checkbox" id="ck2" class="ck_item">
+    <div class="sns_frame">
+        <ul class="sns_box">
+            <li class="item1">
+                <a href=""><i class="xi-kakaotalk"></i></a>
+            </li>
+            <li class="item2">
+                <a href=""><i class="xi-facebook-official"></i></a>
+            </li>
+            <li class="item3">
+                <a href=""><i class="xi-instagram"></i></a>
+            </li>
+            <li class="item4">
+                <a href=""><i class="xi-tumblr-square"></i></a>
+            </li>
+        </ul> 
+        <label for="ck2" class="ck2_close"></label>       
+    </div>
+    
+    
+    <input type="checkbox" id="ck3" class="ck_item">
+    <div class="order_frame">
+        <div class="order_box"><img src="./img/card05.jpg" alt="모바일인트로"></div>
+        <label for="ck3" class="ck3_close"></label>
+    </div>
+</body>
+</html>
