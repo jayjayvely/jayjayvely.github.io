@@ -2,36 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- 웹표준 구현이 가능한 최신 브라우저로 브라우징할 수 있도록 설정 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrom=1">
-    
-    <!-- 스마트기기에서 화면의 크기를 물리적 크기에 맞추어 출력 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     
-    <!-- 스마트기기에서 화면을 풀스크린으로 보이기 위한 설정 -->
-    <meta name="mobile-web-app-capable" content="yes"> <!-- 비 ios -->
-    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- ios -->
+    <meta name="title" content="유성구청">
+    <meta name="keywords" content="대전, 유성, 유성소개, 유성구, 유성이, 국화축제, 유성온천">
+    <meta name="description" content="다 함께 더 좋은 유성 입니다.">
+    <meta name="author" content="Jay">
     
-    <!-- 웹앱 또는 모바일 웹 사이트 등의 사이트 정보를 기록 -->
-    <meta name="title" content="유성구청"><!-- 검색창에 보이는 타이틀 -->
-    <meta name="keywords" content="대전, 유성, 유성소개, 유성구, 유성이, 국화축제, 유성온천"> <!--검색 키워드 -->
-    <meta name="description" content="다 함께 더 좋은 유성 입니다."><!--사이트 설명 -->
-    <meta name="author" content="Jay"><!-- 제작자 -->
-    
-    <!-- 파비콘 설정(32x32):favicon.png를 만들고 난 후 툴을 이용해 ico를 만든다 -->
+    <!-- 파비콘 설정(32x32) -->
     <link rel="icon" href="./img/favicon.ico">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-    <!--상대경로(./)로 꼭 써주자! 리눅스나 메킨토시에서 인식을 못할 수 있다 -->
-    <!--메타포아이콘 : 16x16, 24x24, 32x32(가장많이씀), 48x48, 64x64, 72x72, (96x96은 잘 안쓴다),
-    114x114, 128x128, ~ 512x512(가장큼), png형태 1개 이상, ico형태 1개, 파일이름은 무조건 favicon 으로 저장해야 한다 -->
-    <!--png일 때는 type을 꼭 써주는 게 좋다 -->
     
-    <!-- 플러그인 연결방식 - CDN, 다운로드 받아 연결하는 두가지방식, 연결순서를 기억하자! -->
-    <!-- https가 다 들어가게 써주기! -->
     <!-- jquery 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <!-- 다운로드 받아 연결 <script src="./js/jquery-3.4.1.js"></script> -->
     
     <!-- 부트스트랩 연결 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -48,32 +34,18 @@
     
     <style>
       
-        .contents { height: 90%;}
-        
-        
-        .main_box {width: 100%; height: 100%; padding-top: 60px; box-sizing: border-box;}
-        .main_box li { float: left; background-position: left bottom; background-repeat: no-repeat; }
-        .main_box li.item1 {width: 100%; height: 80%; background-color: #223f8c; background-image: url("./img/ys2.png"),url("./img/vision.png"); background-size: auto 55%, 50% auto; background-position: 10% 108%, 85% 40%; text-align: left; padding-left: 20px;}
-        .main_box li.item2 { clear: both; width: 33.33%; height: 20%; background-color: #7599ab; border-right: 1px solid #fff; text-align: center; }
-        .main_box li.item3 { width: 33.33%; height: 20%; background-color: #7599ab; border-right: 1px solid #fff;  text-align: center;}
-        .main_box li.item4 { width: 33.33%; height: 20%; background-color: #7599ab;  text-align: center;}
-        
-        .thum_tit { font-family: "nsfont",'Noto Sans KR', sans-serif; color: #fff; }
-        .thum_com { color: #fff; }
-        .xicon {font-size: 2.5em;}
-        
-        
-        .main_tit{ font-size: 1.4em; text-indent: 24px; line-height: 40px; }
-        .mv_box { width: 90%; min-height: 200px; position: relative; margin: 10px auto; }
-/*        min-height를 꼭 넣어주자*/
-        .mv_box a { display: block; width: 100%; height: auto; }
-        .mv_box a img{ display: block; width: 100%; height: auto; }
-        #video_frame { position: absolute; top: 0; left: 0; display: none; }
-        #video_frame:target { display: block; }
-        
-        
-        
-        
+       .contents_frame { width: 100%; height: 100%; }
+       .page { width: 100%; padding-top: 0; }
+        .tb_btn{ display: block; width: 33.3333%; line-height: 40px; text-align: center; color: #223f8c; font-size: 1.15em; position: absolute; top: 60px; z-index: 50; text-decoration: none; border-bottom: 3px solid #223f8c; background: #fff; }
+        #page1 .tb_btn { left: 0; }
+        #page2 .tb_btn { left: 33.3333%; }
+        #page3 .tb_btn { right: 0; }
+        .page .tb_data { display: none; margin-top: 80px; }
+        .page:target .tb_data { display: block; }
+        .page:target .tb_btn { background: #223f8c; color: #fff; text-decoration: none; }
+        .page .tb_data img { width: 100% }
+
+        .ft{position: absolute; bottom: 0; left: 0; right:0; width: 100%; }
     </style>
 </head>
 <body>
@@ -102,45 +74,37 @@
                 <i class="xi-profile"></i>
             </a>
         </header>
+        
+        
+<!--        contents-->
         <main class="contents">
-<!--           ul.main_box>li.item$*4>a>h3.thum_tit+p.thum_com-->
-           <ul class="main_box">
-               <li class="item1">
-                    <a href="">
-                       <h3 class="thum_tit">대전광역시 유성구</h3>
-                       <p class="thum_com">다 함께 더 좋은 유성을 만들어갑니다</p>
-                   </a>
-                </li>
-               <li class="item2">
-                    <a href="sub1.html#page1">
-                       <h3 class="thum_tit xicon"><i class="xi-slideshare"></i></h3>
-                       <p class="thum_com">유성구소개</p>
-                   </a>
-                </li>
-               <li class="item3">
-                    <a href="sub2.html#page1">
-                       <h3 class="thum_tit xicon"><i class="xi-map-o"></i></h3>
-                       <p class="thum_com">유성구소식</p>
-                   </a>
-                </li>
-                <li class="item4">
-                    <a href="sub3.html#page1">
-                       <h3 class="thum_tit xicon"><i class="xi-walk"></i></h3>
-                       <p class="thum_com">도시/생활</p>
-                   </a>
-                </li>
-           </ul>
-            <h3 class="main_tit">유성구청 미디어</h3>
-            <div class="mv_box">
-                <a href="#video_frame">
-                    <img src="./img/fastival.png" alt="유성온천문화축제 홍보동영상" width="100%">
-                </a>
-                <div id="video_frame">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/N6-PTIYbKPk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            
+            <div class="contents_frame">
+                <div class="page" id="page1">
+                    <a href="#page1" class="tb_btn">건강도시</a>
+                    <div class="tb_data">
+                        
+                    </div>
                 </div>
-                <p>2019 유성온천문화축제 홍보동영상</p>
+                <div class="page" id="page2">
+                    <a href="#page2" class="tb_btn">복지</a>
+                    <div class="tb_data">
+                        
+                    </div>
+                </div>
+                <div class="page" id="page3">
+                    <a href="#page3" class="tb_btn">교육</a>
+                    <div class="tb_data">
+                        
+                    </div>
+                </div>
             </div>
             
+            
+            
+            
+            
+<!--        footer-->
         <footer class="ft">
             <ul class="fnb">
                 <li class="item1"><a href="">이용약관</a></li>
@@ -160,7 +124,7 @@
            
        </div>
        <div class="breadcrumb"> <!--현채창의 위치 표시-->
-           Home
+           유성구소식
        </div>
         <nav class="gnb">
            <input type="radio" name="rdo" id="ra0" class="ra_item" checked> <!-- 시작과 동시에 체크되도록 -->

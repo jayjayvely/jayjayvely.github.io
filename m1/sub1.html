@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrom=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <meta name="title" content="유성구청">
+    <meta name="keywords" content="대전, 유성, 유성소개, 유성구, 유성이, 국화축제, 유성온천">
+    <meta name="description" content="다 함께 더 좋은 유성 입니다.">
+    <meta name="author" content="Jay">
+    
+    <!-- 파비콘 설정(32x32) -->
+    <link rel="icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    
+    <!-- jquery 연결 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+    <!-- 부트스트랩 연결 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    <!-- fontawesome, xeicon 연결 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    
+    <title>대전광역시 유성구</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="common.css">
+    
+    <style>
+        *{box-sizing: border-box;}
+        html, body { height: 100%; }
+       .contents_frame { clear: both; width: 100%; position: relative; min-height: 100%; padding-bottom: 100px;}
+       .page { width: 100%; }
+        .tb_btn{ display: block; width: 25%; line-height: 40px; text-align: center; color: #223f8c; font-size: 1.15em; position: absolute; top: 60px; z-index: 50; text-decoration: none; border-bottom: 3px solid #223f8c; background: #fff; }
+        #page1 .tb_btn { left: 0; }
+        #page2 .tb_btn { left: 25%; }
+        #page3 .tb_btn { left: 50%; }
+        #page4 .tb_btn { right: 0; }
+        .page .tb_data { display: none; padding-top: 95px; }
+        .page:target .tb_data { display: block; }
+        .page:target .tb_btn { background: #223f8c; color: #fff; text-decoration: none; }
+        .page .tb_data .img100 { width: 100%; }
+        
+        .page .tb_con { margin-bottom: 30px; }
+        .page .tb_con h3 { text-indent: 15px; font-size: 1.2em;  }
+        .page .tb_con h3.tb_h3:before{content: ''; width: 10px; height: 10px; background: #223f8c; margin-right: 15px; display: inline-block; position: relative; left: 5px; top: -1px; }
+        
+        #page2 .img70 { width: 70%; height: auto; margin: 0 auto; display: block;}
+        #page2 h4 { text-indent: 15px; }
+        #page2 p { margin: 0 15px; text-align: justify; margin-bottom: 20px; }
+        
+        .blank{ padding-top: 15%; }
+        
+    
+        .ft{position: absolute; bottom: 0; left: 0; right:0; width: 100%; }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
+<script> 
+//구글API
+function initialize() {
+  var myLatlng = new google.maps.LatLng(36.362425,127.35635350000007);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: '유성구청'
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+    
+</head>
+<body onload="initialize()">
+    <!-- div.container>header.hd+main.contents+footer.ft -->
+<!--    input[type=checkbox]#ck1-->
+    <input type="checkbox" id="ck1" class="ck_item">
+    
+    <div class="container">
+        <header class="hd">
+            <div class="abs_item">
+                <a href="index.html" class="logo">
+                    <img src="./img/logo.jpg" alt="로고">
+                </a>
+            </div>
+            
+<!--            label.lst[for=ck1]{목록}-->
+            <label for="ck1" class="lst_btn">목록</label>
+            
+            <label for="ck2" class="share_btn">
+                <i class="xi-share-alt-o"></i>
+            </label>
+            <label for="ck3" class="order_btn">
+                <i class="xi-flag-o"></i>
+            </label>
+            <a href="login.html" class="login_btn">
+                <i class="xi-profile"></i>
+            </a>
+        </header>
+        
+        
+<!--        contents-->
+        <main class="contents">
+            
+            <div class="contents_frame">
+                <div class="page" id="page1">
+                    <a href="#page1" class="tb_btn">상징소개</a>
+                    <div class="tb_data">
+                       <div class="tb_con">
+                           <h3 class="tb_h3">유성구 심볼 소개</h3>
+                            <img src="./img/symbol_info.jpg" alt="심볼이미지" class="img100">
+                        </div>
+                        <div class="tb_con">
+                            <h3 class="tb_h3">유성구 캐릭터 : 유성이</h3>
+                            <img src="./img/ys02.jpg" alt="유성이" class="img100">
+                        </div>
+                    </div>
+                </div>
+                <div class="page" id="page2">
+                    <a href="#page2" class="tb_btn">일반현황</a>
+                    <div class="tb_data">
+                        <div class="tb_con">
+                           <h3 class="tb_h3">구정 비전</h3>
+                            <img src="./img/vision.png" alt="비전이미지" class="img70">
+                            <h4>① 정책비전</h4>
+                            <p>35만 구민의 주인의식과 참여감으로 어제보다 <span>더 좋은(the better) 유성</span>, 오늘보다는 내일이 <span>더 좋아지는(the better) 유성을 다함께 만들어</span> 주민중심의 진정한 자치분권 시대를 선도하겠다는 실천의지 함축</p>
+                            <h4>② 정책기조</h4>
+                            <p>정책결정 사전단계를 포함한 모든 정책결정 추진과정에서 주민참여를 활성화하고 주민권한의 확대로 연결되는 주민중심의 선순환 자치분권 모델정립, 40년 이상 축적된 전략자산인 대덕특구의 인적․물적 인프라를 지역사회로 최대한 연결하고 융합하여 구정 발전을 위한 실질적인 성장동력으로 활용</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page" id="page3">
+                    <a href="#page3" class="tb_btn">유성통계</a>
+                    <div class="tb_data">
+                        
+                    </div>
+                </div>
+                <div class="page" id="page4">
+                    <a href="#page4" class="tb_btn">오시는길</a>
+                    <div class="blank">
+                        <div class="tb_data">
+                           <div class="map_frame" style="width:300px; margin: 0 auto;">
+                                <div id="map_canvas" style="width:300px; height:300px;"></div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+<!--        footer-->
+            <footer class="ft">
+                <ul class="fnb">
+                    <li class="item1"><a href="">이용약관</a></li>
+                    <li class="item2"><a href="">개인정보처리방침</a></li>
+                </ul>
+                <p class="copyright">&copy; All Copyrights by Jay</p>
+            </footer>
+        </main>
+        
+    </div>
+<!--    aside.left>nav.gnb>ul>li.dep1.item$*3>label[for=ra1]  $:자동증가-->
+    <aside class="left" id="collap">
+      <div class="collap_wrap">
+       <label for="ck1" class="close_btn">닫기</label>
+       <div class="log_box">
+           
+       </div>
+       <div class="breadcrumb"> <!--현채창의 위치 표시-->
+           유성구소개
+       </div>
+        <nav class="gnb">
+           <input type="radio" name="rdo" id="ra0" class="ra_item" checked> <!-- 시작과 동시에 체크되도록 -->
+            <ul>
+                <li class="dep1 item1">
+<!--                  input[type=radio][name=rdo]#ra1.ra_item-->
+                   <input type="radio" name="rdo" id="ra1" class="ra_item">
+                    <label for="ra1">유성구소개</label>
+<!--                    ul.sub>li*3>a[href=sub1.html#page1]-->
+                    <ul class="sub">
+                        <li><a href="sub1.html#page1">유성의 상징</a></li>
+                        <li><a href="sub1.html#page2">일반현황</a></li>
+                        <li><a href="sub1.html#page3">유성통계</a></li><li><a href="sub1.html#page3">오시는 길</a></li>
+                    </ul>
+                </li>
+                <li class="dep1 item2">
+                   <input type="radio" name="rdo" id="ra2" class="ra_item">
+                    <label for="ra2">유성구소식</label>
+                    <ul class="sub">
+                        <li><a href="sub2.html#page1">구정소식</a></li>
+                        <li><a href="sub2.html#page2">공고</a></li>
+                    </ul>
+                </li>
+                <li class="dep1 item3">
+                   <input type="radio" name="rdo" id="ra3" class="ra_item">
+                    <label for="ra3">유성라이프</label>
+                    <ul class="sub">
+                        <li><a href="sub3.html#page1">건강도시 유성</a></li>
+                        <li><a href="sub3.html#page2">복지</a></li>
+                        <li><a href="sub3.html#page3">교육</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </aside>
+    
+    <input type="checkbox" id="ck2" class="ck_item">
+    <div class="sns_frame">
+        <ul class="sns_box">
+            <li class="item1">
+                <a href=""><i class="xi-kakaotalk"></i></a>
+            </li>
+            <li class="item2">
+                <a href=""><i class="xi-facebook-official"></i></a>
+            </li>
+            <li class="item3">
+                <a href=""><i class="xi-instagram"></i></a>
+            </li>
+            <li class="item4">
+                <a href=""><i class="xi-tumblr-square"></i></a>
+            </li>
+        </ul> 
+        <label for="ck2" class="ck2_close"></label>       
+    </div>
+    
+    
+    <input type="checkbox" id="ck3" class="ck_item">
+    <div class="order_frame">
+        <div class="order_box"><img src="./img/card05.jpg" alt="모바일인트로"></div>
+        <label for="ck3" class="ck3_close"></label>
+    </div>
+</body>
+</html>
