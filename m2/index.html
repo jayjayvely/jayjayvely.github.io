@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>루이비통 공식 온라인</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrom=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="title" content="루이비통 온라인">
+    <meta name="keywords" content="루이비통,명품,스퀘어백,루이비통매장,루이비통미술관">
+    <meta name="description" content="루이비통 온라인 사이트 입니다.">
+    <meta name="author" content="Jay">
+    
+    <meta http-equiv="Expires" content="-1"><!-- 위로 한칸 끌어올려서 주소 안보이게 해준다.-->
+    <meta http-equiv="Pragma" content="no-cache"><!-- 기존에 읽어온 캐시를 비워라.-->
+    <meta http-equiv="Cache-Control" content="No-Cache"><!-- 기존에 읽어온 캐시를 저장하지 않는다.-->
+    
+
+    
+    <!-- 모든 스마트기기의 메타포 아이콘 -->
+    <link rel="icon" href="./favicon/favicon_32x32.ico" type="image/x-icon">
+    <!-- 비ios 계열의 스마트폰의 바로가기 아이콘 -->
+    <link rel="shortcut icon" href="./favicon/favicon_32x32.ico" type="image/x-icon">
+    <!-- 고해상도 아이폰 메타포 아이콘 -->
+    <link rel="apple-thoch-icon-precomposed" size="72x72" href="./favicon/favicon_72x72.png">
+    <link rel="apple-thoch-icon-precomposed" size="114x114" href="./favicon/favicon_114x114.png">
+    <!-- 아이패드형 메타포 아이콘 -->
+    <link rel="apple-thoch-icon-precomposed" size="144x144" href="./favicon/favicon_144x144.png">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        * { margin: 0; padding: 0; }
+        body, html{ width: 100%; height: 100%; font-family: 'arita',sans-serif;}
+        ul {list-style: none;}
+        a {text-decoration: none;}
+        button,label,input{ background: transparent; border: 0; outline: 0; }
+        
+        
+        .collap { width: 100%; height: 100%; position: fixed; top: 0; left: -110%;  z-index: 999; background: #fff; transition: 0.5s;}
+        .collap.on { left: 0; }
+        .c_logo { width: 40%; height: auto; margin-left: 20px; margin-top: 24px; float: left; }
+        .c_logo img { display: block; width: 100%; height: auto; }
+        .close { width: 36px; height: 36px; float: right; margin-top: 15px; margin-right: 15px; background-image: url("./img/close.png"); background-size: 100% 100%; }
+        .gnb { clear: both; padding-top: 40px; width: 100%; }
+        .gnb li { line-height: 40px; padding: 10px;}
+        .gnb li a { display: block; font-size: 1.5em; font-weight: bold; text-indent: 15px; color: #333; }
+        
+        .lst { width: 36px; height: 36px; background-color: #000; background-image: url("./img/gnb_btn.png"); background-position: center center; background-repeat: no-repeat; background-size: 36px 36px; float: left; margin-top: 15px; margin-left: 15px; }
+        
+        .wrap { margin-left: 0; width: 100%; transition: 0.5s; }
+        .wrap.on {margin-left: 110%; }
+        
+        .hd { position: fixed; top: 0; left: 0; z-index: 99; transition: 0.5s; width: 100%; height: 70px; background-color: transparent; }
+        .hd.on { background-color: #fff; }
+        .logo { display: block; width: 150px; height: 37px; margin-top: 15px; float: left; margin-left: 70px; background-image: url("./img/logo.png"); background-size: 100% auto; background-position: bottom; background-repeat: no-repeat;}
+        .hd.on .logo { background-position: top; }
+        
+        #vs1 { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+        .img_box { width: 400%; height: 100%; }
+        .img_box li { float: left; width: 25%; height: 100%; position: relative; }
+        .img_box .img_con { display: block; width: auto; height: 100%; }
+        
+        .visual { width: 100vw; height: 100vh; overflow: hidden; background-position: center center; background-size: cover; }
+        .vis_box01 {background-image: url("./img/visual04.jpg");}
+        .vis_box02 {background-image: url("./img/visual06.jpg");}
+        .vis_box03 {background-image: url("./img/visual05.jpg");}
+        
+        .tit_box { position: absolute; top: 25%; left: 15%; width: 70%; z-index: 10; }
+        .tit_box img{ width: 100%; }
+        .detail { display: block; position: absolute; bottom: 30%; left: 15%; z-index: 15; width: 42px; height: 42px; background-image:url("./img/btn_play.png"); background-size: 42px 42px; background-repeat: no-repeat; }
+        
+        .btn_frame { position: absolute; bottom: 20%; left: 15%; z-index: 20; width: 70%; }
+        .btn_box { position: relative; width: 100%; height: 16px; }
+        .btn_box li { position: absolute; width: 16px; height: 16px; top: 4px; }
+        .btn_box li button { display: block; width: 8px; height: 8px; border-radius: 5px; border: 1px solid #fff; background-color: transparent; }
+        .btn_box li.on button { background-color: #fff; }
+        .btn_box li.item1 { left: 0; }
+        .btn_box li.item2 { left: 16px; }
+        .btn_box li.item3 { left: 32px; }
+        div.play { left:48px; top: 0; position: absolute; width: 16px; height: 16px; z-index: 30; }
+        div.play button { width: 16px; height: 16px; background-image: url("./img/autostop.png");background-position: center bottom; background-repeat: no-repeat; }
+        div.play.on button { background-position: center top; }
+        
+
+        #vs2 { height: 100%; padding-top: 10%; min-height: 90vh; }
+        #vs2:before { content: "루이비통 소식"; display: block; width: 100%; clear: both; line-height: 36px; font-size: 24px; font-weight: bold; text-align: center; padding-bottom: 15px;}
+        #vs2 li.slide_01 { float: left; width: 100%; }
+        #vs2 li div.slide_01_inner { width: 100%; }
+        #vs2 .img_wrap { width: 100%; }
+        #vs2 .img_wrap img { display: block; width: 100%; height: auto; }
+        .txt_wrap{ margin-top: 1.2em;  }
+        .tit { font-size: 1.5rem; font-weight: bold; margin: 0; padding : 0 5%; }
+        .com { font-size: 1rem; padding: 0 5%; margin-top: 1em; line-height: 1.2; }
+        .more { padding-left: 5%; line-height: 2; font-size: 0.85rem; font-weight: bold;}
+
+        
+        #page1 { width: 100vw; height: 100vh; clear: both; overflow: hidden; background-image: url(./img/page1.jpg); background-position: center center; background-size: cover;}
+        
+        
+        
+        #vs3 {width: 100vw; height: 100vh; position: relative; overflow: hidden; padding-top: 30px; }
+        .thum_box { width: 700px; }
+        .thum_box img {width: 110px; height: auto;}
+        .thum_box li {float: left; margin: 10px; width: 110px; height: 110px; border: 2px solid #fff;}
+        .thum_box li.on {border: 2px solid #333; }
+        .big_img_box { clear: both; width: 500%; height: 80%; }
+        .big_img_box li { width: 20%; height: 100%; float: left;}
+        .big_img_box li img { display: block; width: 95%; height: auto; margin: 0 auto;}
+        .tit2 { font-size: 0.75rem; padding : 0 5%; margin: 1.2em 0 0.75em;}
+        
+    </style>
+    <script src="./js/jquery-latest.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".lst").click(function(){
+                $(".collap").addClass("on");
+                $(".wrap").addClass("on");
+            });
+            $(".close").click(function(){
+                $(".collap").removeClass("on");
+                $(".wrap").removeClass("on");
+            });
+            $(window).scroll(function(){
+                var par = parseInt($(window).scrollTop());
+                if(par>=200){
+                    $(".hd").addClass("on");
+                    $(".to_top").fadeIn(500);
+                } else {
+                    $(".hd").removeClass("on");
+                    $(".to_top").fadeOut(500);
+                }
+            });
+            $(".to_top").click(function(){
+                $("body, html").animate({"scrollTop" : 0}, 1000);
+            });
+            
+//            #vs1 슬라이드
+            var wd = parseInt($(window).width()); //창의 너비를 계산하여 wd 변수에 저장
+            var intv = setInterval(function(){
+                nextAni(); //주기적으로 3초마다 nextAni() 함수를 실행
+            }, 3000);
+            function nextAni(){
+                //.img_box를 0.8초 동안 너비 만큼 왼쪽으로 슬라이딩
+                $(".img_box").not(":animated").animate({"margin-left":-wd+"px"},800, function(){
+                    //첫번째 .img_box의 자식인 li를 맨 끝으로 보냄
+                    $(".img_box li").eq(0).appendTo($(".img_box"));
+                    //.img_box의 왼쪽 마진을 0으로 설정
+                    $(".img_box").css("margin-left", "0px");
+                    $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                    $(".btn_box li").removeClass("on");
+                    $(".btn_box li").eq(0).addClass("on");
+                    
+                });
+            }
+            var sw = true;
+            $(".play").click(function(){
+                if(sw==true){
+                    $(this).addClass("on");
+                    clearInterval(intv);
+                } else {
+                    $(this).removeClass("on");
+                    nextAni(); //버튼 누르면 바로 실행되게
+                    intv = setInterval(function(){
+                        nextAni();
+                    }, 3000);
+                }
+                sw= !sw;
+            });
+            //누른 버튼의 앞에 있는 요소는 모두 뒤로 보내고, 누른 해당 버튼의 모션이 실행
+            $(".btn_box li").click(function(){
+               var idx = $(this).index()-1;
+                clearInterval(intv);
+                for(var i=0;i<idx;i++){
+                    $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                    $(".img_box li").eq(0).appendTo($(".img_box"));
+                }
+                nextAni();
+                intv = setInterval(function(){
+                    nextAni()
+                }, 3000);
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <script src="./js/ktswiper.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#vs2").ktswiper({
+            infinite: true, //양방향 무한 모션
+            speed: 300, // 슬라이드 스피드
+            autoplay: true, //자동플레이 유무( false시 자동플레이 안됨 )
+            autoplaySpeed: 4000, // 자동플레이 스피드
+            slidesToShow: 1, //한 화면에 보여줄 아이템수
+            slidesToScroll: 1, // 한번에 슬라이드 시킬 아이템 개수
+            arrows: false //좌우 화살 버튼 노출 여부 ( false 시 안보임 )
+        });
+    });
+    </script>
+
+<!--#v3 slider    -->
+    <script>
+        $(document).ready(function(){
+            var wd2 = parseInt($(window).width());
+            function bigNext(){
+                $(".big_img_box").not(":animated").animate({"margin-left":-wd2+"px"}, 700, function(){
+                   $(".big_img_box li").eq(0).appendTo($(".big_img_box"));
+                    $(".big_img_box").css("margin-left","0px");
+                    $(".thum_box").animate({"margin-left":"-130px"}, 10, function(){
+                        $(".thum_box li").eq(0).appendTo($(".thum_box"));
+                        $(".thum_box").css("margin-left", "0px");
+                        $(".thum_box li").removeClass("on");
+                        $(".thum_box li").eq(0).addClass("on");
+                    });
+                });
+            }
+            var intv2 = setInterval(function(){ bigNext(); }, 3600);        
+        
+            $(".thum_box li").click(function(){
+                var idx2 = $(this).index()-1;
+                clearInterval(intv2);
+                for(var i=0;i<idx2;i++){
+                   $(".thum_box li").eq(0).appendTo($(".thum_box"));
+                   $(".big_img_box li").eq(0).appendTo($(".big_img_box"));
+                }
+                bigNext();
+                intv2 = setInterval(function(){
+                    bigNext();
+                }, 3600);
+            });
+        });
+    </script>
+    
+<!--footer    -->
+    <style>
+        .ft { clear: both; }
+        .fnb { width: 96%; margin: 0 auto; padding-top: 10px; }
+        .fnb li {float: left; padding: 5px; }
+        .fnb li a { display: block; font-size: 14px; font-weight: 500; }
+        .fnb .left { float: left; }
+        .fnb .left li a { padding-left: 18px; background-size: 14px auto; background-repeat: no-repeat; background-position: left center; }
+        .fnb .left li.item1 a { background-image:url("./img/f_faq.png"); }
+        .fnb .left li.item2 a { background-image:url("./img/f_mail.png"); }
+        .fnb .right { float: right; }
+        .fnb .right li { padding: 0; }
+        .fnb .right li a { font-size: 1.5em; color: #999;}
+        
+        .linkbox { clear: both; width: 250px; margin: 0 auto; }
+        .linkbox li { float: left; padding: 15px 8px; }
+        .linkbox li a {font-size: 13px; }
+        .linkbox li.item1 a:after { content: "|"; padding-left: 10px; }
+        .linkbox li.item2 a { color:#0540b7; padding-left:24px; background-image:url("./img/ft_ico2.png"); background-repeat: no-repeat; }   
+        
+        .addr, .copyright { clear: both; display: block; line-height: 2.2; font-size: 14px; text-align: center; }
+        .ft_logo {display: block; width: 170px; height: auto; margin: 20px auto;}
+        
+        .to_top { display: block; position: fixed; bottom: 10%; right: 15px; width: 32px; height: 32px; background-image: url("./img/up-arrow.png"); background-size: cover; z-index: 99; box-shadow: 1px 1px 10px #333; border-radius: 17px; display: none; }
+    </style>
+    
+</head>
+<body>
+   <div class="collap">
+        <div class="c_logo">
+            <img src="./img/col_logo.png" alt="로고">
+        </div>
+            <div class="close"></div>
+            <nav class="gnb">
+                <ul class="menu">
+                    <li><a href="sub1.html">LV NOW</a></li>
+                    <li><a href="sub2.html">루이비통의 세계</a></li>
+                    <li><a href="sub3.html">여성</a></li>
+                    <li><a href="sub4.html">남성</a></li>
+                    <li><a href="sub5.html">Meet Us</a></li>
+                </ul>
+            </nav>
+    </div>
+    <div class="wrap">
+        
+        <header class="hd">
+            <div class="lst"></div>
+            <a href="index.html" class="logo"></a>
+            
+        </header>
+        
+        <div id="vs1">
+            <ul class="img_box">
+                <li class="item1">
+                    <div class="vis_box01 visual"></div>
+                    <div class="tit_box">
+                        <img src="" alt="">
+                    </div>
+                    <a href="" class="detail"></a>
+                </li>
+                <li class="item2">
+                    <div class="vis_box02 visual"></div>
+                    <div class="tit_box">
+<!--                        <img src="./img/titbox02.png" alt="타이틀2">-->
+                    </div>
+                    <a href="" class="detail"></a>
+                </li>
+                <li class="item3">
+                   <div class="vis_box03 visual"></div>
+                    <div class="tit_box"><img src="" alt=""></div>
+                    <a href="" class="detail"></a>
+                </li>
+            </ul>
+            <div class="btn_frame">
+                <ul class="btn_box">
+                    <li class="item1"><button></button></li>
+                    <li class="item2"><button></button></li>
+                    <li class="item3"><button></button></li>
+                </ul>
+                <div class="play"><button></button>
+                </div>
+            </div>
+        </div>
+        
+        <ul class="ktswiper-track" id="vs2">
+            <li class="slide_01 ktswiper-slide ktswiper-cloned" data-ktswiper-index="0" aria-hidden="false" tabindex="-1" style="display:none;">
+                <div class="slide_01_inner">
+                    <div class="img_wrap"><img src="./img/2020card.jpg" alt="22020초대장"></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit">루이비통 2020 크루즈 컬렉션 패션쇼 : 초대장</h3>
+                        <p class="com">뉴욕 존 F. 케네디 국제공항 소재 에로 사리넨(Eero Saarinen) 설계의 기념비적 TWA 터미널에서 개최되는 루이 비통 2020 크루즈 컬렉션 패션쇼를 공식 온라인 스토어에서 실시간으로 감상해보자.</p>
+                        <a href="" class="more">더보기</a>
+                    </div>
+                </div>
+            </li>
+            <li class="slide_01 ktswiper-slide ktswiper-cloned" data-ktswiper-index="0" aria-hidden="true" tabindex="-1" style="display:none;">
+                <div class="slide_01_inner">
+                    <div class="img_wrap"><img src="./img/2020preview.jpg" alt="2020프리뷰"></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit">루이비통 2020 크루즈 컬렉션 패션쇼 : 프리뷰</h3>
+                        <p class="com">루이 비통 2020 크루즈 컬렉션 패션쇼, 뉴욕 존 F. 케네디 국제공항 소재 에로 사리넨(Eero Saarinen) 설계의 기념비적 TWA 터미널에서 개최</p>
+                        <a href="" class="more">#LVCRUISE</a>
+                    </div>
+                </div>
+            </li>
+           <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0">
+                <div class="slide_01_inner">
+                    <div class="img_wrap"><img src="./img/2019millano.jpg" alt="2019오브제노마드"></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit">2019 밀라노 푸오리 살로네(Fuori Salone)에서 루이비통 오브제 노마드 전시 컬렉션</h3>
+                        <p class="com">루이 비통이 2019년 밀라노 가구 박람회(Salone del Mobile 2019) 장외 전시인 푸오리 살로네(Fuori Salone)에서 독창적이며 우아한 오브제 노마드 컬렉션 신작을 대거 선보인다. </p>
+                        <a href="" class="more">더보기</a>
+                    </div>
+                </div>
+            </li>
+            <li class="slide_01 ktswiper-slide" data-ktswiper-index="1" aria-hidden="true" tabindex="0">
+                <div class="slide_01_inner">
+                    <div class="img_wrap"><img src="./img/courtauld.jpg" alt="코콜드컬렉션"></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit">루이비통 재단 미술관, 2019년 새로운 전시 공개 "코톨드 컬렉션(THE COURTAULD COLLECTION)"</h3>
+                        <p class="com">2019년 2월 20일 부터 6월 17일까지 루이 비통 재단 미술관과 코톨드 갤러리가 파리 루이 비통 재단 미술관에서 "코톨드 컬렉션(THE COURTAULD COLLECTION): 인상주의에 대한 시선" 전시 개최.</p>
+                        <a href="" class="more">더보기</a>
+                    </div>
+                </div>
+            </li>
+            <li class="slide_01 ktswiper-slide" data-ktswiper-index="2" aria-hidden="true" tabindex="0">
+                <div class="slide_01_inner">
+                    <div class="img_wrap"><img src="./img/lvnomades.jpg" alt=""></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit">레 오브제 노마드(LES OBJETS NOMADES)와 레 쁘띠 노마드(LES PETITS NOMADES)</h3>
+                        <p class="com">루이 비통의 오브제 노마드 컬렉션과 새로운 레 쁘띠 노마드 컬렉션 공개</p>
+                        <a href="" class="more">더보기</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+       
+
+        
+        <div id="page1"></div>
+        
+        
+        <div id="vs3">
+            <ul class="thum_box">
+                <li class="item1"><img src="./img/thumb1.jpg" alt="썸네일1" class="thumbnail"></li>
+                <li class="item2"><img src="./img/thumb2.jpg" alt="썸네일2" class="thumbnail"></li>
+                <li class="item3"><img src="./img/thumb3.jpg" alt="썸네일3" class="thumbnail"></li>
+                <li class="item4"><img src="./img/thumb4.jpg" alt="썸네일4" class="thumbnail"></li>
+                <li class="item5"><img src="./img/thumb5.jpg" alt="썸네일5" class="thumbnail"></li>
+            </ul>
+            <ul class="big_img_box">
+                <li>
+                    <img src="./img/vs3_item1.jpg" alt="유니세프">
+                    <h4 class="tit2">문화유산</h4>
+                    <h3 class="tit">루이비통과 유니세프가 함께하는 실버 락킷 컬러 팔찌</h3>
+                    <p class="com">루이 비통이 심각한 인도주의적 위기를 직면하고 있는 시리아 어린이들에 대한 인식을 높이고 지원 기금을 마련하기 위해 실버 락킷 컬러 팔찌를 선보입니다.<br>
+                    2016년 1월, 루이 비통은 유니세프와의 파트너십을 통해 도움이 절실히 필요한 어린이들을 위한 기금을 마련하는데 힘을 보태기로 약속했습니다.</p>
+                    <a href="" class="more">유니세프 기부하기</a>
+                </li>
+                <li>
+                    <img src="./img/vs3_item2.jpg" alt="키즈플레이">
+                    <h4 class="tit2">LV THE BOOK</h4>
+                    <h3 class="tit">Child's play</h3>
+                    <p class="com">1930년대 메종 루이 비통은 가스통-루이 비통의 영향으로 매력적인 나무 장난감과 게임 컬렉션을 선보였습니다.</p>
+                    <a href="" class="more">더 읽기</a>
+                </li>
+                <li>
+                    <img src="./img/vs3_item3.jpg" alt="성당재건기부">
+                    <h4 class="tit2">문화유산</h4>
+                    <h3 class="tit">아르노 가족 그리고 LVMH 그룹의 파리 노트르담 대성당 재건 기부</h3>
+                    <p class="com">아르노 가족과 LVMH 그룹이 대성당 재건을 위해 2억 유로의 기부를 표명했다.<br>
+                    이번 화재로 인해 루이 비통은 루이비통모에헤네시(LVMH)그룹의 일원으로서 아르노 가족과 함께 프랑스의 전통과 단결의 상징 노트르담 성당의 재건 지원을 위해 총 2억 유로 (한화 약 2500억)의 기부를 표명했다.</p>
+                    <a href="" class="more">자세히보기</a>
+                </li>
+                <li>
+                    <img src="./img/vs3_item4.jpg" alt="룩북">
+                    <h4 class="tit2">LV THE BOOK</h4>
+                    <h3 class="tit">FAST FORWARD</h3>
+                    <p class="com">그녀는 누구일까요? 시선을 사로잡는 백과 당당한 걸음걸이를 돋보이게 하는 부츠를 착용한 그녀가 도시를 활보하며 신비로우면서 매혹적인 장면을 만들어냅니다. 어서, 그녀를 따라가볼까요?</p>
+                    <a href="" class="more">더 읽기</a>
+                </li>
+                <li>
+                    <img src="./img/vs3_item5.jpg" alt="">
+                    <h4 class="tit2">아트·여행</h4>
+                    <h3 class="tit">"Paris Photo"x 루이 비통 출판사</h3>
+                    <p class="com">2018 년 11 월 초 파리의 그랑 팔레에서 개최 된  "Paris Photo (파리 · 포토그래피) ' 루이 비통 팝업 북 스토어를 오픈했다. 루이 비통에서 출판한 도서 컬렉션을 만나보자.</p>
+                    <a href="" class="more">컬렉션 바로가기</a>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <footer class="ft">
+            <nav class="fnb">
+                <ul class="left">
+                    <li class="item1"><a href="">Meet Us</a></li>
+                    <li class="item2"><a href="">뉴스레터 구독</a></li>
+                </ul>
+                <ul class="right">
+                    <li class="item1"><a href=""><i class="xi-facebook-official"></i></a></li>
+                    <li class="item2"><a href=""><i class="xi-instagram"></i></a></li>
+                    <li class="item3"><a href=""><i class="xi-youtube"></i></a></li>
+                </ul>
+            </nav>
+            <ul class="linkbox">
+                <li class="item1"><a href="">개인정보처리방침</a></li>
+                <li class="item2"><a href="">임직원 포털</a></li>
+            </ul>
+            <address class="addr">서울시 강남구 삼성동 511 15층</address>
+            <p class="copyright">LOUIS VUITTON Corporation. All Rights Reserved.</p>
+            <img src="./img/f_logo.png" alt="푸터이미지" class="ft_logo">            
+        </footer>
+        <div class="to_top"></div>
+<!--        <a href="#" class="to_top"></a> a태그는 제이쿼리가 먹히지 않는다-->
+    </div>
+    
+    
+    
+</body>
+</html>
