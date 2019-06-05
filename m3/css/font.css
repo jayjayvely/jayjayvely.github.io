@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'NanumSquare';
+    src: url("../font/NanumSquareR.eot?#iefix") format('embedded-opentype'), 
+        url("../font/NanumSquareR.woff") format("woff"),
+        url("../font/NanumSquareR.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: bold;
+    src: url("../font/NanumSquareb.eot?#iefix") format('embedded-opentype'), 
+        url("../font/NanumSquareb.woff") format("woff"),
+        url("../font/NanumSquareb.ttf") format("truetype");
+}

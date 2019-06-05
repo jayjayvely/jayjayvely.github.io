@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>한국컴패션</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrom=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="title" content="한국컴패션">
+    <meta name="keywords" content="어린이후원,국내후원,해외후원,해외선교,컴패션밴드">
+    <meta name="description" content="꿈을 잃은 어린이들에게 그리스도의 사랑을">
+    <meta name="author" content="Jay">
+    
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    
+<!--파비콘-->
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    
+<!--폰트-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    
+<!--웹폰트-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700,900&display=swap&subset=korean" rel="stylesheet">-->
+
+<!--제이쿼리-->
+    <script src="./js/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }        
+        ul { list-style: none; }
+        a {text-decoration: none; color: #222;}
+        body { color: #222; font-family: 'NanumSquare', 'Noto Sans KR', sans-serif; }
+        button,label,input{ background: transparent; border: 0; outline: 0; }
+        
+        #wrap { width: 100%; }
+        
+        #hd{ width: 100%; height: 55px; background: rgba(0,0,0,.5); padding: 7px 10px ; z-index: 999; position: absolute;}
+        .logo{ display: block; width: 130px; height: 40px; background-image: url("./img/logo_2.png"); background-size: contain; background-repeat: no-repeat; background-position: center center; float: left; }
+        .lst{width: 30px; height: 30px; background-image: url("img/btn_menu.png"); background-repeat: no-repeat; background-position: center center; float: right; margin-top: 5px; margin-right: 5px;}
+
+/*#visual*/
+        #visual { clear: both; width: 100vw; height: 100vh; position: relative; top: 0; left: 0; z-index: 1; }
+
+        ul.s_box {width: 500%; height: 100%; position: relative; }
+        .s_box li {float: left; width: 20%; height: 100%; position: relative; }
+        .s_bg{width: 100vw; height: 100vh; background-repeat: no-repeat; background-position: center center; background-size:auto 100%; }
+        .s_img1 { background-image: url("./img/s_img1.jpg"); }
+        .s_img2 { background-image: url("./img/s_img2.jpg"); }
+        .s_img3 { background-image: url("./img/s_img3.jpg"); }
+        .s_img4 { background-image: url("./img/s_img4.jpg"); }
+        .s_img5 { background-image: url("./img/s_img5.jpg"); }
+
+        .t_box { position: absolute; bottom: 0px; width: 100%; height: 40%; background-image: url("./img/gray-shadow.png"); background-repeat: repeat-x; background-position: center bottom; background-size: auto 100%; padding-left: 5%}
+        .t_box p.yellow { color: #f8f800; font-size: 1em; line-height: 1.5; font-weight: bold; text-shadow: 1px 1px 3px rgba(0,0,0,.7);}
+        .t_box p.tit { font-size: 1.5em; line-height: 2; font-weight: bold; color: #fff;}
+        a.s_more { display: block; width: 120px; height: 35px; color: #fff; background: rgba(0,0,0,0.7); border: 1px solid #fff; border-radius: 5px; line-height: 32px; text-align: center; font-size: 0.9em; margin-top: 15px;}
+        
+        .btn_frame{ position: absolute; width: 26%; bottom: 5%; left: 37%; z-index: 50;}
+        ul.btn_box { position: relative; width: 100%; height: 16px; }
+        ul.btn_box li {position: absolute; width: 16px; height: 16px; }
+        .btn_box li button { display: block; width: 8px; height: 8px; border: 1px solid #fff; border-radius: 5px; background-color: transparent; }
+        .btn_box li.on button { background-color: #fff; }
+        .btn_box li.s_item1 { left: 0; }
+        .btn_box li.s_item2 { left: 16px; }
+        .btn_box li.s_item3 { left: 32px; }
+        .btn_box li.s_item4 { left: 48px; }
+        .btn_box li.s_item5 { left: 64px; }
+        div.play { position: absolute; top: -4px; left: 80px; z-index: 50; width: 16px; height: 16px; }
+        div.play button { width: 16px; height: 16px; background-image: url("./img/mv-stop.png"); background-repeat: no-repeat; background-size: cover; }
+        div.play.on button {background-image: url("./img/mv-play.png")}
+        div.s_ani { width: 16px; height: 16px; position: relative; top: 20px; left: 40%; animation: ssg 3s infinite;}
+        @keyframes ssg {
+            0% {background: url("./img/scroll_1.png") center center / cover no-repeat;}
+            50% {background: url("./img/scroll_2.png") center center / cover no-repeat;}
+            100% {background: url("./img/scroll_3.png") center center / cover no-repeat;}
+        }
+        
+/*#txt_box*/
+        #txt_box { width: 100%; height: 175px; padding-top: 20px;}
+        #txt_box .txt { text-align: center; font-size: 17px; line-height: 1.55; font-weight: bold; }
+        #txt_box .btn { width: 94%; height: 45px; color: #fff; background: #0052a4; margin-left: 3%; margin-top: 15px; font-size: 17px;  }
+        
+        .blank { width: 100%; height: 10px; background-color: #ebebeb; border-top: 1px solid #c4c4c4; clear: both; }
+        
+        
+/*#story*/
+        #story { width: 92%; margin:  0 auto; }
+        h3 { font-size: 1.5em; font-weight: bold; text-align: center; margin: 25px 0; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-container iframe,.video-container object,.video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .txt { text-align: justify; font-size: 17px; line-height: 1.5em; margin-top: 15px; }
+        .txt span { font-weight: bold; color: #0052a4; }
+        #story .img_box{ width: 100%; height: 200px; background-image: url("./img/img_box.jpg"); background-size: cover; background-position: center center; margin-top: 20px; }
+        .more { border-top: 1px solid #c4c4c4; margin-top: 30px; text-align: center; }
+        .more .btn_m { width: 28px; height: 28px; padding-right: 20px;  vertical-align: middle; background: url("./img/btn_more.png") no-repeat right / 7px auto; display: inline-block;}
+        .more .btn_a { height: 45px; font-size: 17px; line-height: 45px; display: inline-block; width: auto; }
+        
+        
+/*advocate#*/
+        #advocate { width: 100%; margin: 0 auto; }
+        #advocate .txt_box { width: 100%; height: auto; padding: 20px 15px;}
+        #advocate p.title { font-size: 17px; font-weight: bold; color: #112941; line-height: 1.65; }
+        #advocate p { font-size: 13px; line-height: 1.65; text-align: justify; color: #d6d6d6; }
+        .advo_img { width: 100%; height: 200px; background-image: url("./img/bg_advocate2.jpg"); background-position: center center; background-size: cover; }
+        .advo_box1 .txt_box { background-color: #408bd6;}
+        .advo_box2 .txt_box { background-color: #7b6666;}
+        #advocate .more { margin-top: 0; border-top: none;}
+        
+/*#slider*/
+        #slider { width: 100vw; height: 300px; overflow: hidden; background: url("./img/bg_slider2.jpg") no-repeat top right / 100% auto;  }
+        
+        .s_txt_bg { width: 100%; }
+        .s_txt_bg h2 { text-align: center; font-size: 1.2em; font-weight: bold; line-height: 1.5; padding: 23px 0; color: #fff; }
+        .s_txt_bg h2 span { font-size: 17px; font-weight: bold; }    
+        
+        .sl_bg li { display: block; width: 180px; height: 180px; float:left; margin-left: 15px; }
+        .sl_bg li.item1 { background: url("./img/slider1.jpg") no-repeat center / cover; }
+        .sl_bg li.item2 { background: url("./img/slider2.jpg") no-repeat center / cover; }
+        .sl_bg li.item3 { background: url("./img/slider3.jpg") no-repeat center / cover; }
+        .sl_bg li.item4 { background: url("./img/slider4.jpg") no-repeat center / cover; }
+        .sl_bg li.item5 { background: url("./img/slider5.jpg") no-repeat center / cover; }
+        .sl_bg li.item6 { background: url("./img/slider6.jpg") no-repeat center / cover; }
+        .s_txt { display: block; width: 180px; height: 180px;; background-color: rgba(0,0,0,.5); color: #fff; padding: 40px 15px 0; font-size: 14px; line-height: 1.4; text-align: justify; }
+        .s_txt span { font-size: 17px; font-weight: bold; line-height: 2.5; }
+        
+/*#notice*/
+        h2 {font-size: 1.25em; font-weight: bold; }
+        
+    </style>
+    
+<!--#visual slide-->
+    <script>
+        $(document).ready(function(){
+            var wd = parseInt($(window).width());
+            var intv = setInterval(function(){
+                nextAni();
+            }, 3000);
+            function nextAni(){
+                $(".s_box").not(":animated").animate({"margin-left":-wd+"px"},800,function(){
+                    $(".s_box li").eq(0).appendTo($(".s_box"));
+                    $(".s_box").css("margin-left", "0px");
+                    $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                    $(".btn_box li").removeClass("on");
+                    $(".btn_box li").eq(0).addClass("on");
+                });
+            }
+            var sw = true;
+            $(".play").click(function(){
+                if(sw==true){
+                    $(this).addClass("on");
+                    clearInterval(intv);
+                } else {
+                    $(this).removeClass("on");
+                    nextAni();
+                    intv = setInterval(function(){
+                        nextAni();
+                    }, 3000);
+                }
+                sw= !sw;
+            });
+            $(".btn_box li").click(function(){
+                var idx = $(this).index()-1;
+                clearInterval(intv);
+                for(var i=0;i<idx;i++){
+                    $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                    $(".s_box li").eq(0).appendTo($(".s_box"));
+                }
+                nextAni();
+                intv = setInterval(function(){
+                    nextAni()
+            },3000);
+          });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(".s_ani").click(function(){
+                $("html,body").unbind().animate({scrollTop:$("#txt_box").offset().top - 40},'slow');
+            });
+        });
+    </script>
+    
+    
+<!--#slider slide-->
+ <link rel="stylesheet" href="./css/ktswiper.css">
+    <script src="./js/ktswiper.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#s_slider").ktswiper({
+            infinite: false, //양방향 무한 모션 ㅇ유무(true)
+            speed: 300, // 슬라이드 스피드
+            autoplay: false, //자동플레이 유무(true)
+            autoplaySpeed: 4000, // 자동플레이 스피드
+            slidesToShow: 1, //한 화면에 보여줄 아이템수
+            slidesToScroll: 1, // 한번에 슬라이드 시킬 아이템 개수
+            arrows: false //좌우 화살 버튼 노출 여부 ( false 시 안보임 )
+        });
+    });
+    </script>
+
+</head>
+<body>
+    <div class="wrap">
+        
+        <header id="hd">
+            <a href="index.html" class="logo"></a>
+            <div class="lst"></div>
+        </header>
+        
+        <div id="visual">
+                <ul class="s_box">
+                    <li class="s_item1">
+                        <div class="s_img1 s_bg"></div>
+                        <div class="t_box">
+                            <p class="yellow">내 아이의 첫 생일을<br>특별하게 기념하는 방법</p>
+                            <p class="tit">생애 첫 나눔</p>
+                            <a href="#" class="s_more">특별한 나눔</a>
+                        </div>                        
+                    </li>
+                    <li class="s_item2">
+                        <div class="s_img2 s_bg"></div>
+                        <div class="t_box">
+                            <p class="yellow">꿈꾸며 성장하는</p>
+                            <p class="tit">컴패션 어린이들의 이야기</p>
+                            <a href="#" class="s_more">꿈꾸는 어린이</a>
+                        </div>                        
+                    </li>
+                    <li class="s_item3">
+                        <div class="s_img3 s_bg"></div>
+                        <div class="t_box">
+                            <p class="yellow">어린이와 함께</p>
+                            <p class="tit">꿈을 키워가는 후원자 이야기</p>
+                            <a href="#" class="s_more">꿈을 심는 후원자</a>
+                        </div>                        
+                    </li>
+                    <li class="s_item4">
+                        <div class="s_img4 s_bg"></div>
+                        <div class="t_box">
+                            <p class="yellow">컴패션의 비전을<br>눈으로 확인하고</p>
+                            <p class="tit">함께 나누기 위한 여행</p>
+                            <a href="#" class="s_more">비전트립</a>
+                        </div>                        
+                    </li>
+                    <li class="s_item5">
+                        <div class="s_img5 s_bg"></div>
+                        <div class="t_box">
+                            <p class="yellow">하나님과 동행하는<br>특별한 여행</p>
+                            <p class="tit">2019 대학생 챌린지</p>
+                            <a href="#" class="s_more">자세히보기</a>
+                        </div>                        
+                    </li>
+                </ul>
+                <div class="btn_frame">
+                    <ul class="btn_box">
+                        <li class="s_item1 on"><button></button></li>
+                        <li class="s_item2"><button></button></li>
+                        <li class="s_item3"><button></button></li>
+                        <li class="s_item4"><button></button></li>
+                        <li class="s_item5"><button></button></li>
+                    </ul>
+                    <div class="play"><button></button></div>
+                    <div class="s_ani"></div>
+                </div>
+            </div>
+
+        <div id="txt_box">
+            <p class="txt">컴패션은 한 어린이를 전인적으로 양육하여<br>가정과 지역사회를 변화시킬<br>기적의 주인공으로 세워갑니다.</p>
+            <button class="btn">컴패션양육 자세히보기</button>
+        </div>
+        
+        <div class="blank"></div>
+
+        
+        <div id="story">
+            <h3>컴패션 소식</h3>
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/4504R8a_ryM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="txt">한국 컴패션이 후원자님의 어린이를 직접 만나고 오는 <span>글로벌 취재!</span> 200명 넘게 응모해주신 소중한 후원자님들 중 첫 번째로, 사랑스러운 어린이집 아이들과 나눔을 실천하는 좋은씨앗 어린이집(강원도 원주시)의 후원 어린이를 컴패션이 만나고 왔습니다!</p>
+            <div class="img_box"></div>
+            <p class="txt"><span>패션, 꿈을 선물하다</span><br>코오롱FNC 시리즈가 9년째 문화 예술 산업 후원 프로젝트 '웜하트' 캠페인을 진행하는데, 아티스트 유나얼과 콜라보레이션 상품 출시와 함께 한국컴패션 후원이 진행될 예정이다.</p>
+            <div class="more"><a href="#" class="btn_m btn_a">컴패션소식 더보기</a></div>
+        </div>
+        
+        <div class="blank"></div>
+        
+        <div id="advocate">
+           <h3>애드보킷</h3>
+            <div class="advo_box1">
+                <div class="video-container">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/pbb8eZn-16E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="txt_box">
+                    <p class="title">컴패션 애드보킷이란?<p>
+                    <p>가난으로 고통 당하는 전 세계 어린이들의 필요를 적극 알리고, 컴패션 양육을 통해 꿈을 잃은 어린이들이 꿈을 찾을 수 있도록 돕는 후원자들을 가리킵니다.</p>
+                </div>
+            </div>
+            <div class="advo_box2">
+                <div class="advo_img"></div>
+                <div class="txt_box">
+                    <p class="title">컴패션 온라인 애드보킷</p>
+                    <p>연약한 어린이들의 목소리가 되어 온라인 상에서 캠페인 참여, 컴패션 활동 공유, SNS 홍보 등을 통하여 적극적으로 컴패션 사역을 알리는 후원자를 말합니다.</p>
+                </div>
+            </div>
+            <div class="more"><a href="#" class="btn_m btn_a">자세히 알아보기</a></div>
+        </div>
+        
+        <div class="blank"></div>
+        
+        <div id="slider">
+            <div class="s_txt_bg ">
+                <h2><span>1:1 어린이 후원</span><br>컴패션을 통해 어떤 지원을 받나요?</h2>
+            </div>
+            <div class="sl_bg">
+                <ul class="ktswiper-track" id="s_slider">
+                    <li class="item1 ktswiper-slide ktswiper-cloned" data-ktswiper-index="0" aria-hidden="false" tabindex="-1" style="display:none;">
+                        <a href="#" class="s_txt"><span>방과 후 활동</span><br>컴퓨터, 재봉, 미용 등의 기술을 배우거나 스포츠 및 음악 교실을 운영합니다.</a>
+                    </li>
+                    <li class="item2 ktswiper-slide ktswiper-cloned" data-ktswiper-index="0" aria-hidden="true" tabindex="-1" style="display:none;">
+                       <a href="#" class="s_txt"><span>멘토링</span><br>컴패션 선생님들은 어린이들의 교육 및 양육 관련 전반적인 멘토가 되어줍니다.</a>
+                    </li>
+                    <li class="item3 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0">
+                        <a href="#" class="s_txt"><span>위생교육</span><br>비누, 치약 등의 위생용품을 제공하고 청결을 유지하는 방법을 배웁니다.</a>
+                    </li>
+                    <li class="item4 ktswiper-slide" data-ktswiper-index="1" aria-hidden="true" tabindex="0">
+                        <a href="#" class="s_txt"><span>건강검진</span><br>정기적 건강검진을 통해 성장발달사항을 체크하며, 에이즈 예방과 치료를 제공합니다.</a>
+                    </li>
+                    <li class="item5 ktswiper-slide" data-ktswiper-index="2" aria-hidden="true" tabindex="0">
+                        <a href="#" class="s_txt"><span>영양보충</span><br>충분한 음식이 없는 어린이들에게 영양식과 비타민을 제공합니다.</a>
+                    </li>
+                    <li class="item6 ktswiper-slide" data-ktswiper-index="3" aria-hidden="true" tabindex="0">
+                        <a href="#" class="s_txt"><span>신앙 활동</span><br>연령에 맞는 신앙 활동을 통해 예수님의 사랑을 배웁니다.</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <div class="blank"></div>
+        
+        <div id="notice">
+            <div class="n_wrap">
+                <h2>공지사항/새소식</h2>
+                <a href="#" class="more_btn"></a>
+            </div>
+            <ul>
+                <li class="no_box">회의자료</li>
+                <li class="no_box">언론보도</li>
+                <li class="no_box">공지사항</li>
+                <li class="no_box">공지사항</li>
+            </ul>
+            <ul>
+                <li class="no_txt">한국컴패션 제34회 이사회 회의록 게시</li>
+                <li class="no_txt">김범수 "한 어린이를 끝까지 사랑할 수 있는 용기 갖길"</li>
+                <li class="no_txt">2018년도 한국 컴패션 연간 기부금 모금액 및 활용실적 명세서</li>
+                <li class="no_txt">2018년도 한국 컴패션 결산과 후원금의 수입 및 사용결과 공고</li>
+            </ul>
+        </div>
+        
+        <div id="more">
+            <h2>더 알아보기</h2>
+            <div class="more_box">
+                <p>후원이<br>처음이세요?</p>
+            </div>
+            <div class="more_box">
+                <p>한국 컴패션<br>투명경영 확인하기</p>
+            </div>
+        </div>
+        
+        <footer id="ft">
+            <div class="sns">
+                <ul>
+                    <li class="sns_item1"><a href="#"></a></li>
+                    <li class="sns_item2"><a href="#"></a></li>
+                    <li class="sns_item3"><a href="#"></a></li>
+                    <li class="sns_item4"><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="ft_menu">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">오시는 길</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="linkbox">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">인재채용</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+                <img src="./img/ft_logo.png" alt="푸터로고">
+                <p class="info">후원상담/안내 02-740-1000</p>
+                <p class="info">대표자 서정인</p>
+                <p class="b_number">사업자번호 108-82-05789</p>
+                <p class="copy">© COMPASSION KOREA All Rights Reserved. Contact us for more information</p>
+            </div>
+        </footer>
+        
+    </div>
+</body>
+</html>
