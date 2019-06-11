@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    <title>여행에미치다</title>
+    
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="media.css">
+<!--
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width:767px)">
+    링크미디어, 이렇게 써주면 css파일에 미디어규칙이 필요 없다
+-->
+
+   <style></style>
+   
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+       $(".vs_btn_box li").click(function(){
+           var vs_sel = $(this).attr("class");
+           if(vs_sel=="item2"){
+               $("#video").attr("src","./images/page1_2.mp4"); 
+               $(".vs_btn_box li button").removeClass("on");
+               $(this).find("button").addClass("on");
+           } else if(vs_sel=="item1"){
+               $("#video").attr("src","'./images/page1.mp4'");  
+               $(".vs_btn_box li button").removeClass("on");
+               $(this).find("button").addClass("on");
+           } else {
+               return false; 
+           }
+       }); 
+        $(".to_top").fadeOut();
+        $(window).scroll(function(){
+            var sc_top = $(window).scrollTop(); 
+            if(sc_top>=300) {
+                $(".to_top").fadeIn();
+            } else {
+                $(".to_top").fadeOut();
+            }
+        });
+    });    
+    </script>
+</head>
+<body>
+    <input type="checkbox" class="ck_item" id="lst_ck">
+    <input type="checkbox" class="ck_item" id="search_ck">
+    <header class="page hd" id="main">
+       <video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+           <source src="./images/page1.mp4" type="video/mp4">
+       </video>
+        <a href="index.html" class="logo"></a>
+        <nav id="gnb">
+            <h3 class="mobile mob_title1">MENU</h3>
+            <ul class="mn">
+                <li class="item1"><a href="new.html">ABOUT US</a></li>
+                <li class="item2"><a href="brand.html">COLLABO</a></li>
+                <li class="item3"><a href="product.html">PRODUCT</a></li>
+                <li class="item4"><a href="store.html">CONTACT</a></li>
+            </ul>
+            <label for="lst_ck" class="mobile close_btn"></label>
+        </nav>
+                
+        <nav id="tnb">
+            <ul class="mn">
+                <li class="item1">
+                    <a href="" class="dp1">KO</a>
+                    <ul class="col_sub">
+                        <li class="it1"><a href="index.html">KO</a></li>
+                        <li class="it2"><a href="index_en.html">EN</a></li>
+                        <li class="it3"><a href="index_cn.html">CN</a></li>
+                    </ul>
+                </li>
+                <li class="item2"><a href="product.html" class="search_btn"></a></li>
+            </ul>
+        </nav>
+        <ul class="vs_btn_box desk">
+            <li class="item1"><button class="on">01</button></li>
+            <li class="divider"></li>
+            <li class="item2"><button>02</button></li>
+        </ul>
+        <nav class="mobile search">
+            <h3 class="mob_title1">SEARCH</h3>
+            <form action="">
+                <input type="text" id="keywords" class="input_data">
+                <input type="submit" id="sub_btn" class="sub_btn">
+            </form>
+            <h4 class="mob_title2">주요 검색어</h4>
+            <ul class="mob_menu">
+                <li class="item1"><a href="">여미휴게소</a></li>
+                <li class="item2"><a href="">0순위여행</a></li>
+                <li class="item3"><a href="">보헤미안배낭</a></li>
+                <li class="item4"><a href="">여행에미칠지도</a></li>
+                <li class="item5"><a href="">미니언즈캐리어</a></li>
+            </ul>
+            <label for="search_ck" class="close_btn"></label>
+        </nav>
+        <label for="lst_ck" class="mobile lst_btn"></label>
+        <label for="search_ck" class="mobile search_btn"></label>
+    </header>
+    <div class="page" id="page1">
+        <ul class="column">
+            <li class="item1">
+                <img src="./images/section1_img1.png" alt="2페이지1" class="pic page_img1">
+                <img src="./images/section1_img2.jpg" alt="2페이지2" class="pic page_img2">
+                <img src="./images/section1_img3.jpg" alt="2페이지3" class="pic page_img3">
+            </li>
+            <li class="item2">
+                <h4 class="page_tit1">ABOUT US</h4>
+                <h2 class="page_tit2">여행에 미치다, <br> 그 시작에 대하여</h2>
+                <p class="page_com">새로운 여행 커뮤니티<br>여미의 탄생</p>
+                <a href="brand.html" class="page_more"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="page" id="page2">
+        <ul class="column">
+            <li class="item1">
+                <h4 class="page_tit1">COLLABORATION</h4>
+                <h2 class="page_tit2">일상, 여행이 되다</h2>
+                <p class="page_com">여행자들을 위한<br>
+                여행자들에 의한<br>여행에 미치다</p>
+                <a href="new.html" class="page_more"></a>
+            </li>
+            <li class="item2">
+                <img src="./images/section2_img1.png" alt="" class="pic page_img1">
+                <img src="./images/section2_img2.jpg" alt="" class="pic page_img2">
+            </li>
+        </ul>
+    </div>
+    <div class="page" id="page3">
+        <h3 class="page_t1">Brand collaboration</h3>
+        <p class="page_com1">일상을 여행으로라는 슬로건 아래 건전한 여행 문화 정착을 목적으로<br>다양한 브랜드와 함께 프로젝트를 진행합니다.</p>
+    </div>
+    <div class="page" id="page4">
+        <div id="img_sl">
+        <input type="radio" class="ra_item" id="ra1" name="ra_item1" checked>
+        <input type="radio" class="ra_item" id="ra2" name="ra_item1">
+        <input type="radio" class="ra_item" id="ra3" name="ra_item1">
+        <input type="radio" class="ra_item" id="ra4" name="ra_item1">
+            <ul class="lb_box">
+                <li class="item1">
+                    <label for="ra1">SKT 0순위여행</label>
+                    <div class="item_box">
+                        <h2 class="item_tit">여미 크루와 떠나는<br>발리 0순위여행</h2>
+                        <p class="item_com">SK텔레콤 20대 고객이라면 누구나!<br>여미크루와 함께 떠나는 절호의 기회<br>인생샷은 덤으로 건져가자!</p>
+                    </div>
+                </li>
+                <li class="item2">
+                    <label for="ra2">여행에미칠지도 재입고</label>
+                    <div class="item_box">
+                        <h2 class="item_tit">여행에미칠지도</h2>
+                        <p class="item_com">하루 만에 무려 7천장 완판신화<br>
+                        사고 싶어도 살 수 없었던 핫아이템<br>
+                        그 사랑에 힘입어 드디어 돌아왔습니다!<br>
+                        지금 바로 여미휴게소에서 만나보세요</p>
+                    </div>
+                </li>
+                <li class="item3">
+                    <label for="ra3">킬리X여행에미치다</label>
+                    <div class="item_box">
+                        <h2 class="item_tit">보헤미안 배낭<br>앵콜 크라우드 펀딩</h2>
+                        <p class="item_com">오랜 협의를 거쳐<br>
+                        정식 출시에 앞서 정말 마지막,<br>
+                        파이널 크라우드펀딩을 진행합니다.</p>
+                    </div>
+                </li>
+                <li class="item4">
+                    <label for="ra4">까스텔바작X여행에미치다</label>
+                    <div class="item_box">
+                        <h2 class="item_tit">미니언즈 캐리어 끌고<br>여행 갈 수 있는 법</h2>
+                        <p class="item_com">상금 100만원 여행콘텐츠 공모전<br>
+                        6월에 여행계획이 있다면 바로 신청!</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="pic_box">
+                <li class="item1"><a href=""><img src="./images/pro01.png" alt="0순위여행"></a></li>
+                <li class="item2"><a href=""><img src="./images/pro02.png" alt="여행에미칠지도"></a></li>
+                <li class="item3"><a href=""><img src="./images/pro03.png" alt="킬리여미콜라보"></a></li>
+                <li class="item4"><a href=""><img src="./images/pro04.png" alt="까스텔바작여미콜라보"></a></li>
+                <li class="item1"><a href=""><img src="./images/pro01.png" alt="0순위여행"></a></li>
+                <li class="item2"><a href=""><img src="./images/pro02.png" alt="여행에미칠지도"></a></li>
+                <li class="item3"><a href=""><img src="./images/pro03.png" alt="킬리여미콜라보"></a></li>
+            </ul>
+        </div>
+    </div>
+    <footer class="page" id="ft">
+        <nav id="fnb">
+            <ul class="mn">
+                <li class="item1"><a href="sitemap.html">SITEMAP</a></li>
+                <li class="item2"><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <nav class="mobile sns_link">
+            <ul class="sns">
+                <li class="item1"><a href=""></a></li>
+                <li class="item2"><a href=""></a></li>
+                <li class="item3"><a href=""></a></li>
+            </ul>
+        </nav>
+        <p class="copyright">
+            <span class="txt1">여행에 미치다</span>
+            <span class="txt1">CEO: 조준기</span>
+            <span class="txt1">주소 : 서울특별시 강남구 논현로172길 21 (신사동) 이화빌딩 B1</span>
+            <span class="txt1">대표전화 : 02-517-0819</span>
+            <span class="txt1">&copy; 2019 TRAVELHOLIC. ALL RIGHTS RESERVED</span>
+        </p>
+    </footer>
+    <a href="#" class="to_top"></a>
+</body>
+</html>

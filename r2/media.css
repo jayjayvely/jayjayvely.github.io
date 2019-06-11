@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/*
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width:767px)">
+    링크미디어방식, 이렇게 써주면 .css파일에 미디어규칙(@media~~~)이 필요 없다
+    단, 기기별로 따로 저장해주어야겠죠!
+*/
+
+
+            
+    @media screen and (max-width:767px){
+        #main #video { position: fixed; top: 0; left: -110%; min-width: 100vw; min-height: 100vh; width: auto; height: 95%; overflow: hidden; }
+        .logo { display:block; width: 160px; height: 38px;  
+        background-repeat:no-repeat; background-size:cover; left:calc(50% - 70px); } 
+        #gnb { position: fixed; z-index: 90; width: 100vw; height: 100vh; background-color: #fff; margin-top: 0; left: -100%; transition: 0.8s; text-align: center; }
+        #gnb ul {padding-left: 0; }
+        #gnb li a { font-size:1.5em; color:#fff; font-weight: bold; text-shadow: none; } 
+        #lst_ck:checked ~ #main #gnb { left: 0; }
+        #search_ck:checked ~ #main .search { right: 0; }
+        #gnb li { float: none; clear: both; padding:1em 2.4em; }   
+        #gnb li a { font-size:1em; color:#333; font-weight:bold; }
+        #tnb { position: fixed; z-index: 92; right: -105%; top: auto; bottom: 42%; transition: 0.8s; }
+        #lst_ck:checked ~ #main #tnb { right: 5%; } 
+        #tnb li a { color: #333; }
+        #tnb .search_btn { background-position: -18px -24px; }
+        .page .column li { clear:both; width:100%; height:48vh; }
+.page .pic { width:65%; height:auto; }
+.page_tit1 { padding-top:2em;  padding-left:30px; }    
+.page_tit2 { line-height:1.2;  padding-bottom:0.4em; padding-top:0.4em; 
+    padding-left:30px; font-size:1.8em; }      
+.page_com { padding-left:30px; font-size:1em; font-weight:400; } 
+.page_more { margin-top:20px; margin-left:20px; }  
+#page2.page .page_img2 { left:10%; top:5%; }
+        #page2 img
+.page_t1 { padding:1.6em; padding-top:7em; font-size:1.6em; line-height:1.4; } 
+.page_com1 { font-size:1.1em; }
+#page4 { height:150vh; }
+.lb_box { top:0; width:100%; }
+.pic_box { padding-left:0; width:100vw; padding-top:320px; }
+.pic_box li { float:none; clear:both; }    
+.pic_box li img { width:100%; margin-top:20px; } 
+#ra1:checked ~ .pic_box { margin-left:0px;  margin-top:0px; }         
+#ra2:checked ~ .pic_box { margin-left:0px; margin-top:-250px; }         
+#ra3:checked ~ .pic_box { margin-left:0px;  margin-top:-700px; }         
+#ra4:checked ~ .pic_box { margin-left:0px; margin-top:-1000px;}
+
+#fnb { padding-left: 0; }
+#fnb ul { padding-left: 30px; }
+    
+.copyright { font-size:0.85em; padding-left:30px; padding-top:50px; 
+margin-top: 100px; }
+
+        
+.mobile { display:block; }
+.desk { display:none; }
+
+    }
+    @media screen and (min-width:768px) and (max-width:1024px){
+        
+        .mobile { display:block; }
+        .desk { display: none; }
+    }
+    @media screen and (min-width:1025px){
+        #main #video { position: fixed; top: 0; left: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; overflow: hidden; }
+        .logo { display:block; width: 250px; height: 60px; 
+        background-image:url("./images/logo_h.png"); 
+        background-repeat:no-repeat; background-size:cover; 
+        position:absolute;  z-index:50; 
+        top:3%; left:calc(50% - 100px); } 
+        #gnb { width:690px; height:50px; margin-top:5%; position: absolute; top: 0; left: calc( 50% - 345px ); z-index: 50; background-color: transparent; }
+        #gnb li { float:left; padding:1em 2.4em; }   
+        #gnb li a { font-size:1.5em; color:#fff; font-weight:bold; text-shadow: 1px 1px 5px #000; }
+        
+        .page .column li.item1 { float:left; }    
+        .page .column li.item2 { float:right; } 
+        
+        #fnb { clear:both; padding-left:50px; }
+        .copyright { color:#fff; padding-left:90px; line-height:2.4; }
+        
+        .mobile { display:none; }
+        .desk { display: block; }
+    }
