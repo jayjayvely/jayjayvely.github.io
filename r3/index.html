@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CELLTRION 셀트리온</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700,900|Noto+Sans:400,400i,700,700i&display=swap&subset=korean" rel="stylesheet">
+</head>
+
+<style>
+/*reset css*/
+    * { margin:0; margin:0;  }
+    body, html { width:100%; font-size:14px;
+        font-family: 'Noto Sans', 'Noto Sans KR', sans-serif; background-color:#fff; color:#333; overflow-x:hidden; }
+    ul { list-style:none; }
+    a { text-decoration:none; color: #333; } 
+    label, input, a, button { 
+        background-color:transparent; background-image:none; border:0; outline:0; user-select:none; }
+    
+/*common css*/
+    #wrap { width: 100%; height: 100%; }
+    /*header*/
+    #hd { width: 100vw; position: fixed; top:0; left: 0; z-index: 99;  background: #fff;  border-bottom: 1px solid #dcdcdc; }
+    .top_menu { width: 100%; height: 30px; border-bottom: 1px solid #dcdcdc; display: block; }
+    .t_menu{ float: right; margin-right: 100px; position: relative; }
+    .t_menu li { float: left; margin-left: 20px; }
+    .t_menu li a { line-height: 30px; font-size: 0.9em; color: #999; }
+    .t_menu li.item3:before { content: ""; width: 1px; height: 10px; background: #999;   
+        display: block; position: absolute; top: 10px; right: 34px; }
+    .hd_menu { clear: both; width: 100%; height: 75px; position: relative; }
+    .logo { position: absolute; left: 0; top: 15px; display: block; width: 140px; height: 35px;
+        background-image: url("./img/logo.png"); background-size: cover; background-position: center center; background-repeat: no-repeat; margin-left: 100px; } 
+    .gnb { position: absolute; top: 0; left: 500px; width: 100%; height: 75px; display: block; }
+    .main_menu { position: relative;  }
+    li.menu.item1 { width: 86px; }
+    li.menu.item2 { width: 100px; }
+    li.menu.item3 { width: 92px; }
+    li.menu.item4 { width: 46px; }
+    li.menu.item5 { width: 22px; }
+    li.menu.item6 { width: 74px; }
+    li.menu { float: left; margin-right: 70px; height: 75px; display: block; }
+    li.menu:last-child { margin-right: 0; }
+    li.menu a.dp1 { font-size: 1.25em; line-height: 71px; border-bottom: 4px solid transparent; display: block;}
+    .sub_box { width: 100%; height: 0; position: absolute; left: -500px; top: 76px; background: #f5fff4; transition: 0.8s; z-index: 90;}
+    .gnb:hover .sub_box { height: 160px; }
+    .sub { height: 0; width: 100%; opacity: 0;  padding-left: 0; padding-top: 20px; position: absolute; z-index: 95;}
+    .sub li { width: 100%; line-height: 30px; position: relative; }
+    .menu:hover .sub { height: 100px; opacity: 1; }
+    .gnb li:hover a.dp1{ border-bottom: 4px solid #3da436; color: #3da436; }
+    .gnb li .sub a:hover { border-bottom: 1px solid #3da436; }
+    
+    #main #video { position: absolute; top: 0; left: 0; min-width: 100vw; min-height: 100vh; width: 100%; height: auto; overflow: hidden; }
+    .page { width: 100vw; height: 100vh; 
+        background-size: cover; background-repeat: no-repeat; position: relative; }
+    .page_wrap { position: absolute; top: 20%; left: 15%; width: 70%; height: 60%; }
+    #page1 { background-image: url("./img/main_con01.jpg"); background-position: left center; }
+    #page2 { background-image: url("./img/main_con02.jpg"); background-position: right center; }
+    #page3 { background-image: url("./img/main_con03.jpg"); background-position: right center; }
+    #page4 { float: left; background-position: right center; }
+    .page_tit { font-size: 4.5em; }
+    .page_txt { font-size: 1.5em; }
+    .page_more { font-size: 1.5em; font-weight: bold; display: block; border-top: 6px solid #3da436; width: 121px; line-height: 55px; margin-top: 40px; }
+    #page1 .page_more, #page3 .page_more { float: right; }
+    #page1, #page3 { text-align: right; }
+    .page_right { float: right; }
+    .right_box { width: 50vw; height: 50vh; }
+    .box_t { background-image: url("./img/main_con04_1.jpg"); }
+    .box_b { background-image: url("./img/main_con04_2.jpg"); }
+
+    
+    #ft { clear: both; width: 100%; height: 180px; background: #000; padding: 50px 80px; box-sizing: border-box; }
+    .f_menu { padding-left: 0; }
+    .f_menu li { float: left; margin-right: 30px; }
+    .f_menu li a { color: #dcdcdc; font-size: 1.2em; }
+    .f_logo { clear: both; display: block; width: 140px; height: 35px; background: url("./img/logo_b.png") center center / cover no-repeat; float: left; margin-top: 30px; }
+    .copy { float: right; font-size: 1.25em; color: #dcdcdc; padding-top: 35px; }
+    
+    .mobile { display: none; }
+    .m_menu { opacity: 0; transition: 0.5s; }
+    .toggle { width: 50px; height: 50px; position: absolute; top: 12px; right: 12px;  z-index: 99; background: url("./img/toggle.png") center center/ cover no-repeat; }
+    .m_menu { width: 100%; height: 100%; background: #fff; position: fixed; top: 76px; left: 0; z-index: 9999; }
+    .m_main_menu { padding: 0 20px; }    
+    .mm { position: relative;  }
+    .mm a.dp1::after { content:""; width: 18px; height: 15px; background-image:  url("./img/v.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; position: absolute; top: 19px; right: 5px; }
+    .mm a.dp1.on::after { content:""; background-image: url("./img/v2.png"); }
+    .mm a.dp1 { font-size: 1.25em; font-weight: 700; line-height: 3; display: block; width: 100%; border-bottom: 1px solid #dcdcdc; text-indent: 5px; }
+    .m_sub { text-indent: -20px; border-bottom: 1px solid #dcdcdc; display: none; }
+    .m_sub li a { line-height: 3; font-size: 1.2em; }
+
+    
+    @media screen and (min-width:768px) and (max-width:959px){
+        .top_menu, .gnb { display: none; }
+        
+        #main #video { left: -73%; }
+    }
+        
+        
+        
+    @media screen and (max-width:767px){
+        .top_menu, .gnb { display: none; }
+        .logo { top: 20px; left: 20px; margin-left:0;  }
+        #main #video { width: auto; height: 100%; left: -150%;  }
+        
+        .mobile { display: block; }
+    }
+
+</style>
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(document).ready(function(){
+    var win_h = $(window).height();
+            var wd = $(window).width();
+            $(".page").each(function(index){//각 페이지마다 스크롤해야 할 양을 지정
+                $(this).attr("data-page", win_h*index);
+            });
+            $(".page").on("mousewheel", function(e){
+                var secPos = parseInt($(this).attr("data-page"));
+                if(e.originalEvent.wheelDelta > 0){ //위로 스크롤
+                    $("body, html").not(":animated").animate({scrollTop:secPos - win_h}, 400);
+                } else if(e.originalEvent.wheelDelta < 0){ //아래로 스크롤
+                    $("body, html").not(":animated").animate({scrollTop:secPos + win_h}, 400);
+                }
+            });
+    $(".toggle").click(function(){
+        $(".m_menu").css("opacity", "1");
+        $("#hd").css("background", "#3da436");
+        $(".logo").css("background-image", "url('./img/m_logo.png')");
+        $(this).css("background-image", "url('./img/close.png')");
+    });
+    $(".mm a.dp1").click(function(){
+       if($(this).hasClass("on")){
+           $(this).removeClass("on"); 
+           $(this).siblings(".m_sub").slideUp();     
+       } else {
+           $(".mm a.ad").removeClass("on");
+           $(".mm .m_sub").css("display", "none");
+           $(this).addClass("on"); 
+           $(this).siblings(".m_sub").slideDown();
+       } 
+    });
+});
+</script>
+
+<body>
+    <div id="wrap">
+      <div class="m_menu">
+        <nav class="m_gnb">                   
+            <ul class="m_main_menu">
+                <li class="item1 mm"><a href="#" class="dp1">ABOUT US</a>
+                    <ul class="m_sub">
+                        <li class="item1"><a href="#">who we are</a></li>
+                        <li class="item2"><a href="#">vision</a></li>
+                        <li class="item3"><a href="#">contact us</a></li>
+                    </ul>                            
+                </li>
+                <li class="item2 mm"><a href="#" class="dp1">BIOSIMILAR</a>                    
+                    <ul class="m_sub">
+                        <li class="item1"><a href="#">Biosimilars</a></li>
+                        <li class="item2"><a href="#">Biologics</a></li>
+                        <li class="item3"><a href="#">Generics &amp; Biosimilars</a></li>
+                    </ul> 
+                </li>
+                <li class="item3 mm"><a href="#" class="dp1">PRODUCTS</a>
+
+                    <ul class="m_sub">
+                        <li class="item1"><a href="#">Approve</a></li>
+                        <li class="item2"><a href="#">Quality</a></li>
+                        <li class="item3"><a href="#">Facilities</a></li>
+                    </ul>
+
+                </li>
+                <li class="item4 mm"><a href="#" class="dp1">R &amp; D</a>
+
+                    <ul class="m_sub">
+                        <li class="item1"><a href="#">R &amp; D Center</a></li>
+                        <li class="item2"><a href="#">Fields of Research</a></li>
+                        <li class="item3"><a href="#">Pipeline</a></li>
+                    </ul>
+
+                </li>
+                <li class="item5 mm"><a href="#" class="dp1">PR</a>
+
+                    <ul class="m_sub">
+                        <li class="item1"><a href="#">News</a></li>
+                        <li class="item1"><a href="#">Press Release</a></li>
+                        <li class="item2"><a href="#">Video</a></li>
+                        <li class="item3"><a href="#">Brochure</a></li>
+                    </ul>
+
+                </li>
+                <li class="item6 mm"><a href="#" class="dp1">CAREERS</a>
+
+                    <ul class="m_sub">
+                        <li class="item1"><a href="#">Contact</a></li>
+                        <li class="item1"><a href="#">Maps</a></li>
+                    </ul>
+
+                </li>                        
+            </ul>               
+        </nav>
+    </div>
+       
+        <header id="hd">
+           
+            <div class="top_menu">
+                <ul class="t_menu">
+                    <li class="item1">
+                        <a href="#">CS center</a>
+                    </li>
+                    <li class="item2">
+                        <a href="#">KOR</a>
+                    </li>
+                    <li class="item3">
+                        <a href="#">ENG</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hd_menu">
+                <a href="index.html" class="logo"></a>
+                <div class="toggle mobile"></div>
+                <nav class="gnb">                   
+                    <ul class="main_menu">
+                        <li class="item1 menu"><a href="#" class="dp1">ABOUT US</a>
+                            <ul class="sub">
+                                <li class="item1"><a href="#">who we are</a></li>
+                                <li class="item2"><a href="#">vision</a></li>
+                                <li class="item3"><a href="#">contact us</a></li>
+                            </ul>                            
+                        </li>
+                        <li class="item2 menu"><a href="#" class="dp1">BIOSIMILAR</a>                    
+                            <ul class="sub">
+                                <li class="item1"><a href="#">Biosimilars</a></li>
+                                <li class="item2"><a href="#">Biologics</a></li>
+                                <li class="item3"><a href="#">Generics &amp; Biosimilars</a></li>
+                            </ul> 
+                        </li>
+                        <li class="item3 menu"><a href="#" class="dp1">PRODUCTS</a>
+
+                            <ul class="sub">
+                                <li class="item1"><a href="#">Approve</a></li>
+                                <li class="item2"><a href="#">Quality</a></li>
+                                <li class="item3"><a href="#">Facilities</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="item4 menu"><a href="#" class="dp1">R &amp; D</a>
+
+                            <ul class="sub">
+                                <li class="item1"><a href="#">R &amp; D Center</a></li>
+                                <li class="item2"><a href="#">Fields of Research</a></li>
+                                <li class="item3"><a href="#">Pipeline</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="item5 menu"><a href="#" class="dp1">PR</a>
+
+                            <ul class="sub">
+                                <li class="item1"><a href="#">News</a></li>
+                                <li class="item1"><a href="#">Press Release</a></li>
+                                <li class="item2"><a href="#">Video</a></li>
+                                <li class="item3"><a href="#">Brochure</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="item6 menu"><a href="#" class="dp1">CAREERS</a>
+
+                            <ul class="sub">
+                                <li class="item1"><a href="#">Contact</a></li>
+                                <li class="item1"><a href="#">Maps</a></li>
+                            </ul>
+
+                        </li>                        
+                    </ul>  
+                    <div class="sub_box"></div>               
+                </nav>
+            </div>
+        </header>
+        <div class="page" id="main">
+            <video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+               <source src="./video/main.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="page" id="page1">
+           <div class="page_wrap">
+            <h1 class="page_tit">Biosimilar</h1>
+            <p class="page_txt">Novel Paradigm for a Comfortable and Happy Life</p>
+            <a href="#" class="page_more">Learn More</a>
+            </div>
+        </div>
+        <div class="page" id="page2">
+           <div class="page_wrap">
+            <h1 class="page_tit">R &amp; D</h1>
+            <p class="page_txt">FDA approved facilities and Global GMP quality control policy</p>
+            <a href="#" class="page_more">Learn More</a>
+            </div>
+        </div>
+        <div class="page" id="page3">
+           <div class="page_wrap">
+            <h1 class="page_tit">Careers</h1>
+            <p class="page_txt">We seek Talented People who will Grow with Celltrion.</p>
+            <a href="#" class="page_more">Learn More</a>
+            </div>
+        </div>
+        <div class="page" id="page4">
+           <div class="page_wrap">
+            <h1 class="page_tit">News</h1>
+            <p class="page_txt">Learn more about our latest news and developments.</p>
+            <a href="#" class="page_more">Learn More</a>
+            </div>
+            <div class="page_right">
+                <div class="right_box box_t"></div>
+                <div class="right_box box_b"></div>
+            </div>
+        </div>
+        <footer id="ft">
+            <ul class="f_menu">
+                <li class="item1">
+                    <a href="#">법적고지</a>
+                </li>
+                <li class="item2">
+                    <a href="#">개인정보처리방침</a>
+                </li>
+                <li class="item3">
+                    <a href="#">수출입경영방침</a>
+                </li>
+                <li class="item4">
+                    <a href="#">내부정보관리규정</a>
+                </li>
+                <li class="item5">
+                    <a href="#">오시는 길</a>
+                </li>
+                <li class="item6">
+                    <a href="#">SITEMAP</a>
+                </li>
+            </ul>
+            <a href="index.html" class="f_logo"></a>
+            <p class="copy">Copyright ⓒ Celltrion Inc. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
