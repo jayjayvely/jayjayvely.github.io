@@ -57,13 +57,13 @@
     #page1 { background-image: url("./img/main_con01.jpg"); background-position: left center; }
     #page2 { background-image: url("./img/main_con02.jpg"); background-position: right center; }
     #page3 { background-image: url("./img/main_con03.jpg"); background-position: right center; }
-    #page4 { float: left; background-position: right center; }
+    #page4 { float: left; background-position: right center; background: transparent; }
     .page_tit { font-size: 4.5em; }
     .page_txt { font-size: 1.5em; }
     .page_more { font-size: 1.5em; font-weight: bold; display: block; border-top: 6px solid #3da436; width: 121px; line-height: 55px; margin-top: 40px; }
     #page1 .page_more, #page3 .page_more { float: right; }
     #page1, #page3 { text-align: right; }
-    .page_right { float: right; }
+    .page_right { display: block; float: right; }
     .right_box { width: 50vw; height: 50vh; }
     .box_t { background-image: url("./img/main_con04_1.jpg"); }
     .box_b { background-image: url("./img/main_con04_2.jpg"); }
@@ -99,8 +99,21 @@
         
     @media screen and (max-width:767px){
         .top_menu, .gnb { display: none; }
-        .logo { top: 20px; left: 20px; margin-left:0;  }
+        .logo { top: 20px; left: 20px; margin-left:0; }
         #main #video { width: auto; height: 100%; left: -150%;  }
+        .page_wrap { top: 12%; left: 5%; width: 80%; height: 60%; }
+        .page_tit { font-size: 3em; }
+        .page_txt { font-size: 1.2em; }
+        .page_more { font-size: 1em; border-top: 4px solid #3da436; width: 82px; line-height: 40px; margin-top: 40px; }
+        #page1 .page_more, #page3 .page_more { float: left; }
+        #page1, #page3 { text-align: left; }
+        #page4 { background: #e8e8e8; }
+        .page_right { display: none; }
+        
+        #ft { height: 250px; padding: 30px 30px; }
+        .f_menu li { font-size: 0.85em; float: left; margin-right: 10px; }
+        .copy { float: left; font-size: 1em; }
+        
         
         .mobile { display: block; }
     }
@@ -111,18 +124,18 @@
 <script>
 $(document).ready(function(){
     var win_h = $(window).height();
-            var wd = $(window).width();
-            $(".page").each(function(index){//각 페이지마다 스크롤해야 할 양을 지정
-                $(this).attr("data-page", win_h*index);
-            });
-            $(".page").on("mousewheel", function(e){
-                var secPos = parseInt($(this).attr("data-page"));
-                if(e.originalEvent.wheelDelta > 0){ //위로 스크롤
-                    $("body, html").not(":animated").animate({scrollTop:secPos - win_h}, 400);
-                } else if(e.originalEvent.wheelDelta < 0){ //아래로 스크롤
-                    $("body, html").not(":animated").animate({scrollTop:secPos + win_h}, 400);
-                }
-            });
+    var wd = $(window).width();
+    $(".page").each(function(index){//각 페이지마다 스크롤해야 할 양을 지정
+        $(this).attr("data-page", win_h*index);
+    });
+    $(".page").on("mousewheel", function(e){
+        var secPos = parseInt($(this).attr("data-page"));
+        if(e.originalEvent.wheelDelta > 0){ //위로 스크롤
+            $("body, html").not(":animated").animate({scrollTop:secPos - win_h}, 400);
+        } else if(e.originalEvent.wheelDelta < 0){ //아래로 스크롤
+            $("body, html").not(":animated").animate({scrollTop:secPos + win_h}, 400);
+        }
+    });
     $(".toggle").click(function(){
         $(".m_menu").css("opacity", "1");
         $("#hd").css("background", "#3da436");
