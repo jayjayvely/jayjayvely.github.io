@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KOLONMALL</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <meta http-equiv="Pragma" content="no-cache"> 
+    <meta http-equiv="Cache-Control" content="No-Cache"> 
+    <meta http-equiv="Expires" content="-1"> 
+    <meta name="title" content="코오롱몰" />
+    <meta name="description" content="코오롱몰이 자신있게 추천하는 트랜디한 패션과 라이프스타일, 쿠론, 해리코튼, 브랜우드, 바이서비스, 슈코마보닌, 코오롱스포츠, 에피그램, 커스토멜로우" />
+    <meta name="keywords" content="라이프스타일, 쿠론, 해리코튼, 브랜우드, 바이서비스, 슈코마보닌, 코오롱스포츠, 에피그램, 커스토멜로우" />
+    <meta name="image" content="./img/logo.png" />
+    <meta property="og:url" content="주소" />
+    <meta property="og:title" content="코오롱몰" />
+    <meta property="og:description" content="코오롱몰이 자신있게 추천하는 트랜디한 패션과 라이프스타일, 쿠론, 해리코튼, 브랜우드, 바이서비스, 슈코마보닌, 코오롱스포츠, 에피그램, 커스토멜로우" />
+    <meta property="og:image" content=./img/logo.jpg />	
+    <meta property="og:type" content="company" />
+    <meta property="og:site_name" content="KOLONMALL" />
+    <meta property="og:locale" content="ko_KR" />	
+    <link rel="stylesheet" href="typo.css">
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+    .tnb { width: 100%; height: 51px; border-bottom:1px solid #f0f0f0; } 
+    .tnb_wrap { width:1280px; margin:0 auto; }
+    .gnb-top { display:none; width:44px; height:30px;  
+        background-image:url("./img/btn_menu.png"); background-position:center center;
+        background-repeat:no-repeat; background-size:33px auto; text-indent:-9999px; 
+        position:fixed; left:10px; top:10px; z-index:70; cursor:pointer; }
+    .top_close { display:none; width:40px; height:40px; 
+        background-image:url("./img/btn_close.png"); background-position:center center;
+        background-repeat:no-repeat; text-indent:-9999px; 
+        position:fixed; right:10%; top:20px; z-index:99; cursor:pointer; }    
+    .brand-list_gnb { float:left; position:static; left:0; top:0; width:auto; 
+        height:auto; z-index:auto; background-color:transparent; transition:0.5s; 
+        padding-left:0; padding-top:0; }    
+    .brand-list_gnb li { float:left; padding:1em 0.7em; position:relative; overflow:hidden; } 
+    .brand-list_gnb li:after { content:""; display:block; 
+        width:100%; height:2px; position:absolute; background:#24c;
+        left:-190px; bottom:2px; transition:0.5s; transition-timing-function:ease-out; }
+    .brand-list_gnb li:hover::after { left:0; }
+    .brand-list_gnb li a { color:#333; }   
+    .brand-list_gnb li a:hover { color:#24c; }  
+        
+    .elstyle a { display:block; width: 22px; height: 22px; background-image:url("./img/logo.png"); background-repeat:no-repeat; background-size: 22px 22px;
+        background-position: center center; text-indent:-9999px; }
+    .language-box { clear:both; width:65px; height:50px; overflow:hidden; }    
+    .language-box a { display:block; line-height:50px; position:relative; 
+        width:65px; }   
+    .language-box a.on:after { content:"▼"; position:absolute; right:10px; 
+        font-size:0.7em; top:-1px; }    
+    .gnb-bot { float:right; }  
+    .logo { display:block; width:100px; height: 100px; margin:50px auto; 
+        background-image:url("./img/logo.jpg");
+        background-size:cover; background-position:center center; }    
+    .hd_com { clear:both; text-align:center; font-size:1.6em; font-weight:400; padding:1em; } 
+    #gnb { clear:both; width:100%;  margin:0 auto;    }  
+    #gnb .menu { width:470px; margin:0 auto; }    
+    #gnb li { float:left; position:relative; } 
+    #gnb li .mn1:after { content:"|"; padding-left:24px; }     
+    #gnb li.item5 .mn1:after { content:""; padding-left: 0; }   
+    #gnb li .sb_item {  position:absolute; left:-45px; background:#efebd2; display:none; border:1px solid #d5d3c5; z-index:50; }
+    #gnb li:hover .sb_item { display:block; }    
+    #gnb li .sb_item li { clear:both; min-width:190px;  padding:0.7em; }    
+    #gnb li button { font-size:1.4em; padding-right:24px; cursor:pointer; }
+        #gnb li.item5 .mn1 { padding-right: 0; }
+    #gnb li a { font-size:1.2em; }    
+        
+    .pro_slider { width:900px; height:200px; margin:28px auto; overflow:hidden; 
+        padding:40px 0; } 
+    .sl_box { width:3000px; margin-left:0; }    
+    .sl_box li { float:left;  padding:10px; }
+    .thum_box { display:block; width: 160px; height:195px; text-align:center; }  
+    .thum_item { width:160px; height:160px; background-position:center center;
+        background-repeat:no-repeat; background-size:100% 100%; transition:0.5s; 
+        border-radius:80px; overflow:hidden; }
+    .thum_box:hover .thum_item { background-size:160% 160%; }    
+    .item1 .thum_item {background-image:url("./img/img_thumb01.jpg"); }
+    .item2 .thum_item {background-image:url("./img/img_thumb02.jpg"); }
+    .item3 .thum_item {background-image:url("./img/img_thumb03.jpg"); }
+    .item4 .thum_item {background-image:url("./img/img_thumb04.jpg"); }
+    .item5 .thum_item {background-image:url("./img/img_thumb05.jpg"); }
+    .item6 .thum_item {background-image:url("./img/img_thumb06.jpg"); }
+    .item7 .thum_item {background-image:url("./img/img_thumb07.jpg"); }
+    .item8 .thum_item {background-image:url("./img/img_thumb08.jpg"); }
+    .item9 .thum_item {background-image:url("./img/img_thumb09.jpg"); }
+    .item10 .thum_item {background-image:url("./img/img_thumb10.jpg"); }
+    .item11 .thum_item {background-image:url("./img/img_thumb11.jpg"); }
+    .item12 .thum_item {background-image:url("./img/img_thumb12.jpg"); }
+    .thum_txt { display:block; line-height:40px; font-size:1.2em; }    
+    .thum_box:hover .thum_txt { font-weight:bold; }
+    .thum_btn_box { position:relative; width:1200px; margin:0 auto; }    
+    .thum_btn_box li { position:absolute; top:-150px; z-index:50; }
+    .thum_btn_box li button { display:block; width:20px; height:45px; 
+        background-size:100% auto; background-repeat:no-repeat; cursor:pointer; }
+    .thum_btn_box li.left { left:5%; }    
+    .thum_btn_box li.right { right:5%; }        
+    .thum_btn_box li.left button { background-image:url("./img/btn_bk_prev.png"); }    
+    .thum_btn_box li.right button { background-image:url("./img/btn_bk_next.png"); }    
+    .content { clear:both; }    
+    .con_lst { width:1206px; margin:20px auto; }    
+    .con_lst li { float:left; padding:20px; position:relative;  }
+    .con_lst li .pic_box { padding:20px 0px; position:relative; float:none;
+        clear:both; }   
+    .pic { border:1px solid #dcdcdc; }
+    .em_box { position:absolute; bottom:10%; left:0; text-align:center; width:100%; } 
+    .brand_main .em_box { bottom:30%; }  
+    .item_com { padding:1.5em 0; line-height:1.8; font-size:1.25em; font-weight:500; color:#fff; }   
+    .brand_main .item_com { color:#333; font-size:1.5em; display:none; }    
+    .pic_home { display:block; font-size:1.3em; font-weight:600; color:#fff; width:180px; margin:5px auto; margin-bottom:10px;  position:relative; 
+        border-radius:30px; height:50px; border:1px solid #fff; 
+        text-align:center;  overflow:hidden; }   
+    .home_txt { position:absolute; top:0; left:0; z-index:2; line-height:50px; 
+        display:block; width: 180px; height:48px; border-radius:30px; }
+    .pic { width: 360px; }    
+    .pic_home:before { content:""; display:block; width:180px; background:#fff;
+        height:50px; position:absolute; left:0; top:0; opacity: 0; transition:0.7s; z-index:1; 
+        border-radius:30px; }
+    .pic_home:hover { color:#666; }
+    .pic_home:hover::before { opacity: 1; }
+    .ft { clear:both; }  
+    .ft_wrap { width:1200px; margin:5px auto; }   
+    .copyright { line-height:1.6; font-size:1em; padding:2em; word-wrap:break-word;  }    
+    .store_detail { display:block; width: 60px; height: 60px; 
+        position:fixed; right:4%; bottom:5%; z-index:99; 
+        background-image:url("./img/btn_black_place02.png");
+        background-size:cover; }    
+    
+
+        .mobile{ display: none; }
+        
+    @media screen and (max-width:767px){
+        body, html { min-width:100%; }
+        .gnb-top { display:block; }
+        .tnb_wrap { width:100%; }
+        .brand-list_gnb { position:fixed; left:-110%; top:0; z-index:90; 
+        background-color:#fff; width:100vw; height:100vh; transition:0.5s; 
+        padding-left:40px; padding-top:20px; }
+        .brand-list_gnb li { clear:both; padding:0.7em; }
+        .brand-list_gnb.on { left:0; }
+        #gnb { width: 80%;  overflow-x:hidden;}
+        #gnb li a { font-size:0.95em; }   
+        .pro_slider { width:180px;   }
+        .thum_btn_box { width:100%; }
+        .con_lst { width:100%; overflow-x:hidden; }
+        .con_lst li { padding:10px; text-align:center; }
+        .con_lst li .pic_box { width:calc(100vw - 20px); margin:0 auto; text-align:center; clear:both; height:auto; }
+        .pic { width:calc(100vw - 40px); margin:0 auto; height: auto; }
+        .item_com {  font-size:1.1em; }   
+        .brand_main .em_box { bottom:0; }  
+        .brand_main .item_com { display:block; }
+        .pic_home {  font-size:1.1em; } 
+        .ft_wrap { width:100%; }
+        
+        .mobile{ display: none; }
+    }
+    @media screen and (min-width:768px) and (max-width:959px){
+        body, html { min-width:100%; }
+        .tnb { overflow: hidden; }
+        .tnb_wrap { width:100%; }
+        .brand-list_gnb { position:relative; width:688px; margin:0 auto;
+        left:auto; top:auto; padding-left:0; padding-top:0; }
+        .brand-list_gnb li:nth-child(9) { display:none; }
+        .brand-list_gnb li:nth-child(10) { display:none; }
+        .brand-list_gnb li:nth-child(11) { display:none; }
+        .brand-list_gnb li:nth-child(12) { display:none; }
+        .brand-list_gnb li:nth-child(13) { display:none; }
+        .brand-list_gnb li:nth-child(14) { display:none; }
+        .pro_slider { width:540px; overflow-x:hidden; }
+        .thum_btn_box { width:100%; }
+        .con_lst { width:100%; margin:0;  }
+        .con_lst li { float:left; clear:none; height:auto; padding:0;  }
+        .con_lst li .pic_box { float:left; clear:none;  padding:8px; 
+        width:auto; height:575px; overflow:hidden; }
+        .brand_main .item_com { display:block; }
+        .pic { height:575px; width:auto; }
+        .pic { width:calc(50vw - 20px); }
+        
+        .mobile{ display: block; }
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+       $(".gnb-top").click(function(){
+           $(".brand-list_gnb").addClass("on");
+           $(".top_close").fadeIn();
+       }); 
+       $(".top_close").click(function(){
+           $(".brand-list_gnb").removeClass("on");
+           $(".top_close").fadeOut();
+       });    
+        var sl_wd = parseInt($(".sl_box li").width());
+        var len = $(".sl_box li").length;
+        $(".thum_btn_box li.left").click(function(){
+            $(".sl_box li").eq(len-1).prependTo($(".sl_box"));
+            $(".sl_box").css("margin-left",-sl_wd+"px");
+            $(".sl_box").not(":animated").animate({"margin-left":"0px"}, 600);
+        });   
+        $(".thum_btn_box li.right").click(function(){
+            $(".sl_box").not(":animated").animate({"margin-left":-sl_wd+"px"}, 600, function(){
+                $(".sl_box li").eq(0).appendTo($(".sl_box"));
+                $(".sl_box").css("margin-left","0px");                
+            });
+        });   
+    });    
+    </script>
+</head>
+<body>
+<nav class="tnb">
+	<div class="tnb_wrap">
+		<div class="gnb-top">
+			<p class="txt">select brand</p>
+		</div>
+		<ul class="brand-list_gnb">
+			<li class="elstyle"><a href="index.html" >HOME</a></li>
+			<li><a href="#">COURONNE</a></li>
+			<li><a href="#">HenryCotton's</a></li>
+			<li><a href="#">BRENTWOOD</a></li>
+			<li><a href="#">bySERIES;</a></li>
+			<li><a href="#">SUECOMMA BONNIE</a></li>
+			<li><a href="#">KOLON SPORT</a></li>
+			<li><a href="#">HEAD</a></li>
+			<li><a href="#">I R O</a></li>
+			<li><a href="#">epigram</a></li>
+			<li><a href="#">LUCKY CHOUETTE</a></li>
+			<li><a href="#">customellow</a></li>
+			<li><a href="#">Archivepke</a></li>
+		</ul>
+		<div class="top_close">
+			<p class="txt">close brand</p>
+		</div>
+		<div class="gnb-bot">
+			<div class="language-box">
+				<a href="#" class="on">KOR</a>
+				<a href="#" class="">ENG</a>
+			</div>
+		</div>
+	</div>
+</nav>	
+<header class="hd">
+    <a href="index.html" class="logo"></a>
+    <p class="hd_com">코오롱몰이 자신있게 추천하는<br>트랜디한 패션과 라이프스타일을 만나보실 수 있습니다.</p>
+    <nav id="gnb">
+        <ul class="menu">
+            <li class="item1">
+                <button class="mn1">여성</button>
+                <ul class="sb_item">
+                    <li class="it1"><a href="">SUECOMMA BONNIE</a></li>
+                    <li class="it2"><a href="">LUCKY CHOUETTE</a></li>
+                    <li class="it3"><a href="">COURONNE</a></li>
+                    <li class="it4"><a href=""> Archivepke</a></li>
+                    <li class="it5"><a href="">I R O</a></li>
+                </ul>
+            </li>
+            <li class="item2">
+                <button class="mn1">남성</button>
+                <ul class="sb_item">
+                    <li class="it1"><a href="">CUSTOMELLOW</a></li>
+                    <li class="it2"><a href="">epigram</a></li>
+                    <li class="it3"><a href="">BRENTWOOD</a></li>
+                    <li class="it4"><a href="">HENRY COTTON'S</a></li>
+                    <li class="it5"><a href="">byseries;</a></li>
+                </ul>
+            </li>
+            <li class="item3">
+                <button class="mn1">SPORTS</button>
+                <ul class="sb_item">
+                    <li class="it1"><a href="">KOLON SPORT</a></li>
+                    <li class="it2"><a href="">HEAD</a></li>
+                </ul>
+            </li>
+            <li class="item4">
+                <button class="mn1">아울렛</button>
+<!--
+                <ul class="sb_item">
+                    <li class="it1"><a href=""></a></li>
+                </ul>
+-->
+            </li>
+            <li class="item5">
+                <button class="mn1">베스트</button>
+<!--
+                <ul class="sb_item">
+                    <li class="it"><a href=""></a></li>
+                </ul>
+-->
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="pro_slider">
+    <ul class="sl_box">
+        <li class="item1">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">COURONNE</span>
+            </a>
+        </li>
+        <li class="item2">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">HenryCotton's</span>
+            </a>
+        </li>
+        <li class="item3">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">BRENTWOOD</span>
+            </a>
+        </li>
+        <li class="item4">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">bySERIES;</span>
+            </a>
+        </li>
+        <li class="item5">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">SUECOMMA BONNIE</span>
+            </a>
+        </li>
+        <li class="item6">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">KOLON SPORT</span>
+            </a>
+        </li>
+        <li class="item7">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">HEAD</span>
+            </a>
+        </li>
+        <li class="item8">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">I R O</span>
+            </a>
+        </li>
+        <li class="item9">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">epigram</span>
+            </a></li>
+        <li class="item10">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">LUCKY CHOUETTE</span>
+            </a></li>
+        <li class="item11">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">customellow</span>
+            </a></li>
+        <li class="item12">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">Archivepke</span>
+            </a></li>
+    </ul>
+</div>
+<ul class="thum_btn_box">
+    <li class="left">
+        <button class="thum_btn"></button>
+    </li>
+    <li class="right">
+        <button class="thum_btn"></button>
+    </li>
+</ul>
+<div class="content">
+    <ul class="con_lst">
+        <li class="item1 col">
+            <div class="pic_box">
+                <img src="./img/pro_big01.jpg" alt="parsons" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_couronne_wt.png" alt="parsons" class="lt_logo">
+                    <p class="item_com">고급, 심플, 절제된 스타일의 컨셉을<br>
+                    추구하는 가방 브랜드</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pic_box">
+                <img src="./img/pro_big02.jpg" alt="oven" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_henrycottons_wt.png" alt="oven" class="lt_logo">
+                    <p class="item_com">바쁜 일상생활 속에서도 여가와<br>레저에 대한 소망, 자연과 함께 하고자 하는<br>열린 삶에 대한 열망을 담고 있는 브랜드</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pic_box">
+                <img src="./img/pro_big03.jpg" alt="charlotte" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_brentwood_wt.png" alt="charlotte" class="lt_logo">
+                    <p class="item_com">비지니스 라이프 웨어의 재탄생,<br>탈 수트 무드의 선구자</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pic_box mobile">
+                <img src="./img/pro_big11.jpg" alt="charlotte" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_recode_wt.png" alt="charlotte" class="lt_logo">
+                    <p class="item_com">버려지는 재고상품을 해체하여<br>새로운 패션으로 재탄생시키는 브랜드</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="item2 col">
+            <div class="pic_box">
+                <img src="./img/pro_big04.jpg" alt="vieu" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_byseries_wt.png" alt="vieu" class="lt_logo">
+                    <p class="item_com">누구에게나 어필할 수 있는 직수입 상품과<br>국내상품의 믹스앤매치 편집형 브랜드</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pic_box">
+                <img src="./img/pro_big05.jpg" alt="dongshim" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_suecomma_wt.png" alt="dongshim" class="lt_logo">
+                    <p class="item_com">한국 1세대 슈즈 디자이너 이보현의<br>최고급 핸드 메이드 슈즈 브랜드</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pic_box">
+                <img src="./img/pro_big06.jpg" alt="ettol" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_kolonsport_wt.png" alt="ettol" class="lt_logo">
+                    <p class="item_com">1973년 아웃도어 문화를 창조하고<br>레저문화를 보급시킨<br>아웃도어 브랜드의 선구자</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pic_box">
+                <img src="./img/pro_big07.jpg" alt="eliden" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_head_wt.png" alt="eliden" class="lt_logo">
+                    <p class="item_com">언제 어디서나 즐겁게 스포츠를<br>즐길 수 있는 제품을 선보이는 스포츠 브랜드</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="item3 col">
+            <div class="pic_box">
+                <img src="./img/pro_big08.jpg" alt="unit" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_iro_wt.png" alt="unit" class="lt_logo">
+                    <p class="item_com">프랑스 특유의 시크한 감성과<br>빈티지한 스타일, 파리를 대표하는<br>컨템포러리 여성 패션 브랜드</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pic_box">
+                <img src="./img/pro_big09.jpg" alt="sogongwon" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_epigram_wt.png" alt="sogongwon" class="lt_logo">
+                    <p class="item_com">심플하고 절제된 감도와 편안한 감성의<br>라이프스타일 큐레이팅 브랜드</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pic_box">
+                <img src="./img/pro_big10.jpg" alt="lottetops" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_lucky_wt.png" alt="lottetops" class="lt_logo">
+                    <p class="item_com">글로벌 감성의 개성있고 스마트한<br>젊은 세대를 위한 캐쥬얼 브랜드</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pic_box mobile">
+                <img src="./img/pro_big12.jpg" alt="lottetops" class="pic">
+                <div class="em_box">
+                    <img src="./img/logo_common_wt.png" alt="lottetops" class="lt_logo">
+                    <p class="item_com">국내 최초, 세계 최대의<br>팝업 컨테이너 쇼핑몰</p>
+                    <a href="" class="pic_home">
+                        <span class="home_txt">BRAND HOME</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<footer class="ft">
+    <div class="ft_wrap">
+        <p class="copyright">Copyright ⓒ KOLONMALL all rights reserved</p>
+    </div>
+</footer>
+<a href="store.html" class="store_detail"></a>
+</body>
+</html>
