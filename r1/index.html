@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>한국폴스포츠협회</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- 인터넷 익스플로러의 최신 브라우저인 IE-Edge로 문서 열기 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 아이폰 계열의 웹앱 설정 -->
+    <meta name="apple-mobile-web-app-title" content="KPSA">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 비아이폰 계열의 웹앱 설정 -->
+    <meta name="title" content="KPSA">
+    <!-- 검색어/url다음에 나오는 설명 -->
+    <meta name="keywords" content="폴댄스, 봉춤, 폴스포츠, 폴댄스협회, 폴댄스국가대표, 기계체조">
+    <meta name="description" content="하나의 스포츠로서, 세계 폴스포츠의 중심이 되겠습니다.">
+    <!-- sns에 의한 검색결과 설정(검색 잘되게) -->
+    <meta itemprop="name" content="KPSA">
+    <meta itemprop="description" content="한국폴스포츠협회(KPSA), 하나의 스포츠로서, 세계 폴스포츠의 중심이 되겠습니다.">
+    
+    <meta itemprop="image" content="./img/sns_title.png">
+    <!-- 페이스북 연동설정 -->
+    <meta property="fb:app_id" content="APP_ID">
+    <!-- 페이스북,트위터,카카오톡의 크롤러 연동 설정 -->
+    <meta property="og:type" content="Website">
+    <meta property="og:title" content="KPSA">
+    <meta property="og:url" content="http://koreapsa.org">
+    <meta property="og:description" content="하나의 스포츠로서, 세계 폴스포츠의 중심">
+    <meta property="og:img" content="./img/sns_title.png">
+    <!-- 메타포아이콘 설정 -->
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <!-- ico를 먼저 넣어주면 icon이 지원이 되면 이걸 먼저 지원이 안되면 아래껄로! -->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-180x180" sizes="180x180" href="./img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png">
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141057110-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-141057110-1');
+    </script>
+-->
+
+    <link rel="stylesheet" href="common.css">
+    <style>
+        
+        @media screen and (max-width:767px){
+            .hd.on { height: 150px; }
+            .page_tit { font-size: 3em; }
+            .more { font-size: 1.4em; }
+            .plus { width: 25px; height: 25px; }
+            .logo { width: 60px; }
+            .menu_call img { width: 30px; }
+            .fnb li { line-height: 2.4em; }
+            .bd { width: 90%; margin: 10px auto; }
+        }
+        
+        @media screen and (min-width:768px) and (max-width:959px) { /* 태블릿 */
+            .hd.on { height: 200px; }
+            .logo { width: 100px; }
+            .menu_call img { width: 60px; }
+            .col_menu li { font-size: 1.4em; }
+            .col_menu li a { font-size: 2em; }
+            .page_tit { font-size: 5em; }
+            .more { font-size: 2em; }
+            .plus { width: 40px; height: 40px; }
+            .fnb li { line-height: 4em; }
+            .fnb li a { font-size: 2.5em; }
+            .bd { width: 93%; margin: 60px auto 30px; }
+            .ft_logo { width: 200px; height: auto; margin-top: 20px; margin-left: 5%; }
+
+        }
+        @media screen and (min-width:960px){ /* 데스크탑 */
+            .hd.on { height: 180px; }
+            .logo { width: 80px; }
+            .menu_call img { width: 50px; }
+            .page_tit {font-size: 5em; }
+            .more { font-size: 1.8em; }
+            .plus { width: 30px; height: 30px; }
+        }
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".fnb li a.ad").click(function(){
+//                var inx = $(this).index();
+                $(".fnb li a.ad").removeClass("on");
+                $(".fnb li .sub").css("display", "none");
+                $(this).addClass("on");
+                $(this).siblings(".sub").slideDown();
+                /*siblings는 형제요소*/
+            });
+            var win_h = $(window).height();
+            var wd = $(window).width();
+            $(".page").each(function(index){//각 페이지마다 스크롤해야 할 양을 지정
+                $(this).attr("data-page", win_h*index);
+            });
+            $(".page").on("mousewheel", function(e){
+                var secPos = parseInt($(this).attr("data-page"));
+                if(e.originalEvent.wheelDelta > 0){ //위로 스크롤
+                    $("body, html").not(":animated").animate({scrollTop:secPos - win_h}, 400);
+                } else if(e.originalEvent.wheelDelta < 0){ //아래로 스크롤
+                    $("body, html").not(":animated").animate({scrollTop:secPos + win_h}, 400);
+                }
+            });
+            $(".menu_call, .close_btn").click(function(){
+                $(".gnb").toggleClass("on");
+            });
+            $(window).scroll(function(){
+                var sc_top = $(window).scrollTop(); //스크롤 양 계산
+                if(sc_top>=200){ //스크롤양이 200px 이상이면
+                    $(".hd").addClass("on");
+                    $(".logo img").attr("src","./img/logo.png");
+                    $(".menu_call img").attr("src","./img/btn_more_2b.png");
+                } else {
+                    $(".hd").removeClass("on");
+                    $(".logo img").attr("src","./img/logo_w.png");
+                    $(".menu_call img").attr("src","./img/menu_view.png");
+                }
+            });
+            $(".next_page").click(function(){
+            var np = parseInt($(this).attr("data-target"));
+            $("body, html").not(":animated").animate({scrollTop:np*win_h}, 500);
+        });
+        });
+    </script>
+</head>
+<body>
+    <div class="page" id="page1">
+        <h2 class="page_tit">As a Sport, Center of World Pole Sports</h2>
+        <a href="" class="more">
+            <span class="txt">세계 폴스포츠의 중심</span>
+            <span class="plus"></span>
+        </a>
+        <div class="next_page" data-target="1"></div>
+    </div>
+    <div class="page" id="page2">
+        <h2 class="page_tit">POSSIBILITY</h2>
+        <a href="" class="more">
+            <span class="txt">우리의 가능성은 끝이 없습니다</span>
+            <span class="plus"></span>
+        </a>
+        <div class="next_page" data-target="2"></div>
+    </div>
+    <div class="page" id="page3">
+        <h2 class="page_tit">TREND</h2>
+        <a href="" class="more">
+            <span class="txt">우리는 하나의 트랜드가 되었습니다</span>
+            <span class="plus"></span>
+        </a>
+        <div class="next_page" data-target="3"></div>
+    </div>
+    <div class="page" id="page4">
+<!--
+       <div class="vdo_Fr">
+           <video poster="" id="vdo1" loop muted> autoplay
+               <source src="" type="video/mp4">
+           </video>
+       </div>
+-->
+        <h2 class="page_tit">WORLD</h2>
+        <a href="" class="more">
+            <span class="txt">세계로 나아가는 한국 폴스포츠협회</span>
+            <span class="plus"></span>
+        </a>
+        <div class="next_page" data-target="4"></div>
+    </div>
+    <div class="page" id="page5">
+        <nav class="fnb">
+            <ul>
+                <li class="item1">
+                   <a class="dp1 ad">KPSA</a>
+                    <ul class="sub">
+                        <li class="sb_item1"><a href="sub1.html">개요</a></li>
+                        <li class="sb_item2"><a href="sub2.html">비전·정책</a></li>
+                        <li class="sb_item3"><a href="sub3.html">연혁</a></li>
+                        <li class="sb_item4"><a href="sub1.html">Contact</a></li>
+                    </ul>
+                    
+                </li>
+                <li class="item2">
+                   <a class="dp1 ad">협회소식</a>
+
+                    <ul class="sub">
+                        <li class="sb_item1"><a href="sub4.html">공지사항</a></li>
+                        <li class="sb_item2"><a href="sub5.html">일정</a></li>
+                        <li class="sb_item3"><a href="sub6.html">언론보도</a></li>
+                        <li class="sb_item4"><a href="sub7.html">자료실</a></li>
+                    </ul>
+                </li>
+                <li class="item3">
+                       <a class="dp1 ad">협회정보</a>
+                        <ul class="sub">
+                            <li class="sb_item1"><a href="sub8.html">회원정보</a></li>
+                            <li class="sb_item2"><a href="sub9.html">지부정보</a></li>
+                            <li class="sb_item3"><a href="sub10.html">지도자정보</a></li>
+                        </ul>
+                    
+                </li>
+                <li class="item4">
+                       <a class="dp1 ad">자격안내</a>
+                        <ul class="sub">
+                            <li class="sb_item1"><a href="sub11.html">자격소개</a></li>
+                            <li class="sb_item2"><a href="sub12.html">검정신청</a></li>
+                            <li class="sb_item3"><a href="sub13.html">수료기관</a></li>
+                        </ul>
+                    
+                </li>
+                <li class="item5">
+                       <a class="dp1 ad">선수권대회</a>
+                        <ul class="sub">
+                            <li class="sb_item1"><a href="sub14.html">2019 개요</a></li>
+                            <li class="sb_item2"><a href="sub15.html">안티도핑</a></li>
+                            <li class="sb_item3"><a href="sub16.html">파트너쉽</a></li>
+                        </ul>
+                    
+                </li>
+            </ul>
+        </nav>
+        <div class="bd"></div>
+
+        <div class="ft">
+            <div class="ft_logo">
+                <img src="./img/ft_logo.png" alt="푸터로고">
+            </div>
+            <p class="copy">CopyrightⓒKOREA POLE SPORTS ASSOCIATION All rights reserved.</p>
+        </div>
+        
+        <div class="next_page" data-target="0"></div>
+        <!-- 이러면 맨위로 올라간다. data-target이 0이기 때문에 높이값을 곱해줘도 0이라서 맨위로 올라갈 수밖에! -->
+    </div>
+    
+
+    
+    <header class="hd">
+        <a href="index.html" class="logo">
+            <img src="./img/logo_w.png" alt="로고">
+        </a>
+        <label for="ck" class="menu_call">
+            <img src="./img/menu_view.png" alt="메뉴호출버튼">
+        </label>
+    </header>
+    <nav class="gnb">
+       <a href="" class="col_logo">
+           <img src="./img/logo.png" alt="컬랩로고">
+       </a>
+       <label for="ck" class="close_btn">
+            <img src="./img/btn_close_2.png" alt="닫기버튼">
+        </label>
+        <div class="wd_box">
+            <h3 class="addr">6월 3일 (월)<br>대전광역시 서구</h3>
+            <ul class="wd_fr">
+                <li class="item1">
+                    <span class="cr_data">27㎍.㎥</span>
+                    <span class="cr_txt">미세먼지</span>
+                </li>
+                <li class="item2">
+                    <span class="cr_data">15㎍.㎥</span>
+                    <span class="cr_txt">초미세먼지</span>
+                </li>
+            </ul>
+        </div>
+        <ul class="colmenu">
+            <li class="item1 split">KPSA</li>
+            <li class="item2"><a href="sub1.html">개요</a></li>
+            <li class="item3"><a href="sub2.html">비전·정책</a></li>
+            <li class="item4"><a href="sub3.html">연혁</a></li>
+            <li class="item5"><a href="sub4.html">Contact</a></li>
+            <li class="item6 split">협회소식</li>
+            <li class="item7"><a href="sub5.html">공지사항</a></li>
+            <li class="item8"><a href="sub6.html">일정</a></li>
+            <li class="item9"><a href="sub7.html">언론보도</a></li>
+            <li class="item10"><a href="sub8.html">자료실</a></li>
+            <li class="item11 split">협회정보</li>
+            <li class="item12"><a href="sub9.html">회원정보</a></li>
+            <li class="item13"><a href="sub10.html">지부정보</a></li>
+            <li class="item14"><a href="sub11.html">지도자정보</a></li>
+            <li class="item15 split">자격안내</li>
+            <li class="item16"><a href="sub12.html">자격소개</a></li>
+            <li class="item17"><a href="sub13.html">검정신청</a></li>
+            <li class="item18"><a href="sub14.html">수료기관</a></li>
+            <li class="item19 split">선수권대회</li>
+            <li class="item20"><a href="sub15.html">2019 개요</a></li>
+            <li class="item21"><a href="sub16.html">안티도핑</a></li>
+            <li class="item22"><a href="sub17.html">파트너쉽</a></li>
+        </ul>
+    </nav>
+    <div class="page_text" id="page_text">
+        <span class="page_comment"></span>
+          <span class="page_num"></span>
+    </div>
+</body>
+</html>
