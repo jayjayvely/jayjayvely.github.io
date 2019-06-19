@@ -493,6 +493,7 @@ background-position:center center; }
 }
 
 #ft {
+    clear: both;
     background-color: #9f2626;
 }
 
@@ -517,7 +518,7 @@ background-position:center center; }
 
 .sns_link li {
     float: left;
-    margin: 20px;
+    margin-right: 15px;
 }
 
 .sns_link li a {
