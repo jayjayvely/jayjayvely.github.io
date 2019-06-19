@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>대전오월드</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrom=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="title" content="대전오월드">
+        <meta name="author" content="Jay">
+    
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    
+    <!--파비콘-->
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    
+    <!--웹폰트-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,700&display=swap" rel="stylesheet">
+    
+    <!--제이쿼리-->
+    <script src="./js/jquery-3.4.1.js"></script>
+    
+    <style>
+        * {margin: 0; padding: 0;}
+        ul { list-style: none; }
+        a { text-decoration: none; color: #222; }
+        body { font-family: 'Noto Sans KR', sans-serif; font-weight: 300; color: #222; font-size: 1em; }
+        button,label,input{ background: transparent; border: 0; outline: 0; }
+        
+        #wrap { width: 100%; }
+        
+        #hd { width: 100%; height: 50px; position: relative; }
+        .menu { width: 30px; height: 30px; background: url("./img/menu.png") center center / contain no-repeat; position:absolute; top: 10px; left: 18px; }
+        .logo { width: 100%; height: 40px; background: url(./img/main_logo.png) center center / 60px auto no-repeat;text-align: center; margin-top: 5px; }
+        .s_btn { width: 30px; height: 30px; background: url("./img/search.png") center center / contain no-repeat; position: absolute; top: 10px; right: 15px; z-index: 99;}
+        
+        #vs{ width: 100%; height: 400px;
+            background: url("./img/birdland.jpg") center top / cover no-repeat; position: relative; }
+/*
+        .vs_tit { position: absolute; top: 10%; left: 15%}
+        .vs_tit h2 span { color: #dd1837; }
+*/
+        .video_frame { position: absolute; bottom: 5%; left: 5%; width: 90%; height: 190px; }
+        
+        .page { width: 100%; }
+        #page1 { height: 460px; }
+        .page_box { width: 42.5%; height: 200px; background: #ccc; float: left; margin-left: 5%; margin-top: 20px;  }
+        
+        #page2 { height: 500px; background: #dcdcdc; }
+        
+        #page3 { height: 100px; }
+        
+        #page4 { height: 500px; background: #dcdcdc; }
+        
+        #ft {}
+    </style>
+    
+</head>
+<body>
+    <div id="wrap">
+        
+        <header id="hd">
+            <div class="menu"></div>
+            <div class="logo"></div>
+            <div class="s_btn"></div>
+        </header>
+        
+        <figure id="vs">
+            <div class="vs_tit">
+<!--
+                <h5>오-월드 환상의 버드체험 테마파크!</h5>
+                <h2>대전오월드 <span>버드랜드</span></h2>
+-->
+            </div>
+            <div class="video_frame">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/k8RmJTLxsd8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </figure>
+        <div class="page" id="page1">
+            <div class="item1 page_box">이용안내</div>
+            <div class="item2 page_box">할인정보</div>
+            <div class="item3 page_box">연간회원권</div>
+            <div class="item4 page_box">예약</div>
+        </div>
+        <div class="page" id="page2"></div>
+        <div class="page" id="page3"></div>
+        <div class="page" id="page4"></div>
+        
+        <footer id="ft"></footer>
+    </div>
+</body>
+</html>
