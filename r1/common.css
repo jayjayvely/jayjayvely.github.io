@@ -9,20 +9,20 @@ a { text-decoration: none; }
 img { border: 0; } /* a태그에 이미지를 넣었을 때 낮은 브라우저에서 생기는 테두리 없애기 */
 .container { width: 100%; height: 100%; }
 .page{ width: 100%; height: 100%; position: relative; clear: both; background-repeat: no-repeat; background-position: center center; background-size: cover; }
-.page_tit { color: #fff; font-size: 3em; position: absolute; bottom: 20%; left: 10%; }
-.more { display: block; color: #fff; font-size: 1.2em; position: absolute; bottom: 13%; left: 10%; }
+.page_tit { color: #fff; font-size: 2.5em; position: absolute; bottom: 30%; left: 10%; }
+.more { display: block; color: #fff; font-size: 1em; position: absolute; bottom: 25%; left: 10%; }
 .plus { display: block; width: 25px; height: 25px; float: right; margin-left: 15px; background-image: url("./img/btn_more.png"); background-repeat: no-repeat; background-position: center center; background-size: cover; box-shadow: 1px 1px 5px #999;  border-radius: 35px; }
 #page1 {background-image: url("./img/pc_vis_1.jpg"); }
 #page2 {background-image: url("./img/pc_vis_2.jpg"); }
 #page3 {background-image: url("./img/pc_vis_3.jpg"); }
 #page4 {background-image: url("./img/pc_vis_4.jpg"); }
 
-.next_page { position: absolute; z-index: 90; bottom: 5%; left:calc(90% - 15px); display:block; width:30px; height:72px; background-image:url("./img/next.png"); background-size:cover; background-repeat:no-repeat; cursor:pointer; } 
+.next_page { position: absolute; z-index: 90; bottom: 5%; left:calc(50% - 10px); display:block; width: 20px; height: 48px; background-image:url("./img/next.png"); background-size:cover; background-repeat:no-repeat; cursor:pointer; } 
 #page5 .next_page { transform:rotate(180deg); } 
 
 .hd { position: fixed; width: 100%; z-index: 90; top: 0; left: 0; background-color: transparent; height: auto; }
-.hd.on { background-color: rgba(255,255,255,.5); height: 18px; }
-.logo { position: absolute; top: 2em; left: 2em; display: block; width: 80px; height: auto; }
+.hd.on { background-color: rgba(255,255,255,.5); height: 130px; }
+.logo { position: absolute; top: 2em; left: 2em; display: block; width: 50px; height: auto; }
 .logo img { display: block; width: 100%; height: auto; }
 .menu_call { position: absolute; right: 3%; top: 1.5em; display: block; }
 .menu_call img { display: block; width: 50px; height: auto; }
@@ -41,6 +41,7 @@ img { border: 0; } /* a태그에 이미지를 넣었을 때 낮은 브라우저�
 .ft_logo { display: block; width: 150px; height: auto; margin-top: 20px; margin-left: 5%; }
 .ft_logo img{ display: block; width: 100%; }
 .copy { color: #fff; font-size: 0.85em; padding: 5%; line-height: 1.8; }
+
 
 
 .gnb { position:fixed; top:0; left:105%; z-index:999; width:100%; overflow-y:scroll; overflow-x:hidden; background:#fff; padding-bottom:100px; min-height:100%; transition:0.6s; }
