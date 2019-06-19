@@ -24,68 +24,52 @@
     .mobile { display: none; }
     .desk { display: block; } 
     
-    
-    #main #video { position: absolute; top: 0; left: 0; min-width: 100vw; min-height: 100vh; width: 100%; height: auto; overflow: hidden; }
-    .page { width: 100vw; height: 100vh; 
-        background-size: cover; background-repeat: no-repeat; position: relative; }
-    .page_wrap { position: absolute; top: 20%; left: 15%; width: 70%; height: 60%; }
-    #page1 { background-image: url("./img/main_con01.jpg"); background-position: left center; }
-    #page2 { background-image: url("./img/main_con02.jpg"); background-position: right center; }
-    #page3 { background-image: url("./img/main_con03.jpg"); background-position: right center; }
-    #page4 { float: left; background-position: right center; background: transparent; }
+    #main { height: 500px; text-align: center; background: url("./img/about.jpg") center top/ cover no-repeat; color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,.5); }
+    .main_wrap { position: absolute; top: 25%; left: 15%; width: 70%; height: auto; }
+    #main .page_txt { line-height: 3; }
     .page_tit { font-size: 4.5em; }
     .page_txt { font-size: 1.5em; }
-    .page_more { font-size: 1.5em; font-weight: bold; display: block; border-top: 6px solid #3da436; width: 121px; line-height: 55px; margin-top: 40px; }
-    #page1 .page_more, #page3 .page_more { float: right; }
-    #page1, #page3 { text-align: right; }
-    .page_right { display: block; float: right; }
-    .right_box { width: 50vw; height: 50vh; }
-    .box_t { background-image: url("./img/main_con04_1.jpg"); }
-    .box_b { background-image: url("./img/main_con04_2.jpg"); }
 
-    .more_txt { position: absolute; left: 0; bottom: 0; width: 39%; }
-    .page_txt2 { font-size: 1.25em; line-height: 1.5; margin-top: 15px; text-align: justify; }
+    #page1 {  width: 100%; height: 1000px; position: relative; }
+    .page_wrap { position: absolute; top: 10%; left: 15%; width: 70%; height: 80%; }
+    .more_txt { float: left; width: 33.33%; height: 200px; padding-left: 0; padding-right: 100px; box-sizing: border-box; margin-bottom: 0; text-align: left;}
+    .more_txt2 { clear: both; position: absolute; top: 250px; width: 100%; }
+    
+    #page1 .page_tit { font-size: 2.5em; }
+    .page_txt2 { font-size: 1em; line-height: 1.5; margin-top: 15px; text-align: justify; }
+    .sub_txt { float: left; width: 25%; height: 300px; padding: 40px; box-sizing: border-box; position: relative; }
+    .sub_icon { width: 150px; height: 150px; border-radius: 80px; border: 5px solid #dcdcdc; position: absolute; top: 50px; left: calc( 50% - 75px); background-size: cover; background-position: center center; background-repeat: no-repeat; }
+    .s_item1 { background-image: url("./img/icon1.png");}
+    .s_item2 { background-image: url("./img/icon2.png");}
+    .s_item3 { background-image: url("./img/icon3.png");}
+    .s_item4 { background-image: url("./img/icon4.png");}
+    .ss_wrap { position: absolute; left: 0; top: 230px; }
+
+
+
+
 
     
-    @media screen and (min-width:768px) and (max-width:959px){
-        .top_menu, .gnb { display: none; }
-        .logo { top: 20px; left: 20px; margin-left:0; }
-        #main #video { width: auto; height: 100%; left: -70%;  }
-        .page_wrap { top: 12%; left: 5%; width: 80%; height: 80%; }
-        .page_tit { font-size: 5em; }
-        .page_txt { font-size: 2.5em; }
-        #page1 .page_more, #page3 .page_more { float: left; }
-        #page1, #page3 { text-align: left; }
-        #page4 { background: #e8e8e8; }
-        .page_right { display: none; }
-        .more_txt {  width: 100%; }
-        .page_txt2 { font-size: 1.35em; line-height: 1.8; margin-top: 15px; text-align: justify; }
-        
-        #ft { height: 251px; padding: 30px 30px; }
-        .f_menu li { font-size: 1em; float: left; margin-right: 15px; }
-        .copy { clear: both; float: none; font-size: 1.5em; }
-        
-        
-        .mobile { display: block; }
-        .desk { display: block; } 
-    }
+    
+
             
         
     @media screen and (max-width:767px){
         .top_menu, .gnb { display: none; }
         .logo { top: 20px; left: 20px; margin-left:0; }
-        #main #video { width: auto; height: 100%; left: -150%;  }
-        .page_wrap { top: 12%; left: 5%; width: 80%; height: 60%; }
-        .page_tit { font-size: 3em; }
-        .page_txt { font-size: 1.2em; }
-        .page_more { font-size: 1em; border-top: 4px solid #3da436; width: 82px; line-height: 40px; margin-top: 40px; }
-        #page1 .page_more, #page3 .page_more { float: left; }
-        #page1, #page3 { text-align: left; }
-        #page4 { background: #e8e8e8; }
-        .page_right { display: none; }
-        .more_txt {  width: 100%; }
-        .page_txt2 { font-size: 1em; line-height: 1.5; margin-top: 15px; text-align: justify; }
-        
+     /*subpage 여기서부터*/
+        #main { height: 300px; }
+        .main_wrap { top: 20%; left: 5%; width: 90%; }
+        #main .page_txt { line-height: 3; }
+        .page_tit { font-size: 2em; }
+        .page_txt { font-size: 1em; }
+        #page1 { height: 2200px; }
+        .page_wrap { top: 20px; left: 5%; width: 90%; height: auto; }
+        .more_txt { float: none; width: 100%; height: auto; padding-right: 0; margin-bottom: 15px; text-align: center; }
+        .more_txt2 { top: 430px; }
+        #page1 .page_tit { font-size: 2em; }
+        .sub_txt { float: none; width: 100%; height: 350px; padding: 0;}
+    /*여기까지*/
         #ft { height: 250px; padding: 30px 30px; }
         .f_menu li { font-size: 0.85em; float: left; margin-right: 10px; }
         .copy { float: left; font-size: 1em; }
@@ -94,25 +78,37 @@
         .mobile { display: block; }
         .desk { display: none; }
     }
-
+    @media screen and (min-width:768px) and (max-width:1024px){
+        .top_menu, .gnb { display: none; }
+        .logo { top: 20px; left: 20px; margin-left:0; }
+      /*subpage 여기서부터*/
+        #main { height: 400px; }
+        .main_wrap { top: 17%; left: 5%; width: 90%; }
+        #main .page_txt { line-height: 3; }
+        .page_tit { font-size: 3em; }
+        .page_txt { font-size: 1.5em; }
+        #page1 { height: 1200px; }
+        .page_wrap { top: 50px; left: 5%; width: 90%; height: auto; }
+        .more_txt { height: auto; padding-left: 15px; padding-right: 15px; margin-bottom: 0; text-align: center; }
+        .more_txt2 { top: 250px; }
+        #page1 .page_tit { font-size: 2em; }
+        .sub_txt { float: left; width: 50%; height: 350px; padding: 0; box-sizing: border-box; }
+        .ss_wrap { width: 90%; left: 5%; }
+      /*여기까지*/
+        #ft { height: 251px; padding: 30px 30px; }
+        .f_menu li { font-size: 1em; float: left; margin-right: 15px; }
+        .copy { clear: both; float: none; font-size: 1.5em; }
+        
+        
+        .mobile { display: block; }
+        .desk { display: block; } 
+    }
 </style>
 
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script>
 $(document).ready(function(){
-    var win_h = $(window).height();
-    $(".page").each(function(index){
-        $(this).attr("data-page", win_h * index);
-    });
-    $(".page").on("mousewheel", function(e){
-        var secPos = parseInt($(this).attr("data-page"));
-        if(e.originalEvent.wheelDelta > 0){ 
-            $("body, html").not(":animated").animate({scrollTop:secPos - win_h}, 500);
-        } else if(e.originalEvent.wheelDelta < 0){ 
-            $("body, html").not(":animated").animate({scrollTop:secPos + win_h}, 500);
-        }
-    });
-    
+
     $(".toggle").click(function(){
         if($(this).hasClass("on")){
             $(this).removeClass("on"); 
@@ -275,49 +271,63 @@ $(document).ready(function(){
                 </nav>
             </div>
         </header>
-        <div class="page data-page" id="main">
-            <video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-               <source src="./video/main.mp4" type="video/mp4">
-            </video>
+        <div id="main">
+            <div class="main_wrap">
+            <h1 class="page_tit">Corporate Philosophy</h1>
+            <p class="page_txt">Celltrion Transforms “Possibility” into “Possible”</p>
+            </div>
         </div>
-        <div class="page data-page" id="page1">
+        
+        <div class="page" id="page1">
            <div class="page_wrap">
-            <h1 class="page_tit">Biosimilar</h1>
-            <p class="page_txt">Novel Paradigm for a Comfortable and Happy Life</p>
-            <a href="#" class="page_more">Learn More</a>
-            </div>
+               <div class="more_txt">
+                    <h1 class="page_tit">Mission</h1>
+                    <p class="page_txt2">To promote the health and welfare of mankind</p>
+               </div>
+               <div class="more_txt">
+                    <h1 class="page_tit">Vision</h1>
+                    <p class="page_txt2">To be the world's leading life science company through innovative biologics</p>
+               </div>
+               <div class="more_txt">
+                    <h1 class="page_tit">Core Values</h1>
+                    <p class="page_txt2">- Self-esteem and happiness to our employees<br>
+                    - Comfort and help to those who are in need<br>
+                    - Respect and delight to community</p>
+               </div>
+               <div class="more_txt2">
+                    <h1 class="page_tit">Corporate Business principles</h1>
+                   <div class="sub_txt">
+                       <div class="sub_icon s_item1"></div>
+                       <div class="ss_wrap">
+                           <h2 class="sub_tit">Creativity</h2>
+                           <p class="page_txt2">Biotechnology is a 21st century high-tech industry, where the creativity of individuals becomes the driving force behind growth, so Celltrion employees must value creativity when working on all tasks.</p>
+                       </div>
+                   </div>
+                   <div class="sub_txt">
+                      <div class="sub_icon s_item2"></div>
+                      <div class="ss_wrap">
+                           <h2 class="sub_tit">Compliance with Principles</h2>
+                           <p class="page_txt2">As a business based on valuing human life, the various regulations and principles shall be thoroughly complied with.</p>
+                       </div>
+                   </div>
+                   <div class="sub_txt">
+                      <div class="sub_icon s_item3"></div>
+                      <div class="ss_wrap">
+                           <h2 class="sub_tit">Innovative Spirit</h2>
+                           <p class="page_txt2">The business goal of Celltrion is a difficult one to achieve without infinite innovative spirit, and the Celltrion employees shall work on their duties with an unquenchable innovative spirit when working on all tasks.</p>
+                       </div>
+                   </div>
+                   <div class="sub_txt">
+                      <div class="sub_icon s_item4"></div>
+                      <div class="ss_wrap">
+                           <h2 class="sub_tit">Pursuit for the World’s Best</h2>
+                           <p class="page_txt2">The business of Celltrion aims for the global market, instead of only the domestic market, and to achieve success amid the competition with global companies, where all officers and researchers shall aim for the world’s best standards and shall have the abilities corresponding to such aim.</p>
+                       </div>
+                   </div>
+               </div>
+            </div>       
         </div>
-        <div class="page data-page" id="page2">
-           <div class="page_wrap">
-            <h1 class="page_tit">R &amp; D</h1>
-            <p class="page_txt">FDA approved facilities and Global GMP quality control policy</p>
-            <a href="#" class="page_more">Learn More</a>
-            </div>
-        </div>
-        <div class="page data-page" id="page3">
-           <div class="page_wrap">
-            <h1 class="page_tit">Careers</h1>
-            <p class="page_txt">We seek Talented People who will Grow with Celltrion.</p>
-            <a href="#" class="page_more">Learn More</a>
-            </div>
-        </div>
-        <div class="page data-page" id="page4">
-           <div class="page_wrap">
-                <h1 class="page_tit">News</h1>
-                <p class="page_txt">Learn more about our latest news and developments.</p>
-                <a href="#" class="page_more">Learn More</a>
-                <div class="more_txt">
-                    <p class="page_txt2">금일(11월 20일) JTBC ‘뉴스룸’에 보도된 셀트리온그룹 서정진 회장 관련 보도에 대한 회사의 입장을 말씀드립니다.<br><span>2018-11-20</span></p>
-                    <p class="page_txt2">금융위원회와 금융감독원 (이하 ‘금융당국’)은 공동으로 지난 9월 19일 '제약·바이오 기업의 연구개발비 회계처리 관련 감독지침'을 발표하였습니다.<br><span>2018-11-14</span></p>
-                    <p class="page_txt2 desk">전일 장 종료 후 당사 2대 주주인 테마섹이 보유중인 지분 일부를 블록딜(시간외 대량매매) 방식으로 매각을 추진한다는 내용이 기사화되었습니다.<br><span>2018-10-23</span></p>
-                </div>
-            </div>
-            <div class="page_right">
-                <div class="right_box box_t"></div>
-                <div class="right_box box_b"></div>
-            </div>
-        </div>
-        <footer id="ft" class="data-page">
+        <footer id="ft">
             <ul class="f_menu">
                 <li class="item1">
                     <a href="#">법적고지</a>
