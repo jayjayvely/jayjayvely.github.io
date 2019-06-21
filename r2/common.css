@@ -64,7 +64,7 @@ background-position:center center; }
 }
 
 #gnb li a:hover {
-    color: #e6f52f;
+    color: #dd0000;
 }
 
 .mob_title1 {
@@ -193,7 +193,7 @@ background-position:center center; }
 }
 
 #tnb li:hover a {
-    color: #e6f52f;
+    color: #dd0000;
 }
 
 #tnb li.item1 a.dp1:after {
@@ -495,6 +495,10 @@ background-position:center center; }
 #ft {
     clear: both;
     background-color: #9f2626;
+    background-image: url("./images/ft_bg.png");
+    background-position: right bottom;
+    background-size: cover;
+    background-repeat: no-repeat; 
 }
 
 #fnb {
