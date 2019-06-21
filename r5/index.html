@@ -47,7 +47,7 @@
         
     .elstyle a { display:block; width: 22px; height: 22px; background-image:url("./img/logo.png"); background-repeat:no-repeat; background-size: 22px 22px;
         background-position: center center; text-indent:-9999px; }
-    .language-box { clear:both; width:65px; height:50px; overflow:hidden; }    
+    .language-box { clear:both; width:65px; height:50px; overflow:hidden; margin-top: 35px;}    
     .language-box a { display:block; line-height:50px; position:relative; 
         width:65px; }   
     .language-box a.on:after { content:"▼"; position:absolute; right:10px; 
@@ -62,13 +62,13 @@
     #gnb li { float:left; position:relative; } 
     #gnb li .mn1:after { content:"|"; padding-left:24px; }     
     #gnb li.item5 .mn1:after { content:""; padding-left: 0; }   
-    #gnb li .sb_item {  position:absolute; left:-45px; background:#efebd2; display:none; border:1px solid #d5d3c5; z-index:50; }
+    #gnb li .sb_item {  position:absolute; left:-45px; background:#fff; display:none; border:1px solid #999; z-index:50; }
     #gnb li:hover .sb_item { display:block; }    
     #gnb li .sb_item li { clear:both; min-width:190px;  padding:0.7em; }    
     #gnb li button { font-size:1.4em; padding-right:24px; cursor:pointer; }
         #gnb li.item5 .mn1 { padding-right: 0; }
     #gnb li a { font-size:1.2em; }    
-        
+     #gnb li a:hover { border-bottom: 1px solid #24c; color: #24c; }  
     .pro_slider { width:900px; height:200px; margin:28px auto; overflow:hidden; 
         padding:40px 0; } 
     .sl_box { width:3000px; margin-left:0; }    
@@ -90,10 +90,10 @@
     .item10 .thum_item {background-image:url("./img/img_thumb10.jpg"); }
     .item11 .thum_item {background-image:url("./img/img_thumb11.jpg"); }
     .item12 .thum_item {background-image:url("./img/img_thumb12.jpg"); }
-    .thum_txt { display:block; line-height:40px; font-size:1.2em; }    
+    .thum_txt { display:block; line-height:40px; font-size:1em; }    
     .thum_box:hover .thum_txt { font-weight:bold; }
     .thum_btn_box { position:relative; width:1200px; margin:0 auto; }    
-    .thum_btn_box li { position:absolute; top:-150px; z-index:50; }
+    .thum_btn_box li { position:absolute; top:-180px; z-index:50; }
     .thum_btn_box li button { display:block; width:20px; height:45px; 
         background-size:100% auto; background-repeat:no-repeat; cursor:pointer; }
     .thum_btn_box li.left { left:5%; }    
@@ -127,7 +127,8 @@
     .store_detail { display:block; width: 60px; height: 60px; 
         position:fixed; right:4%; bottom:5%; z-index:99; 
         background-image:url("./img/btn_black_place02.png");
-        background-size:cover; }    
+        background-size:cover; }
+        .store_detail:hover { background-image:url("./img/btn_black_place01.png"); }
     
 
         .mobile{ display: none; }
