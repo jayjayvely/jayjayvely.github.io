@@ -37,7 +37,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }        
         ul { list-style: none; }
         a {text-decoration: none; color: #222;}
-        body { color: #222; font-family: 'NanumSquare', 'Noto Sans KR', sans-serif; }
+        html, body { color: #222; font-family: 'NanumSquare', 'Noto Sans KR', sans-serif; width: 100vw; height: 100vh; }
         button,label,input{ background: transparent; border: 0; outline: 0; }
         
         #wrap { width: 100%; }
@@ -46,8 +46,8 @@
         .logo{ display: block; width: 130px; height: 40px; background-image: url("./img/logo_2.png"); background-size: contain; background-repeat: no-repeat; background-position: center center; float: left; }
         .lst{width: 30px; height: 30px; background-image: url("img/btn_menu.png"); background-repeat: no-repeat; background-position: center center; float: right; margin-top: 5px; margin-right: 5px;}
 
-/*#visual*/
-        #visual { clear: both; width: 100vw; height: 100vh; position: relative; top: 0; left: 0; z-index: 1; }
+/*visual*/
+        #visual { clear: both; width: 100vw; height: 100vh; position: relative; top: 0; left: 0; z-index: 1; overflow: hidden; }
 
         ul.s_box {width: 500%; height: 100%; position: relative; }
         .s_box li {float: left; width: 20%; height: 100%; position: relative; }
@@ -83,15 +83,15 @@
             100% {background: url("./img/scroll_3.png") center center / cover no-repeat;}
         }
         
-/*#txt_box*/
-        #txt_box { width: 100%; height: 175px; padding-top: 20px;}
+/*txt_box*/
+        #txt_box { width: 100%; height: 175px; padding-top: 5px;}
         #txt_box .txt { text-align: center; font-size: 17px; line-height: 1.55; font-weight: bold; }
-        #txt_box .btn { width: 94%; height: 45px; color: #fff; background: #0052a4; margin-left: 3%; margin-top: 15px; font-size: 17px;  }
+        #txt_box .btn { width: 92%; height: 45px; color: #fff; background: #0052a4; margin-left: 4%; margin-top: 15px; font-size: 17px;  }
         
         .blank { width: 100%; height: 10px; background-color: #ebebeb; border-top: 1px solid #c4c4c4; clear: both; }
         
         
-/*#story*/
+/*story*/
         #story { width: 92%; margin:  0 auto; }
         h3 { font-size: 1.5em; font-weight: bold; text-align: center; margin: 25px 0; }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
@@ -104,7 +104,7 @@
         .more .btn_a { height: 45px; font-size: 17px; line-height: 45px; display: inline-block; width: auto; }
         
         
-/*advocate#*/
+/*advocate*/
         #advocate { width: 100%; margin: 0 auto; }
         #advocate .txt_box { width: 100%; height: auto; padding: 20px 15px;}
         #advocate p.title { font-size: 17px; font-weight: bold; color: #112941; line-height: 1.65; }
@@ -114,7 +114,7 @@
         .advo_box2 .txt_box { background-color: #7b6666;}
         #advocate .more { margin-top: 0; border-top: none;}
         
-/*#slider*/
+/*slider*/
         #slider { width: 100vw; height: 300px; overflow: hidden; background: url("./img/bg_slider2.jpg") no-repeat top right / 100% auto;  }
         
         .s_txt_bg { width: 100%; }
@@ -132,62 +132,54 @@
         .s_txt span { font-size: 17px; font-weight: bold; line-height: 2.5; }
         
 /*#notice*/
-        h2 {font-size: 1.25em; font-weight: bold; }
+        #notice { width: 92%; margin: 0 auto; height: auto; }
+        .n_wrap { margin: 0 auto; margin-top: 15px; border-bottom: 2px solid #333; width: 100%; height: 30px; position: relative; }
+        .n_wrap h2 {font-size: 1.15em; font-weight: bold; }
+        .n_wrap h2::after { content: ""; width: 20px; height: 20px; display: block; background: url("./img/ico-more2.jpg") center center/cover no-repeat; border: 1px solid #ccc; box-sizing: border-box; position:absolute; top: 0; right: 0; }
+        li.no_txt { display: table; width: 100%;  border-bottom: 1px solid #ccc; }
+        li.no_txt:last-child { border-bottom: 0; margin-bottom: 15px;}
+        li.no_txt a strong { width: 20%; height: 100%; position: relative; display: inline-block; float: left;}
+        li.no_txt a strong>span.no_box {  border: 1px solid #ccc; font-size: 0.85em; text-align: center; line-height: 1.25; padding: 3px 5px;  position: absolute; left: 0; top: 13px;}
+        li.no_txt a > span { float: right; display: inline-block; width: 80%; height: 50px; font-size: 0.85em; line-height: 1.25; text-align: left;word-break: pre-wrap; padding: 10px 0 5px; }
+
+/*more*/
+        #more { width: 100%; height: 240px; background-color: #ebebeb; border-top: 1px solid #c4c4c4; clear: both; }
+        .m_wrap {width: 92%; margin: 0 auto; margin-top: 20px; }
+        .m_wrap h2 {font-size: 1.15em; font-weight: bold; margin-bottom: 15px; }
+        .more_box { width: 165px; height: 160px; background: #fff; border-bottom: 1px solid #c4c4c4; text-align: center; padding: 20px; background-position: center center; background-size: cover; background-repeat: no-repeat; position: relative; }
+        .m_left { float: left; background-image: url("./img/monitor.png"); }
+        .m_right { float: right; background-image: url("./img/balance.png"); }
+        .more_box p { position: absolute; top: 65%; left: calc( 50% - 70px); width: 140px; display: block; font-size: 0.85em; line-height: 1.5; }
+        
+        
+        
+/*footer*/
+        #ft { clear: both; width: 100%; text-align: center; font-size: 0.85em; }
+        .sns { width:178px; height: 50px; margin: 0 auto; }
+        .sns li { float:left; padding: 8px 5px; }
+        .sns li a { display: block; width: 34px; height: 34px; background-image: url("./img/sns_footer.png"); background-repeat: no-repeat; }
+        .sns_item1 a { background-position: 0 0;}
+        .sns_item2 a { background-position: -44px 0;}
+        .sns_item3 a { background-position: -88px 0;}
+        .sns_item4 a { background-position: right top;}
+        .ft_menu { width: 100%; height: 41px; clear: both; border-top: 1px solid #dcdcdc; border-bottom: 1px solid #dcdcdc; }
+        .ft_menu li { float: left; display: block; width: 33.3%; height: 40px; border-right: 1px solid #dcdcdc; text-align: center; padding-top: 13px; }
+        .ft_menu li:last-child { border-right: none; }
+        .linkbox {clear: both; }
+        .linkbox ul { width: 300px; display: block; margin: 0 auto; }
+        .linkbox li { float: left; margin: 20px 5px;}
+        .linkbox li a { position: relative; }
+        .linkbox li a::after { content="|"; }
+        .linkbox img { margin-bottom: 20px; }
+        .linkbox p { line-height: 1.5; }
+        .copy { margin: 15px 0; }
+        
+        
         
     </style>
     
 <!--#visual slide-->
-    <script>
-        $(document).ready(function(){
-            var wd = parseInt($(window).width());
-            var intv = setInterval(function(){
-                nextAni();
-            }, 3000);
-            function nextAni(){
-                $(".s_box").not(":animated").animate({"margin-left":-wd+"px"},800,function(){
-                    $(".s_box li").eq(0).appendTo($(".s_box"));
-                    $(".s_box").css("margin-left", "0px");
-                    $(".btn_box li").eq(0).appendTo($(".btn_box"));
-                    $(".btn_box li").removeClass("on");
-                    $(".btn_box li").eq(0).addClass("on");
-                });
-            }
-            var sw = true;
-            $(".play").click(function(){
-                if(sw==true){
-                    $(this).addClass("on");
-                    clearInterval(intv);
-                } else {
-                    $(this).removeClass("on");
-                    nextAni();
-                    intv = setInterval(function(){
-                        nextAni();
-                    }, 3000);
-                }
-                sw= !sw;
-            });
-            $(".btn_box li").click(function(){
-                var idx = $(this).index()-1;
-                clearInterval(intv);
-                for(var i=0;i<idx;i++){
-                    $(".btn_box li").eq(0).appendTo($(".btn_box"));
-                    $(".s_box li").eq(0).appendTo($(".s_box"));
-                }
-                nextAni();
-                intv = setInterval(function(){
-                    nextAni()
-            },3000);
-          });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function(){
-            $(".s_ani").click(function(){
-                $("html,body").unbind().animate({scrollTop:$("#txt_box").offset().top - 40},'slow');
-            });
-        });
-    </script>
+    <script src="./js/visual_slide.js"></script>
     
     
 <!--#slider slide-->
@@ -353,26 +345,22 @@
                 <a href="#" class="more_btn"></a>
             </div>
             <ul>
-                <li class="no_box">회의자료</li>
-                <li class="no_box">언론보도</li>
-                <li class="no_box">공지사항</li>
-                <li class="no_box">공지사항</li>
-            </ul>
-            <ul>
-                <li class="no_txt">한국컴패션 제34회 이사회 회의록 게시</li>
-                <li class="no_txt">김범수 "한 어린이를 끝까지 사랑할 수 있는 용기 갖길"</li>
-                <li class="no_txt">2018년도 한국 컴패션 연간 기부금 모금액 및 활용실적 명세서</li>
-                <li class="no_txt">2018년도 한국 컴패션 결산과 후원금의 수입 및 사용결과 공고</li>
+                <li class="no_txt"><a href=""><strong><span class="no_box">회의자료</span></strong><span>한국컴패션 제34회 이사회 회의록 게시</span></a></li>
+                <li class="no_txt"><a href=""><strong><span class="no_box">언론보도</span></strong><span>김범수 "한 어린이를 끝까지 사랑할 수 있는 용기 갖길"</span></a></li>
+                <li class="no_txt"><a href=""><strong><span class="no_box">공지사항</span></strong><span>2018년도 한국 컴패션 연간 기부금 모금액 및 활용실적 명세서</span></a></li>
+                <li class="no_txt"><a href=""><strong><span class="no_box">공지사항</span></strong><span>2018년도 한국 컴패션 결산과 후원금의 수입 및 사용결과 공고</span></a></li>
             </ul>
         </div>
         
         <div id="more">
-            <h2>더 알아보기</h2>
-            <div class="more_box">
-                <p>후원이<br>처음이세요?</p>
-            </div>
-            <div class="more_box">
-                <p>한국 컴패션<br>투명경영 확인하기</p>
+           <div class="m_wrap">
+                <h2>더 알아보기</h2>
+                <div class="more_box m_left">
+                    <p>후원이<br>처음이세요?</p>
+                </div>
+                <div class="more_box m_right">
+                    <p>한국 컴패션<br>투명경영 확인하기</p>
+                </div>
             </div>
         </div>
         
@@ -403,7 +391,7 @@
                 <p class="info">후원상담/안내 02-740-1000</p>
                 <p class="info">대표자 서정인</p>
                 <p class="b_number">사업자번호 108-82-05789</p>
-                <p class="copy">© COMPASSION KOREA All Rights Reserved. Contact us for more information</p>
+                <p class="copy">ⓒ COMPASSION KOREA All Rights Reserved.<br>Contact us for more information</p>
             </div>
         </footer>
         
