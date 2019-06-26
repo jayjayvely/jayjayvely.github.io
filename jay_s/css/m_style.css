@@ -151,21 +151,27 @@
 
 /* 2 Columns */
 
-@media screen and (min-width: 541px) {
+@media screen and (min-width: 541px) and (max-width:960px) {
     .mix,
     .gap {
         width: calc(100%/2 - (((2 - 1) * 1rem) / 3));
-        height: 30%;
+        height: 23%;
+    }
+    .controls {
+        height: 8%;
+    }
+    .container {
+        height: 92%
     }
 }
 
 /* 3 Columns */
 
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 961px) and (max-width:1024px) {
     .mix,
     .gap {
         width: calc(100%/3 - (((3 - 1) * 1rem) / 4));
-        height: 30%;
+        height: 30%;        
     }
 }
 

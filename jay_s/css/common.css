@@ -102,12 +102,14 @@
     .po_wrap { width: 100%; height: 100%; position: relative; }
 
     
-    .mob1 { background: url("../img/m2.jpg") -50px -20px/500px auto no-repeat; }
-    .mob2 { background: url("../img/m3.jpg") -100px center/650px auto no-repeat; }
+    .mob1 { background: url("../img/m2.jpg") no-repeat; background-position: -50px -20px; background-size: 500px auto; }
+    .mob2 { background: url("../img/m3.jpg") no-repeat; background-position: -100px center; background-size: 650px auto; }
+    .mob3 { background: url("../img/pre.jpg") center center/cover no-repeat; }
     .res1 { background: url("../img/r9.jpg") center center/cover no-repeat; }
     .res2 { background: url("../img/r1.jpg") center center/cover no-repeat; }
     .res3 { background: url("../img/r3.jpg") center center/cover no-repeat; }
-    .web1 { background: url("../img/w1.jpg") center top/450px auto no-repeat; }
+    .web1 { background: url("../img/w1.jpg") no-repeat; background-position: center top; background-size: 450px auto; }
+    .web2 { background: url("../img/pre.jpg") center center/cover no-repeat; }
 
     
     
@@ -149,6 +151,7 @@
 /*태블릿*/
     @media screen and (min-width:768px) and (max-width:1024px){
         .parcon { background-size: cover; background-position: 75% bottom; }
+        .left_bar, .right_side { display: none; }
         .logo_main { top: 40%; left: calc( 50% - 150px ); width: 300px; height: 89px; background: url("../img/logo_main.png") center center/contain no-repeat; }
         #about .txt_wrap { top: 30%; left: 100px; width: 380px; height: auto; padding-top: 0; }
         .me_txt_box{ text-align: right; margin-bottom: 20px; }
@@ -160,6 +163,10 @@
         .s_move_line { width: 30%; margin : 0 35%; margin-top: 30px; }
         .s_moving { width: 30px; height: 30px; left: calc(50% - 15px);}
         .s_list { left: calc(50% - 45px); width: 90px; height: 90px; }
+        
+        #portfolio { width: 100vw; height: 150vh; }
+        #portfolio .p_wrap { height: 80%; top: 12%; }
+        .mob1, .mob2, .web1 { background-position: center center; background-size: contain; }
         
         
         .mobile { display: none; }
