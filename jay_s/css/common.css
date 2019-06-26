@@ -104,8 +104,11 @@
     
     .mob1 { background: url("../img/m2.jpg") -50px -20px/500px auto no-repeat; }
     .mob2 { background: url("../img/m3.jpg") -100px center/650px auto no-repeat; }
-    .res1 { background: url("../img/r3.jpg") center center/cover no-repeat; }
+    .res1 { background: url("../img/r9.jpg") center center/cover no-repeat; }
     .res2 { background: url("../img/r1.jpg") center center/cover no-repeat; }
+    .res3 { background: url("../img/r3.jpg") center center/cover no-repeat; }
+    .web1 { background: url("../img/w1.jpg") center top/450px auto no-repeat; }
+
     
     
     .parcon { opacity:0; transition:1s; z-index:-3; }

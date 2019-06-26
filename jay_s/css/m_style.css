@@ -118,6 +118,7 @@
     height: 50%;
 }
 
+
 .mix:before {
     content: '';
     display: inline-block;
@@ -172,6 +173,7 @@
     .mix,
     .gap {
         width: calc(100%/4 - (((4 - 1) * 1rem) / 5));
+        height: 50%
     }
 }
 
