@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: #333;}
+ul, li{list-style: none;}
+h1, h2, h3, h4{font-family: 'Noto Sans', sans-serif;}
+body{font-family: 'Noto Sans KR', sans-serif; color: #333;}
+/* Noto Sans KR: light(300), regular(400), medium(500), bold(700), black(900) */
+
+.clearfix:before, .clearfix:after{content: ""; display: table;}
+.clearfix:after{clear: both;}
+
+#wrapper{width: 100%; position: relative;}
+header{position: fixed; width: 100%; height: 160px; background: rgba(255,255,255,.7); z-index: 9999; transition: all 0.5s;}
+header:hover{background: #fff;}
+#logo{margin: 30px 0 20px;}
+#logo h1{text-align: center;
+				font-size: 1.75em; font-weight: 700;
+				line-height: 0.9em; letter-spacing: -1px;}
+
+header .mobile_tab{
+	display: none;
+	background: url(../image/toggle_button.png) 0 0 no-repeat;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	width: 40px;
+	height: 40px;
+}
+header .mobile_tab.close{
+	background-position: -41px 0;
+}
+
+
+
+
+/*기존메뉴*/
+#gnb{text-align: center; width: 60%; margin: 0 auto;}
+#gnb nav ul{display: table; margin-left: auto; margin-right: auto; width: 100%;}
+#gnb nav ul .menu{float: left; height: 60px; width: 16.66%;}
+#gnb nav ul .menu>a{font-weight: 700; line-height: 60px; padding-bottom: 15px; }
+#gnb nav ul .menu:hover .menu_a{border-bottom: 3px solid #4ac008; color: #4ac008;}
+#gnb nav ul .menu:hover .submenu li{display: block; opacity: 1;}
+.submenu{position: relative;background: rgba(255,255,255,.8);}
+.submenu li{display: none; opacity: 0;}
+.submenu li a{font-weight: 400; line-height: 50px; display: block; width: 100%; transition: all 0.5s;}
+.submenu li:hover a{background: #4ac008; color: #fff; z-index: 999;}
+
+
+#wrap{position: relative; top: 160px; clear: both;}
+#visual, footer{width: 70%; margin: 0 auto;}
+#visual{height: 500px; margin-bottom: 50px;
+	background: url(../image/visual_04.png) center no-repeat; background-size: cover;}
+
+#contents{width: 100%;}
+#contents .cont1{width: 1180px; margin: 0 auto; text-align: center;}
+.cont1 h1{font-size: 3.75em; font-weight: 700; letter-spacing: -1px;}
+.cont1 h1::after{content: ""; width: 30px; height: 2px; background: #333;
+				position: relative; top: 30px; margin-left: auto; margin-right: auto; display: block;}
+.cont1 h3{margin-top: 65px; font-size: 1.75em;}
+
+.cont2{width: 1180px; margin: 60px auto; position: relative;}
+
+.cont2 h3{font-size: 1.75em; letter-spacing: -1px; text-align: center;}
+.cont2 .contact .story{float: left; width: 22%; margin-right: 4%;}
+.cont2 .contact .last{float: left; margin-right: 0%;}
+.story p{font-size: 0.85em;}
+.story span{font-weight: 700;}
+.story p.mail{color: #ccc; font-weight: 300;}
+
+.cont3{clear: both; width: 600px; margin: 75px auto;}
+.cont3 .quick{width: 100px; float: left; text-align: center;}
+.cont3 .quick a{font-size: 12px; font-weight: 300; color: #999; padding-top: 80px; display: block;}
+.cont3 .quick:hover a{color: #333; font-weight: 400;}
+
+.cont3 .quick:first-child a{background: url(../image/quickmenu01.png) center 15px no-repeat;}
+.cont3 .quick:nth-child(2) a{background: url(../image/quickmenu02.png) center 13px no-repeat;}
+.cont3 .quick:nth-child(3) a{background: url(../image/quickmenu03.png) center 15px no-repeat;}
+.cont3 .quick:nth-child(4) a{background: url(../image/quickmenu04.png) center 15px no-repeat;}
+.cont3 .quick:nth-child(5) a{background: url(../image/quickmenu05.png) center 15px no-repeat;}
+.cont3 .quick:nth-child(6) a{background: url(../image/quickmenu06.png) center 13px no-repeat;}
+.cont3 .quick:first-child:hover a{background: url(../image/quickmenu01_hover.png) center 15px no-repeat;}
+.cont3 .quick:nth-child(2):hover a{background: url(../image/quickmenu02_hover.png) center 13px no-repeat;}
+.cont3 .quick:nth-child(3):hover a{background: url(../image/quickmenu03_hover.png) center 15px no-repeat;}
+.cont3 .quick:nth-child(4):hover a{background: url(../image/quickmenu04_hover.png) center 15px no-repeat;}
+.cont3 .quick:nth-child(5):hover a{background: url(../image/quickmenu05_hover.png) center 15px no-repeat;}
+.cont3 .quick:nth-child(6):hover a{background: url(../image/quickmenu06_hover.png) center 13px no-repeat;}
+
+
+
+
+footer{clear: both;}
+#copy{font-size: 13px; color: #ccc;}
+#copy p a{font-weight: 300; line-height: 30px;}
+#sns{display: table; margin-left: auto; margin-right: auto; position: relative; top: -45px;}
+#sns ul li{float: left; margin: 0 5px;}
+
+
+
+
+
+
+/*반응형*/
+
+@media screen and (min-width: 1300px) and (max-width: 1599px){
+	#gnb{width: 75%;}
+	#visual{width: 90%;}
+}
+@media screen and (min-width: 1180px) and (max-width: 1299px){
+	#gnb{width: 80%;}
+	#visual{width: 100%;}
+	.cont2{width: 95%;}
+	footer{width: 90%;}
+}
+@media screen and (min-width: 1024px) and (max-width: 1179px){
+	#gnb{width: 85%;}
+	#visual{width: 100%; height: 400px;}
+	#contents .cont1{width: 1024px;}
+	.cont2{width: 92%;}
+	.cont2 .contact{width: 100%;}
+	footer{width: 90%;}
+}
+@media screen and (min-width: 780px) and (max-width: 1023px){
+/* 토글메뉴,자바스크립트 추가(5/1) */
+	header{height: 100px;}
+	#logo{margin: 25px 0;}
+	header .mobile_tab{display: block;}	
+	#gnb{text-align: left; width: 250px; margin: 0; float: right; padding-left: 50px;
+		background: rgba(255,255,255,.7); box-shadow: -1px 1px 5px rgba(0,0,0,.1);}
+	#gnb nav{height: 0px; overflow-y: scroll;}
+	#gnb nav ul{display: table; margin: 0; width: 100%;}
+	#gnb nav ul .menu{clear: both; height: auto; width: 100%;}
+	#gnb nav ul .menu>a{font-weight: 700; line-height: 60px; padding-bottom: 0;}
+	#gnb nav ul .menu:hover .menu_a{border-bottom: 3px solid #4ac008; color: #4ac008;}
+	#gnb nav ul .menu:hover .submenu li{display: block; opacity: 1;}
+	.submenu{position: relative;background: none;}
+	.submenu li{display: block; opacity: 1;}
+	.submenu li a{font-weight: 400; line-height: 50px; display: block; width: 100%;
+				 transition: all 0.5s;}
+	.submenu li:hover a{background: #4ac008; color: #fff; z-index: 999;}
+	header #gnb nav.show{height: 600px;}
+	#wrap{top: 100px;}
+/*여기까지*/
+
+	#visual{width: 100%; height: 400px;}
+	#contents .cont1{width: 780px;}
+	.cont1 h1{font-size: 3em;}
+	.cont1 p{font-size: 1em;}
+	.cont2{width: 95%;}
+	.cont2 .contact{width: 100%; text-align: center;}
+	.cont2 .contact .story{width: 45%; margin-right: 0%;}
+	.cont2 .contact .story span{font-size: 1.25em;}
+	.cont2 .contact .story_r{float: right;}
+	.cont2 .contact .story_nd{clear: both; float: left; margin-top: 30px;}
+	.cont2 .contact .last{float: right; margin-top: 30px;}
+	footer{width: 85%;}
+	footer #sns{float: right;}
+}
+@media screen and (min-width: 640px) and (max-width: 779px){
+/* 토글메뉴,자바스크립트 추가(5/1) */
+	header{height: 100px;}
+	#logo{margin: 25px 0;}
+	header .mobile_tab{display: block;}	
+	#gnb{text-align: left; width: 250px; margin: 0; float: right; padding-left: 50px;
+		background: rgba(255,255,255,.7); box-shadow: -1px 1px 5px rgba(0,0,0,.1);}
+	#gnb nav{height: 0px; overflow-y: scroll;}
+	#gnb nav ul{display: table; margin: 0; width: 100%;}
+	#gnb nav ul .menu{clear: both; height: auto; width: 100%;}
+	#gnb nav ul .menu>a{font-weight: 700; line-height: 60px; padding-bottom: 0;}
+	#gnb nav ul .menu:hover .menu_a{border-bottom: 3px solid #4ac008; color: #4ac008;}
+	#gnb nav ul .menu:hover .submenu li{display: block; opacity: 1;}
+	.submenu{position: relative;background: none;}
+	.submenu li{display: block; opacity: 1;}
+	.submenu li a{font-weight: 400; line-height: 50px; display: block; width: 100%;
+				 transition: all 0.5s;}
+	.submenu li:hover a{background: #4ac008; color: #fff; z-index: 999;}
+	header #gnb nav.show{height: 600px;}
+	#wrap{top: 100px;}
+/*여기까지*/
+
+	#visual{width: 100%; height: 350px;}
+	#contents .cont1{width: 100%;}
+	.cont1 h1{font-size: 2.5em;}
+	.cont1 h3{font-size: 1.25em;}
+	.cont1 p{font-size: 1em;}
+	.cont2{width: 95%;}
+	.cont2 .contact{width: 100%; text-align: center;}
+	.cont2 .contact .story{width: 45%; margin-right: 0%;}
+	.cont2 .contact .story span{font-size: 1.25em;}
+	.cont2 .contact .story_r{float: right;}
+	.cont2 .contact .story_nd{clear: both; float: left; margin-top: 30px;}
+	.cont2 .contact .last{float: right; margin-top: 30px;}
+	.cont3{width: 600px;}
+	footer{width: 85%;}
+	footer #copy{display: table; margin-left: auto; margin-right: auto; text-align: center;}
+	footer #sns{display: table; margin-left: auto; margin-right: auto; position: relative; top: 20px;}
+}
+@media screen and (min-width: 480px) and (max-width: 639px){
+/* 토글메뉴,자바스크립트 추가(5/1) */
+	header{height: 100px;}
+	#logo{margin: 25px 0;}
+	header .mobile_tab{display: block;}	
+	#gnb{text-align: left; width: 250px; margin: 0; float: right; padding-left: 50px;
+		background: rgba(255,255,255,.7); box-shadow: -1px 1px 5px rgba(0,0,0,.1);}
+	#gnb nav{height: 0px; overflow-y: scroll;}
+	#gnb nav ul{display: table; margin: 0; width: 100%;}
+	#gnb nav ul .menu{clear: both; height: auto; width: 100%;}
+	#gnb nav ul .menu>a{font-weight: 700; line-height: 60px; padding-bottom: 0;}
+	#gnb nav ul .menu:hover .menu_a{border-bottom: 3px solid #4ac008; color: #4ac008;}
+	#gnb nav ul .menu:hover .submenu li{display: block; opacity: 1;}
+	.submenu{position: relative;background: none;}
+	.submenu li{display: block; opacity: 1;}
+	.submenu li a{font-weight: 400; line-height: 50px; display: block; width: 100%;
+				 transition: all 0.5s;}
+	.submenu li:hover a{background: #4ac008; color: #fff; z-index: 999;}
+	header #gnb nav.show{height: 600px;}
+	#wrap{top: 100px;}
+/*여기까지*/
+
+	#visual{width: 100%; height: 300px;}
+	#contents .cont1{width: 100%;}
+	.cont1 h1{font-size: 2em;}
+	.cont1 h3{font-size: 1.25em;}
+	.cont1 p{font-size: 1em;}
+	.cont2{width: 95%;}
+	.cont2 .contact{width: 100%; text-align: center;}
+	.cont2 .contact .story{width: 100%; margin-right: 0%; clear: both;
+						margin-bottom: 50px;}
+	.cont2 .contact .story span{font-size: 1.25em;}
+	.cont2 .contact .last{margin-bottom: 0;}
+	.cont3{width: 350px;}
+	.cont3 .quick{width: 33.33%;}
+	.cont3 .q_menu{clear: both; float: left;}
+	footer{width: 90%;}
+	footer #copy{display: table; margin-left: auto; margin-right: auto; text-align: center;}
+	footer #sns{display: table; margin-left: auto; margin-right: auto; position: relative; top: 20px;}
+}
+@media screen and (max-width: 479px){
+/* 토글메뉴,자바스크립트 추가(5/1) */
+	header{height: 100px;}
+	#logo{margin: 25px 0;}
+	header .mobile_tab{display: block;}	
+	#gnb{text-align: center; width: 100%; margin: 0; float: right;
+		background: rgba(255,255,255,.7); box-shadow: -1px 1px 5px rgba(0,0,0,.1);}
+	#gnb nav{height: 0px; overflow-y: scroll;}
+	#gnb nav ul{display: table; margin: 0; width: 100%;}
+	#gnb nav ul .menu{clear: both; height: auto; width: 100%;}
+	#gnb nav ul .menu>a{font-weight: 700; line-height: 60px; padding-bottom: 0;}
+	#gnb nav ul .menu:hover .menu_a{border-bottom: 3px solid #4ac008; color: #4ac008;}
+	#gnb nav ul .menu:hover .submenu li{display: block; opacity: 1;}
+	.submenu{position: relative;background: none;}
+	.submenu li{display: block; opacity: 1;}
+	.submenu li a{font-weight: 400; line-height: 50px; display: block; width: 100%;
+				 transition: all 0.5s;}
+	.submenu li:hover a{background: #4ac008; color: #fff; z-index: 999;}
+	header #gnb nav.show{height: 300px;}
+	#wrap{top: 100px;}
+/*여기까지*/
+
+	#visual{width: 100%; height: 200px;}
+	#contents .cont1{width: 100%;}
+	.cont1 h1{font-size: 1.85em;}
+	.cont1 h3{font-size: 1em;}
+	.cont1 p{font-size: 0.85em;}
+	.cont2{width: 95%;}
+	.cont2 .contact{width: 100%; text-align: center;}
+	.cont2 .contact .story{width: 100%; margin-right: 0%; clear: both;
+						margin-bottom: 50px;}
+	.cont2 .contact .story span{font-size: 1.25em;}
+	.cont2 .contact .last{margin-bottom: 0;}
+	.cont3{width: 350px;}
+	.cont3 .quick{width: 33.33%;}
+	.cont3 .q_menu{clear: both; float: left;}
+	footer{width: 90%;}
+	footer #copy{display: table; margin-left: auto; margin-right: auto; text-align: center;}
+	footer #sns{display: table; margin-left: auto; margin-right: auto; position: relative; top: 20px;}
+}
