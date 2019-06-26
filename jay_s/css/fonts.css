@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+
+@font-face {
+    font-family: 'arita';
+    font-weight: normal;
+    font-style: normal;
+    src: url("../font/Arita-dotumM.woff") format("woff"),
+        url("../font/Arita-dotumM.otf") format("opentype");
+}

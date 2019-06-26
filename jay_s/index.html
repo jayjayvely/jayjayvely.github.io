@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <title>Jay's Portfolio</title>
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/m_style.css">
+    <link rel="stylesheet" href="./css/common.css">
+    
+</head>
+<style>
+
+    
+
+
+    
+</style>
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+$(document).ready(function(){
+    var win_h = $(window).height();
+    $('.page').each(function(index){
+        $(this).attr("data-index",win_h * index);
+    });
+    $('.page').on("mousewheel DOMMouseScroll",function(e){
+        var sectionPos = parseInt($(this).attr("data-index"));
+        var idx = $(this).index();
+        if(e.originalEvent.wheelDelta > 0) {
+            $("body, html").stop().animate({scrollTop:sectionPos - win_h});
+        return false;
+        } else if (e.originalEvent.wheelDelta < 0) {
+            $("body, html").stop().animate({scrollTop:sectionPos + win_h});
+        return false; 
+        }
+    });
+        
+    $(window).scroll(function(){
+        var sc_top = $(window).scrollTop();
+        var cur_page = 0;
+        cur_page = parseInt($(window).scrollTop() / win_h);
+        $(".left_bar li").removeClass("on");
+        $(".left_bar li").eq(cur_page).addClass("on");
+        if(cur_page == 2) {
+            $(".s_move01, .s_line01").addClass("on");
+            $(".s_move02, .s_line02").addClass("on");
+            $(".s_move03, .s_line03").addClass("on");
+            $(".s_move04, .s_line04").addClass("on");
+            $(".s_move05, .s_line05").addClass("on");
+            $(".s_move06, .s_line06").addClass("on");
+            $(".s_move07, .s_line07").addClass("on");
+            $(".s_move08, .s_line08").addClass("on");
+        }  
+        
+        //main, about
+        if(cur_page == 0){
+            $(".parcon").eq(0).addClass("on");
+            $(".parcon").eq(1).removeClass("on");
+        } else if(cur_page == 1){
+            $(".parcon").eq(0).removeClass("on");
+            $(".parcon").eq(1).addClass("on");
+        } else {
+            $(".parcon").eq(0).removeClass("on");
+            $(".parcon").eq(1).removeClass("on");
+        }
+        
+    });
+//    $(window).scroll(function(){ 
+//    });
+    
+    $(".lst").click(function(){
+        $("#menu").css("right", "0");
+    });
+    $(".close").click(function(){
+        $("#menu").css("right", "-201px");
+    });
+
+});    
+</script>
+
+
+
+
+
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <a href="index.html" class="logo"></a>
+            <div class="lst"></div>
+        </header>
+        <aside id="fix">
+            <div class="left_bar">
+                <ul>
+                    <li class="main on"><a href="#"></a></li>
+                    <li class="about"><a href="#"></a></li>
+                    <li class="skills"><a href="#"></a></li>
+                    <li class="portfolio"><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="right_side"></div>
+        </aside>
+        <div id="menu">
+            <div class="close"></div>
+            <nav class="gnb">
+                <ul>
+                    <li class="item1"><a href="#main">Main</a></li>
+                    <li class="item2"><a href="#about">About me</a></li>
+                    <li class="item3"><a href="#skills">Skills</a></li>
+                    <li class="item4"><a href="#portfolio">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="main" class="parcon on">
+            <div class="logo_main"></div>
+            <div class="right_txt_wrap mobile">
+                <p class="right_txt">#명조보단 #고딕체<br>#신경쓰여 #1px</p>
+                <p class="right_tit"><span>이자영</span><br>포트폴리오</p>
+            </div>
+            <div class="main_txt">
+                <p><span>크롬</span> 브라우저 <span>1920×1080</span>에 최적화 되었습니다.<br>스크롤 하시면 다음 페이지로 넘어갑니다 :D</p>
+            </div>
+            <div class="btn_scroll"></div>
+        </div>
+        <div id="about" class="parcon">
+            <div class="txt_wrap">
+                <div class="me_txt_box">
+                    <p class="me_tit"><span>Lee Ja young</span></p>
+                    <p class="me_txt desk">성인이 되어 진짜 올림픽을 맞이한 88올림픽 둥이<br>대전광역시 유성구 상대동<br>youngslj@naver.com</p>
+                    <p class="me_txt mobile">1988. 01. 29.<br>대전광역시 유성구 상대동<br>youngslj@naver.com</p>
+                </div>
+                <div class="me_txt_box">
+                    <p class="me_tit">Personality type/ <span>ESTJ</span></p>
+                    <p class="me_txt desk">옳다고 생각되는 일은 거침없이 밀고 나가는 굳은 의지와<br>부족함을 인정할 줄 아는 지혜를 가진 사람</p>
+                    <p class="me_txt mobile">옳다고 생각되는 일은 거침없이 밀고 나가는 굳은 의지와 부족함을 인정할 줄 아는 지혜를 가진 사람</p>
+                </div>
+                <div class="me_txt_box desk">
+                    <p class="me_tit"><span>Achievement</span></p>
+                    <p class="me_txt">그린컴퓨터아트학원 <span>스마트기기 UX/UI 디자인</span> 수료&nbsp;&nbsp;<span>2019</span></p>
+                    <p class="me_txt">대우직업전문학교 <span>스마트 eBook 개발</span> 수료&nbsp;&nbsp;<span>2013</span></p>
+                    <p class="me_txt">대전보건대학교 <span>작업치료학과</span>(전공심화) 졸업&nbsp;&nbsp;<span>2012</span></p>
+                </div>
+                <div class="me_txt_box mobile">
+                    <p class="me_tit"><span>Achievement</span></p>
+                    <p class="me_txt">2019/06&nbsp;&nbsp;그린컴퓨터아트학원<br><span>스마트기기 UX/UI 디자인</span> 수료</p>
+                    <p class="me_txt">2013/12&nbsp;&nbsp;대우직업전문학교<br><span>스마트 eBook 개발</span> 수료</p>
+                    <p class="me_txt">2012/02&nbsp;&nbsp;대전보건대학교<br><span>작업치료학과</span>(전공심화) 졸업</p>
+                </div>
+            </div>
+            <div class="right_txt_wrap desk">
+                <p class="right_txt">#명조말고 #고딕체<br>#신경쓰여 #1px</p>
+                <p class="right_tit">디자이너 <span>이자영</span></p>
+            </div>
+            <div class="btn_scroll"></div>
+        </div>
+        <div id="blank1" class="page"></div>
+        <div id="blank2" class="page"></div>
+        <div id="skills" class="page">
+            <div class="skills_tit_box">
+                <p class="s_tit">Skills</p>
+            </div>
+            <div class="s_contents">
+               <div class="s_move s_item1">
+                  <div class="s_move_wrap">
+                       <div class="s_move_line">
+                           <div class="sm_line s_line01"></div>
+                       </div>
+                       <div class="s_moving s_move01"></div>
+                   </div>
+                   <div class="s_list"></div>
+               </div>
+               <div class="s_move s_item2">
+                  <div class="s_move_wrap">
+                       <div class="s_move_line">
+                           <div class="sm_line s_line02"></div>
+                       </div>
+                       <div class="s_moving s_move02"></div>
+                   </div>
+                   <div class="s_list"></div>
+               </div>
+               <div class="s_move s_item3">
+                  <div class="s_move_wrap">
+                       <div class="s_move_line">
+                           <div class="sm_line s_line03"></div>
+                       </div>
+                       <div class="s_moving s_move03"></div>
+                   </div>
+                   <div class="s_list"></div>
+               </div>
+               <div class="s_move s_item4">
+                  <div class="s_move_wrap">
+                       <div class="s_move_line">
+                           <div class="sm_line s_line04"></div>
+                       </div>
+                       <div class="s_moving s_move04"></div>
+                   </div>
+                   <div class="s_list"></div>
+               </div>
+               <div class="s_move s_item5">
+                  <div class="s_move_wrap">
+                       <div class="s_move_line">
+                           <div class="sm_line s_line05"></div>
+                       </div>
+                       <div class="s_moving s_move05"></div>
+                   </div>
+                   <div class="s_list"></div>
+               </div>
+               <div class="s_move s_item6">
+                  <div class="s_move_wrap">
+                       <div class="s_move_line">
+                           <div class="sm_line s_line06"></div>
+                       </div>
+                       <div class="s_moving s_move06"></div>
+                   </div>
+                   <div class="s_list"></div>
+               </div>
+               <div class="s_move s_item7">
+                  <div class="s_move_wrap">
+                       <div class="s_move_line">
+                           <div class="sm_line s_line07"></div>
+                       </div>
+                       <div class="s_moving s_move07"></div>
+                   </div>
+                   <div class="s_list"></div>
+               </div>
+               <div class="s_move s_item8">
+                  <div class="s_move_wrap">
+                       <div class="s_move_line">
+                           <div class="sm_line s_line08"></div>
+                       </div>
+                       <div class="s_moving s_move08"></div>
+                   </div>
+                   <div class="s_list"></div>
+               </div>
+            </div>
+            <div class="btn_scroll"></div>
+        </div>
+        <div id="portfolio" class="page">
+          
+           <div class="p_wrap">
+               <div class="po_wrap">
+                <div class="controls">
+                   <div class="cont_btn">
+                    <button type="button" class="control" data-filter="all">All</button>
+                    <button type="button" class="control" data-filter=".green">Responsive</button>
+                    <button type="button" class="control" data-filter=".blue">Mobile</button>
+                    <button type="button" class="control" data-filter=".pink">Web</button>
+                   </div>
+                </div>
+
+                <div class="container">
+                    <div class="mix green res1"></div>
+                    <div class="mix green res2"></div>
+                    <div class="mix blue mob1"></div>
+                    <div class="mix pink web1"></div>
+                    <div class="mix green res3"></div>
+                    <div class="mix blue mob2"></div>
+                    <div class="mix pink web2"></div>
+                    <div class="mix blue mob3"></div>
+
+        <!--
+                    <div class="gap"></div>
+                    <div class="gap"></div>
+                    <div class="gap"></div>
+        -->
+                </div>
+
+                <script src="./js/mixitup.min.js"></script>
+
+                <script>
+                    var containerEl = document.querySelector('.container');
+
+                    var mixer = mixitup(containerEl);
+                </script>
+             </div>
+            </div>
+        </div>
+    </div>
+        
+</body>
+</html>
