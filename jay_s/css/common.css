@@ -15,8 +15,9 @@
 /*commom.css*/
     .wrap { width: 100vw; height: 100vh; }
     #hd { position: fixed; top: 0; left: 0; z-index: 99; width: 100vw; height: 130px; }
-/*    #hd { border-bottom: 1px solid red; }*/
-    .logo { display: block; width: 211px; height: 63px; background: url("../img/logo.png") center center / cover no-repeat; position: absolute; top: 70px; left: 70px; }
+    /*#hd { border-bottom: 1px solid red; }*/
+    .logo { display: block; width: 211px; height: 63px; background: url("../img/logo.png") center center / cover no-repeat; position: absolute; top: 70px; left: 70px; opacity:1; transition:1s; }
+    .logo.off { opacity:0; }
     .lst { width: 50px; height: 50px; background: url("../img/toggle.png") center center / cover no-repeat; position: absolute; top: 50px; right: 50px; cursor: pointer; }
     
     #fix { clear: both; }
@@ -41,7 +42,8 @@
     #skills { background-color: #fff; }
     #portfolio { background-color: #ffeadd; }
 /*main*/
-    .logo_main { position: absolute; top: 455px; left: calc( 50% - 205px ); display: block; width: 410px; height: 120px; background: url("../img/logo_main.png") center center/cover no-repeat; transition: 0.7s; }
+    .logo_main { position: absolute; top: 455px; left: calc( 50% - 205px ); display: block; width: 410px; height: 120px; background: url("../img/logo_main.png") center center/cover no-repeat; transition: 1s; }
+    .logo_main.on { top: 70px; left: 70px; width: 211px; height: 63px;  }
     .main_txt { display: block; position: absolute; bottom: 12%; left: calc(50% - 167px); text-align: center; }
     .main_txt p span { font-weight: bold; }
     .btn_scroll { position: absolute; bottom: 5%; left: calc( 50% - 14px); width: 20px; height: 45px; background: url("../img/btn_scroll.png") center center/ 20px 45px no-repeat; }
@@ -101,7 +103,7 @@
     #portfolio .p_wrap { width: 80%; height: 70%; position:absolute; top: 18%; left: 10%; background: #fff6f1; }
     .po_wrap { width: 100%; height: 100%; position: relative; }
 
-    
+
     .mob1 { background: url("../img/m2.jpg") no-repeat; background-position: -50px -20px; background-size: 500px auto; }
     .mob2 { background: url("../img/m3.jpg") no-repeat; background-position: -100px center; background-size: 650px auto; }
     .mob3 { background: url("../img/pre.jpg") center center/cover no-repeat; }
@@ -153,7 +155,8 @@
         .parcon { background-size: auto 1024px; background-position: 75% bottom; }
         .left_bar, .right_side { display: none; }
         .logo_main { top: 40%; left: calc( 50% - 150px ); width: 300px; height: 89px; background: url("../img/logo_main.png") center center/contain no-repeat; }
-        #about .txt_wrap { top: 30%; left: 100px; width: 380px; height: auto; padding-top: 0; }
+        
+        #about .txt_wrap { top: 30%; left: 80px; width: 420px; height: auto; padding-top: 0; }
         .me_txt_box{ text-align: right; margin-bottom: 20px; }
         p.me_tit { font-size: 1.8em; }
         .me_txt { font-size: 1em; }

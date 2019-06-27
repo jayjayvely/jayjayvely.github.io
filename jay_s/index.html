@@ -17,6 +17,7 @@
     <script>
 $(document).ready(function(){
     var win_h = $(window).height();
+    
     $('.page').each(function(index){
         $(this).attr("data-index",win_h * index);
     });
@@ -33,8 +34,8 @@ $(document).ready(function(){
     });
         
     $(window).scroll(function(){
-        var sc_top = $(window).scrollTop();
         var cur_page = 0;
+        var sc_top = $(window).scrollTop();
         cur_page = parseInt($(window).scrollTop() / win_h);
         $(".left_bar li").removeClass("on");
         $(".left_bar li").eq(cur_page).addClass("on");
@@ -53,17 +54,20 @@ $(document).ready(function(){
         if(cur_page == 0){
             $(".parcon").eq(0).addClass("on");
             $(".parcon").eq(1).removeClass("on");
+            $(".logo").addClass("off");
+            $(".logo_main").removeClass("on");
         } else if(cur_page == 1){
             $(".parcon").eq(0).removeClass("on");
             $(".parcon").eq(1).addClass("on");
+            $(".logo").removeClass("off");
+            $(".logo_main").addClass("on");
         } else {
             $(".parcon").eq(0).removeClass("on");
             $(".parcon").eq(1).removeClass("on");
+            $(".logo").removeClass("off");
         }
-        
     });
-//    $(window).scroll(function(){ 
-//    });
+
     
     $(".lst").click(function(){
         $("#menu").css("right", "0");
@@ -84,7 +88,7 @@ $(document).ready(function(){
 <body>
     <div class="wrap">
         <header id="hd">
-            <a href="index.html" class="logo"></a>
+            <a href="index.html" class="logo off"></a>
             <div class="lst"></div>
         </header>
         <aside id="fix">
@@ -102,8 +106,8 @@ $(document).ready(function(){
             <div class="close"></div>
             <nav class="gnb">
                 <ul>
-                    <li class="item1"><a href="#main">Main</a></li>
-                    <li class="item2"><a href="#about">About me</a></li>
+                    <li class="item1"><a href="#blank1">Main</a></li>
+                    <li class="item2"><a href="#blank2">About me</a></li>
                     <li class="item3"><a href="#skills">Skills</a></li>
                     <li class="item4"><a href="#portfolio">Portfolio</a></li>
                 </ul>
@@ -247,7 +251,7 @@ $(document).ready(function(){
                 </div>
 
                 <div class="container">
-                    <div class="mix green res1"></div>
+                    <div class="mix green res1"><a href="https://jayjayvely.github.io/etw_ing/etw_index.html" target="_blank"></a></div>
                     <div class="mix green res2"></div>
                     <div class="mix blue mob1"></div>
                     <div class="mix pink web1"></div>
