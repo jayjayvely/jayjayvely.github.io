@@ -168,15 +168,18 @@ p.con_txt {
 @media screen and (min-width:320px) and (max-width:540px) {
     .mix,
     .gap {
-        width: 100%;
-        height: 11%;
+        width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
+        height: 22%;
     }
     .controls {
-        height: 7%;
+        height: 10%;
     }
     .container {
-        height: 93%
+        height: 90%;
+        padding: 1rem;
+            
     }
+    
     .cont_btn {
     width: 95%;
     height: 100%;

@@ -162,8 +162,8 @@
         .s_line08.on { width: 85%; height: 100%;}
         .s_list { position: absolute; bottom: -7px; left: -17px; width: 80px; height: 80px; background-position: center center; background-size: cover; background-repeat: no-repeat; }
         
-        #portfolio { width: 100vw; height: 200vh; }
-        #portfolio .p_wrap { height: 90%; top: 8%; }
+        #portfolio { width: 100vw; height: 100vh; }
+        #portfolio .p_wrap { width: 100%; height: 85%; top: 15%; left: 0; }
         
         .mob1, .mob2, .web1 { background-position: center center; background-size: cover; }
         
