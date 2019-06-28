@@ -94,10 +94,10 @@ $(document).ready(function(){
         <aside id="fix">
             <div class="left_bar">
                 <ul>
-                    <li class="main on"><a href="#"></a></li>
-                    <li class="about"><a href="#"></a></li>
-                    <li class="skills"><a href="#"></a></li>
-                    <li class="portfolio"><a href="#"></a></li>
+                    <li class="main on"></li>
+                    <li class="about"></li>
+                    <li class="skills"></li>
+                    <li class="portfolio"></li>
                 </ul>
             </div>
             <div class="right_side"></div>
@@ -116,7 +116,7 @@ $(document).ready(function(){
         <div id="main" class="parcon on">
             <div class="logo_main"></div>
             <div class="right_txt_wrap mobile">
-                <p class="right_txt">#명조보단 #고딕체<br>#신경쓰여 #1px</p>
+                <p class="right_txt">#명조보단 #고딕체<br>#웹퍼블리싱 #웹디자인</p>
                 <p class="right_tit"><span>이자영</span><br>포트폴리오</p>
             </div>
             <div class="main_txt">
@@ -150,8 +150,8 @@ $(document).ready(function(){
                 </div>
             </div>
             <div class="right_txt_wrap desk">
-                <p class="right_txt">#명조말고 #고딕체<br>#신경쓰여 #1px</p>
-                <p class="right_tit">디자이너 <span>이자영</span></p>
+                <p class="right_txt">#명조보단 #고딕체<br>#웹퍼블리싱 #웹디자인</p>
+                <p class="right_tit">디자이너<span>이자영</span></p>
             </div>
             <div class="btn_scroll"></div>
         </div>
@@ -167,7 +167,7 @@ $(document).ready(function(){
                        <div class="s_move_line">
                            <div class="sm_line s_line01"></div>
                        </div>
-                       <div class="s_moving s_move01"></div>
+                       <div class="s_moving s_move01 desk"></div>
                    </div>
                    <div class="s_list"></div>
                </div>
@@ -176,7 +176,7 @@ $(document).ready(function(){
                        <div class="s_move_line">
                            <div class="sm_line s_line02"></div>
                        </div>
-                       <div class="s_moving s_move02"></div>
+                       <div class="s_moving s_move02 desk"></div>
                    </div>
                    <div class="s_list"></div>
                </div>
@@ -185,7 +185,7 @@ $(document).ready(function(){
                        <div class="s_move_line">
                            <div class="sm_line s_line03"></div>
                        </div>
-                       <div class="s_moving s_move03"></div>
+                       <div class="s_moving s_move03 desk"></div>
                    </div>
                    <div class="s_list"></div>
                </div>
@@ -194,7 +194,7 @@ $(document).ready(function(){
                        <div class="s_move_line">
                            <div class="sm_line s_line04"></div>
                        </div>
-                       <div class="s_moving s_move04"></div>
+                       <div class="s_moving s_move04 desk"></div>
                    </div>
                    <div class="s_list"></div>
                </div>
@@ -203,11 +203,11 @@ $(document).ready(function(){
                        <div class="s_move_line">
                            <div class="sm_line s_line05"></div>
                        </div>
-                       <div class="s_moving s_move05"></div>
+                       <div class="s_moving s_move05 desk"></div>
                    </div>
                    <div class="s_list"></div>
                </div>
-               <div class="s_move s_item6">
+               <div class="s_move s_item6 desk">
                   <div class="s_move_wrap">
                        <div class="s_move_line">
                            <div class="sm_line s_line06"></div>
@@ -216,7 +216,7 @@ $(document).ready(function(){
                    </div>
                    <div class="s_list"></div>
                </div>
-               <div class="s_move s_item7">
+               <div class="s_move s_item7 desk">
                   <div class="s_move_wrap">
                        <div class="s_move_line">
                            <div class="sm_line s_line07"></div>
@@ -225,7 +225,7 @@ $(document).ready(function(){
                    </div>
                    <div class="s_list"></div>
                </div>
-               <div class="s_move s_item8">
+               <div class="s_move s_item8 desk">
                   <div class="s_move_wrap">
                        <div class="s_move_line">
                            <div class="sm_line s_line08"></div>
@@ -244,21 +244,50 @@ $(document).ready(function(){
                 <div class="controls">
                    <div class="cont_btn">
                     <button type="button" class="control" data-filter="all">All</button>
-                    <button type="button" class="control" data-filter=".green">Responsive</button>
+                    <button type="button" class="control desk" data-filter=".green">Responsive</button><button type="button" class="control mobile" data-filter=".green">RWD</button>
                     <button type="button" class="control" data-filter=".blue">Mobile</button>
                     <button type="button" class="control" data-filter=".pink">Web</button>
                    </div>
                 </div>
 
                 <div class="container">
-                    <div class="mix green res1"><a href="https://jayjayvely.github.io/etw_ing/etw_index.html" target="_blank"></a></div>
-                    <div class="mix green res2"></div>
-                    <div class="mix blue mob1"></div>
-                    <div class="mix pink web1"></div>
-                    <div class="mix green res3"></div>
-                    <div class="mix blue mob2"></div>
-                    <div class="mix pink web2"></div>
-                    <div class="mix blue mob3"></div>
+                    <div class="mix green res1">
+                        <a href="https://jayjayvely.github.io/etw_ing/etw_index.html" target="_blank" class="mix_btn">
+                            <p class="con_txt">ETW 반응형 홈페이지 제작<br>벤치마킹 : 마커스워십</p>
+                        </a></div>
+                    <div class="mix green res2">
+                        <a href="https://jayjayvely.github.io/r1" target="_blank" class="mix_btn">
+                            <p class="con_txt">폴스포츠협회 반응형 홈페이지 리뉴얼<br>벤치마킹 : 에티카</p>
+                        </a>
+                    </div>
+                    <div class="mix blue mob1">
+                        <a href="https://jayjayvely.github.io/m2" target="_blank" class="mix_btn">
+                            <p class="con_txt">루이비통 모바일 홈페이지 리뉴얼<br>벤치마킹 : 아모레퍼시픽</p>
+                        </a>
+                    </div>
+                    <div class="mix pink web1">
+                        <a href="https://jayjayvely.github.io/kwater/index2.html" target="_blank" class="mix_btn">
+                            <p class="con_txt">K-water 웹페이지 제작연습<br>벤치마킹 : K-water</p>
+                        </a>
+                    </div>
+                    <div class="mix green res3">
+                        <a href="https://jayjayvely.github.io/r3" target="_blank" class="mix_btn">
+                            <p class="con_txt">셀트리온 반응형 홈페이지 리뉴얼<br>벤치마킹 : 삼성바이오에피스</p>
+                        </a>
+                    </div>
+                    <div class="mix blue mob2">
+                        <a href="https://jayjayvely.github.io/m3" target="_blank" class="mix_btn">
+                            <p class="con_txt">컴패션코리아 모바일 홈페이지 리뉴얼<br>벤치마킹 : 세이브더칠드런</p>
+                        </a></div>
+                    <div class="mix pink web2">
+                        <a href="#" target="_blank" class="mix_btn">
+                            <p class="con_txt"></p>
+                        </a></div>
+                    <div class="mix blue mob3">
+                        <a href="#" target="_blank" class="mix_btn">
+                            <p class="con_txt"></p>
+                        </a>
+                    </div>
 
         <!--
                     <div class="gap"></div>

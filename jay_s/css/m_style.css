@@ -125,6 +125,29 @@
     padding-top: 56.25%;
 }
 
+a.mix_btn {
+    display: block;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+a.mix_btn:hover {
+    background: rgba(229, 108, 34, .8);
+}
+a.mix_btn:hover p {
+    opacity: 1;
+}
+p.con_txt {
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0;
+    padding-top: 30%;
+}
+
 .mix.green {
     color: #91e6c7;
 }
@@ -142,11 +165,24 @@
 
 /* 1 Columns */
 
-.mix,
-.gap {
-    width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
-    height: 50%
-    
+@media screen and (min-width:320px) and (max-width:540px) {
+    .mix,
+    .gap {
+        width: 100%;
+        height: 11%;
+    }
+    .controls {
+        height: 7%;
+    }
+    .container {
+        height: 93%
+    }
+    .cont_btn {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    }
 }
 
 /* 2 Columns */

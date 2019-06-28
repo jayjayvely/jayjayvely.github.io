@@ -36,8 +36,8 @@
     
 /*page*/
     .parcon { position: fixed; width: 100vw; height: 100vh; background-size: cover; background-position: center bottom; background-repeat: no-repeat; }
-    #main { background-image: url("../img/bg_main.jpg"); }
-    #about { background-image: url("../img/bg_about.jpg"); }
+    #main { background-image: url("../img/bg_main.jpg"); background-attachment: fixed; }
+    #about { background-image: url("../img/bg_about.jpg"); background-attachment: fixed; }
     .page { width: 100vw; height: 100vh; position: relative; }
     #skills { background-color: #fff; }
     #portfolio { background-color: #ffeadd; }
@@ -145,6 +145,27 @@
         .me_txt_box{ text-align: left; margin-bottom: 10px; }
         p.me_tit {font-size: 1em; line-height: 2; }
         .me_txt { font-size: 0.85em; }
+        
+        /*skills*/
+        .s_contents { width: 80%; height: 50%; left: 10%; top: 30%; }
+        .s_move { width: 100%; height: 20%; float: none;}
+        .s_move_wrap { width: 100%; height: 100%; }
+        .s_move_line { width: 80%; height: 50%; margin: 0; top: 25%; box-sizing: border-box; float: right; }
+        .sm_line { width: 0; height: 100%; }
+        .s_line01.on { width: 80%; height: 100%; }
+        .s_line02.on { width: 85%; height: 100%;}
+        .s_line03.on { width: 80%; height: 100%;}
+        .s_line04.on { width: 80%; height: 100%;}
+        .s_line05.on { width: 70%; height: 100%;}
+        .s_line06.on { width: 85%; height: 100%;}
+        .s_line07.on { width: 80%; height: 100%;}
+        .s_line08.on { width: 85%; height: 100%;}
+        .s_list { position: absolute; bottom: -7px; left: -17px; width: 80px; height: 80px; background-position: center center; background-size: cover; background-repeat: no-repeat; }
+        
+        #portfolio { width: 100vw; height: 200vh; }
+        #portfolio .p_wrap { height: 90%; top: 8%; }
+        
+        .mob1, .mob2, .web1 { background-position: center center; background-size: cover; }
         
         .mobile { display: block; }
         .desk { display: none; }
