@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>대전공연전시</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- 인터넷익스플로러의 최신브라우저인 IE-Edge로 문서 열기 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 아이폰 계열의 웹앱 설정 -->
+    <meta name="apple-mobile-web-app-title" content="ETIQA">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 메타포 아이콘 설정 -->
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,700|Noto+Sans:400,700&display=swap&subset=korean" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/singihae/Webfonts/master/style.css" rel="stylesheet" type="text/css" />
+<!-- font-family: 'BM JUA', '배달의민족 주아', sans-serif; -->
+
+        
+    
+    <style>
+        * { margin: 0; padding: 0; }
+        body, html { width: 100%; height: 100%;
+        font-family: 'Noto Sans', 'Noto Sans KR', sans-serif; font-weight: 100; background-color:#fff; color:#333; box-sizing: border-box; }
+        ul { list-style: none; }
+        a { text-decoration: none; color: #333; }
+        img { padding: 0; }
+        label, input, a, button { 
+        background-color:transparent; background-image:none; border:0; outline:0; user-select:none; }
+        h2 { font-family: 'BM JUA', '배달의민족 주아', sans-serif; text-align: center; line-height: 2.5; margin-top: 15px; font-weight: 100; }
+        
+        #wrap { width: 100vw; }
+/*header*/
+        #hd { width: 100%; height: 70px; background: #000; position: fixed; z-index: 99; transition: 1s; }
+        .logo { width: 132px; height: 50px; background: url("./img/logoover.png") center center/cover no-repeat; position: absolute; top: 10px; left: 15px; }
+        .toggle { width: 35px; height: 35px; background: url("./img/btn_toggle.png") center center/ cover no-repeat; position: absolute; top: 16px; right: 20px; }
+        .search { position: fixed; top: 70px; width: 100%; height: 40px; background: #000; z-index: 30; }
+        .search_box { background : #fff; width: 280px; height: 31px; border: 1px solid #dcdcdc;box-sizing: border-box; position: absolute; left: calc(50% - 140px); }
+        .search_txt { padding-left: 10px; line-height: 31px; font-size: 17px; }
+        .search_btn { width: 17px; height: 17px; background: url("./img/btn_search.png") center center/cover no-repeat;  position: absolute; top: 7px; right: 10px; }
+        
+        
+/*gnb*/
+        .gnb_bg { background: rgba(0,0,0,.5); width: 100vw; height: 100vh; opacity: 0; transition: 1.5s; position: fixed; z-index: -1;  }
+        .gnb_bg.on { opacity: 1; z-index: 99; }
+        .gnb { background: #fff; width: 80vw; height: 100vh; position: absolute; top: 0; right: -100vh; transition: 1s; position: fixed; z-index: 99;  }
+        .gnb.on { right: 0; }
+        .close { width: 44px; height: 44px; position: absolute; right: 80vw; top: 0; background: url("./img/btn_close.png") center center / cover no-repeat; }
+        .menu_top { width: 100%; height: 110px; background: #c2111a; }
+        .signin { height: 50%; border-bottom: 1px solid #ff7c7c; box-sizing: border-box; }
+        .txt1, .txt2 { width: 50%; float: left; line-height: 55px; font-size: 17px; text-align: center; }
+        .txt1 { font-weight: 400; color: #fff; }
+        .txt2 { color: rgba(255,255,255,.8);}
+        .m_cont { height: 50%; }
+        .m_txt { width: 33%; height: 100%; float: left; border-right: 1px solid #ff7c7c; box-sizing: border-box; line-height: 55px; text-align: center; }
+        .m_txt a { color: #fff; }
+        .m_txt:last-child { border-right: none; }        
+        .m_cont, .menu_bottom { clear: both; }
+        .menu_bottom { position: relative; width: 100%; height: 100%; overflow: auto; }
+        .menu { width: 90%; position: absolute; top: 10px; left: 20px; }
+        .menu li a { font-size: 18px; font-weight: 400; line-height: 2.35; }
+        
+        
+/*main*/
+        #main { width: 100%; height: 100vh; position: static; position: relative; background: #000; }
+        .visual { width: 25%;  height: 85vh; padding-top: 120px; float: left; display: block; }
+        .slide_01_inner { position: relative; width: 100%; height: 85vh; }
+        .img_wrap img { width: 100vw; height: auto; }
+        .txt_wrap { position: absolute; bottom: 30px; left: 0; background: rgba(0,0,0,.7); width: 100%; height: 260px; color: #fff; padding: 10px 0 0 20px; box-sizing: border-box;}
+        .main_tit { color: #e8ff3b; font-size: 12px; line-height: 3; }
+        .main_txt { font-size: 23px; font-weight: 100; line-height: 1.35; }
+        .main_txt span { font-size: 34px; font-weight: 700; }
+        .main_info { font-size: 18px; font-weight: 700; margin-top: 10px; }
+        .main_info span { font-weight: 100; }
+        .more { color: #fff; width: 120px; height: 35px; line-height: 35px; position: absolute; bottom: 0; }
+        #main1 .more { background: #9ebd6d; }
+        #main2 .more { background: #a89143; }
+        #main3 .more { background: #c9c9c9; color: #333; }
+        #main4 .more { background: #676767; }
+        
+        
+/*hot_slider*/
+        #hot_slider { width: 100vw; height: auto; }
+        .hot_wrap { width: 325vw; height: 445px; }
+        .hot_item { width: 65vw; height: 445px; float: left; padding-left: 3vw; box-sizing: border-box; }
+        .hot_imgbox { width: 220px; height: 325px; background-position: center center; background-size: cover; background-repeat: no-repeat; }
+        .hot_img1 { background-image: url("./img/hot_s1.jpg"); }
+        .hot_img2 { background-image: url("./img/hot_s2.jpg"); border: 1px solid #dcdcdc; box-sizing: border-box; }
+        .hot_img3 { background-image: url("./img/hot_s3.jpg"); }
+        .hot_img4 { background-image: url("./img/hot_s4.jpg"); }
+        .hot_img5 { background-image: url("./img/hot_s5.jpg"); }
+        .hot_txtbox { width: 220px; height: 120px; }
+        .hot_box1 { background-color: #e5c28b; }
+        .hot_box2 { background: #adcbac; }
+        .hot_box3 { background: #faf69c; }
+        .hot_box4 { background: #dcdcdc; }
+        .hot_box5 { background: #aaddf4; }
+        .hot_txt { font-size: 15px; padding: 10px; font-weight: 400; }
+        .hot_pay { color: #c2111a; padding-left: 10px; }
+        .cont_more { text-align: center; line-height: 3; font-weight: 400; clear: both; }
+        
+/*classic*/
+        #contents { width: 100%; height: auto; }
+        .cont_wrap { width: 100%; height: auto; }
+        .cont_item { width: 47%; height: auto; margin-left: 2%; float: left; }
+        .cont_imgbox { width: 100%; height: 240px; background-position: center center; background-size: cover; background-repeat: no-repeat; }
+        .cont_margin_top { margin-top: 5px; }
+        .classic1 { background-image: url("./img/classic_1.jpg"); }
+        .classic2 { background-image: url("./img/classic_2.jpg"); border: 1px solid #dcdcdc; box-sizing: border-box; }
+        .classic3 { background-image: url("./img/classic_3.jpg"); }
+        .classic4 { background-image: url("./img/classic_4.jpg"); }
+        .cont_txtbox { margin: 10px 0; }
+        .cont_txt { font-size: 15px; font-weight: 400; white-space: normal; overflow: hidden; text-overflow: ellipsis; height: 3.15em; line-height: 1.4; text-align: left; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .cont_day { font-size: 14px; font-weight: 400; }
+        
+        .cont_imgbox { background-color: #dcdcdc;}
+        
+/*musical*/
+        .musical1 { background-image: url("./img/musical_1.jpg"); }
+        .musical2 { background-image: url("./img/musical_2.jpg"); }
+        .musical3 { background-image: url("./img/musical_3.jpg"); border: 1px solid #dcdcdc; box-sizing: border-box; }
+        .musical4 { background-image: url("./img/musical_4.jpg"); }
+        
+/*drama*/
+        .drama1 { background-image: url("./img/drama_1.jpg"); }
+        .drama2 { background-image: url("./img/drama_2.jpg"); }
+        .drama3 { background-image: url("./img/drama_3.jpg"); }
+        .drama4 { background-image: url("./img/drama_4.jpg"); }
+        
+/*exhibition*/
+        .exhi1 { background-image: url("./img/exhi_1.jpg"); }
+        .exhi2 { background-image: url("./img/exhi_2.jpg"); }
+        .exhi3 { background-image: url("./img/exhi_3.jpg"); }
+        .exhi4 { background-image: url("./img/exhi_4.jpg"); }
+        
+/*notice*/
+        #notice { width: 100%; height: 390px; background: #dcdcdc; }
+        .no_item { width: 90%; height: 70px; background: #fff; margin-bottom: 10px; margin-left: 5%; text-indent: 15px; position: relative; clear: both; }
+        .no_item:last-child { margin-bottom: 0; }
+        .no_item::before { content: ""; display: block; width: 4px; height: 70px; background: #e5151f; position: absolute; }
+        .no_item a { width: 100%;  position: absolute; top: 10px; left: 0;}
+        .no_item p { font-size: 14px; line-height: 1.85; }
+        .no_tit { font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .no_com { float: left; }
+        .no_pay { float: right; } 
+        
+/*footer*/
+        #ft { clear: both; position: relative; }
+        .top_btn { width: 25px; height: 30px; background: url("./img/btn_top.png") center center / cover no-repeat; position: absolute; left: calc(50% - 12px); top: 25px;  }
+        .f_menu1 { position: absolute; top: 75px; left: calc(50% - 169px); }
+        .f_menu1 li { float: left; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; font-weight: 400; }
+        .f_menu1 li::after { content: "|"; margin: 0 10px; }
+        .f_menu1 li:last-child::after { content: ""; }
+        
+        .ft_box { width: 100%; height: 325px; position: absolute; top: 120px; background: #242424; clear: both; text-align: center; }
+        .f_menu2 { color: #fff; margin-top: 20px; }
+        .f_menu2 li { display: inline-block; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; font-weight: 400; }
+        .f_menu2 li::after { content: "|"; margin: 0 10px; }
+        .f_menu2 li:last-child::after { content: ""; margin: 0; }
+        .ft_logo { width: 125px; height: 50px; background: url("./img/ft_logo.png") center center / cover no-repeat; text-align: center; margin: 25px auto 15px; }
+        .ft_box p, .ft_box a { color: #fff; }
+        .ft_box p { font-size: 15px; line-height: 1.7; }
+        
+        
+        .banner { width: 100%; height: 50px; position: fixed; bottom: 0; }
+        .ban_tit { color: #fff; line-height: 50px; margin-top: 0; text-indent: 2.5em; }
+        #banner1 { background: #ffbf65; }
+        #banner1 .ban_tit::before { content: ""; width: 66px; height: 50px; background: url("./img/banner_bg1over.png") center center / cover no-repeat; position: absolute; top: 0; left: 10%; }
+        #banner2 { background: #e5151f; display: none;}
+        #banner2 .ban_tit::before { content: ""; width: 55px; height: 50px; background: url("./img/banner_bg2over.png") center center / cover no-repeat; position: absolute; top: 0; left: 13%; }
+    
+    </style>
+    
+    <script src="./js/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".toggle").click(function(){
+            $(".gnb_bg").addClass("on");
+            $(".gnb").addClass("on");
+            $("#hd").css("z-index", "50");
+        });
+        $(".close").click(function(){
+            $(".gnb_bg").removeClass("on");
+            $(".gnb").removeClass("on");
+            $("#hd").css("z-index", "99");
+        });
+    });
+        
+//    $(window).scroll(function(){
+//        var win_h = $(window).height();
+//        var sc_top = $(window).scrollTop();
+//        $(window).each(function(){
+//           if(sc_top = win_h){
+//               $(".search").css("top", "0");
+//           } else {
+//               $(".search").css("top", "70px");
+//           }
+//        });
+//   });
+    
+    </script>
+    
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <script src="./js/ktswiper.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#main").ktswiper({
+            infinite: true, //양방향 무한 모션
+            speed: 500, // 슬라이드 스피드
+            autoplay: true, //자동플레이 유무( false시 자동플레이 안됨 )
+            autoplaySpeed: 4000, // 자동플레이 스피드
+            slidesToShow: 1, //한 화면에 보여줄 아이템수
+            slidesToScroll: 1, // 한번에 슬라이드 시킬 아이템 개수
+            arrows: false //좌우 화살 버튼 노출 여부 ( false 시 안보임 )
+        });
+    });
+    </script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <div class="gnb_wrap">
+            <div class="gnb_bg"></div>            
+            <div class="gnb">
+                <div class="close"></div>
+                <div class="menu_top">
+                    <div class="signin">
+                        <p class="txt1">로그인하세요.</p>
+                        <p class="txt2">비회원 예매 확인</p>
+                    </div>
+                    <div class="m_cont">
+                        <div class="m_txt">
+                            <a href="index.html">홈으로</a>
+                        </div>
+                        <div class="m_txt">
+                            <a href="#">로그인</a>
+                        </div>
+                        <div class="m_txt">
+                            <a href="#">회원가입</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu_bottom">
+                    <ul class="menu">
+                        <li class="item1"><a href="#">클래식/오페라</a></li>
+                        <li class="item2"><a href="#">뮤지컬/콘서트</a></li>
+                        <li class="item3"><a href="#">연극</a></li>
+                        <li class="item4"><a href="#">국악/무용</a></li>
+                        <li class="item5"><a href="#">전시회</a></li>
+                        <li class="item6"><a href="#">어린이/가족</a></li>
+                        <li class="item7"><a href="#">행사/축제</a></li>
+                        <li class="item8"><a href="#">티켓예매</a></li>
+                        <li class="item9"><a href="#">지난 공연/전시</a></li>
+                        <li class="item10"><a href="#">공지사항</a></li>
+                        <li class="item11"><a href="#">공연전시 깊이보기(칼럼)</a></li>
+                        <li class="item12"><a href="#">관람후기</a></li>
+                        <li class="item13"><a href="#">대전문화계소식</a></li>
+                        <li class="item14"><a href="#">공연전시 뉴스레터</a></li>
+                        <li class="item15"><a href="#">공연/전시/행사 등록</a></li>
+                        <li class="item16"><a href="#">이용안내 FAQ</a></li>
+                    </ul>
+                </div>
+            </div>           
+        </div>
+        <header id="hd">
+            <div class="logo">
+                <a href="index.html"></a>
+            </div>
+            <div class="toggle"></div>
+        </header>
+        <div class="search">
+           <div class="search_box">
+                <input type="text" placeholder="공연/전시를 검색해 보세요" class="search_txt">
+                <button class="search_btn"></button>
+            </div>
+        </div>
+        <div class="ktswiper-track" id="main">
+            <div class="visual slide_01 ktswiper-slide" data-ktswiper-index="1" aria-hidden="true" tabindex="0" id="main1">
+               <div class="slide_01_inner">
+                    <div class="img_wrap">
+                        <img src="./img/main_visual1.jpg" alt="">
+                    </div>
+                    <div class="txt_wrap">
+                       <p class="main_tit">대전 클래식 공연</p>
+                       <p class="main_txt">레알슈팀메<br><span>리하르트 슈트라우스</span><br>서거 70주년 기념음악회</p>
+                       <p class="main_info">2019. 6. 28. FRI. PM 7:30<br>장소 <span>대전예술의전당 앙상블홀</span></p>
+                        <button class="more">자세히 보기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="visual slide_01 ktswiper-slide" data-ktswiper-index="2" aria-hidden="true" tabindex="0" id="main2">
+               <div class="slide_01_inner">
+                    <div class="img_wrap">
+                        <img src="./img/main_visual2.jpg" alt="">
+                    </div>
+                    <div class="txt_wrap">
+                       <p class="main_tit">대전 클래식 공연</p>
+                       <p class="main_txt">안디무지크 필하모니<br><span>브람스를 좋아하세요!</span><br>브람스 교향곡 시리즈Ⅲ</p>
+                       <p class="main_info">2019. 6. 2. SUN. PM 7:00<br>장소 <span>대전예술의전당 아트홀</span></p>
+                        <button class="more">자세히 보기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="visual slide_01 ktswiper-slide" data-ktswiper-index="3" aria-hidden="true" tabindex="0" id="main3">
+               <div class="slide_01_inner">
+                    <div class="img_wrap">
+                        <img src="./img/main_visual3.jpg" alt="">
+                    </div>
+                    <div class="txt_wrap">
+                       <p class="main_tit">대전 전시</p>
+                       <p class="main_txt">대전시립미술관 어린이미술 기획전<br><span>스르륵美↔來</span></p>
+                       <p class="main_info">2019. 5. 3. ~ 9. 29.<br>장소 <span>대전시립미술관</span></p>
+                        <button class="more">자세히 보기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="visual slide_01 ktswiper-slide" data-ktswiper-index="4" aria-hidden="true" tabindex="0" id="main4">
+               <div class="slide_01_inner">
+                    <div class="img_wrap">
+                        <img src="./img/main_visual4.jpg" alt="">
+                    </div>
+                    <div class="txt_wrap">
+                       <p class="main_tit">대전 국악 공연</p>
+                       <p class="main_txt">장경진 가야금 독주회<br><span>Harmony</span></p>
+                       <p class="main_info">2019. 7. 12. FRI. PM 7:30<br>장소 <span>대전예술가의집 누리홀</span></p>
+                        <button class="more">자세히 보기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="hot_slider">
+            <h2 class="page_tit">Hot! 인기 공연/전시</h2>
+            <div class="hot_wrap">
+                <div class="hot_item">
+                    <div class="hot_imgbox hot_img1"></div>
+                    <div class="hot_txtbox hot_box1">
+                        <p class="hot_txt">대전시립교향악단 마스터즈시리즈7<br>'바그너의 오페라'</p>
+                        <p class="hot_pay">5,000~</p>
+                    </div>
+                </div>
+                <div class="hot_item">
+                    <div class="hot_imgbox hot_img2"></div>
+                    <div class="hot_txtbox hot_box2">
+                        <p class="hot_txt">[티켓할인]<br>트리오라피네 4회 정기연주회<br>‘relaxing’</p>
+                        <p class="hot_pay">20,000</p>
+                    </div>
+                </div>
+                <div class="hot_item">
+                    <div class="hot_imgbox hot_img3"></div>
+                    <div class="hot_txtbox hot_box3">
+                        <p class="hot_txt">[티켓예매할인]<br>곡하고 노래하리라,<br>신채호와 의열단, 극단새벽</p>
+                        <p class="hot_pay">15,000~</p>
+                    </div>
+                </div>
+                <div class="hot_item">
+                    <div class="hot_imgbox hot_img4"></div>
+                    <div class="hot_txtbox hot_box4">
+                        <p class="hot_txt">[티켓할인]<br>2019 콰르텟 이즈 정기연주회<br>'낭만, 그리고 열정'</p>
+                        <p class="hot_pay">8,000</p>
+                    </div>
+                </div>
+                <div class="hot_item">
+                    <div class="hot_imgbox hot_img5"></div>
+                    <div class="hot_txtbox hot_box5">
+                        <p class="hot_txt">[티켓할인]<br>GROOVY ORCHESTRA<br>제5회 정기연주회</p>
+                        <p class="hot_pay">16,000</p>
+                    </div>
+                </div>
+            </div>
+            <h4 class="cont_more">+ 인기 공연/전시 더보기</h4>
+        </div>
+        <div class="contents" id="classic">
+            <h2 class="page_tit">클래식/오페라</h2>
+            <div class="cont_wrap">
+                <div class="cont_item">
+                    <div class="cont_imgbox classic1"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">신이은 피아노 독주회 '베토벤 피아노 소나타 전곡 시리즈 II'</p>
+                        <p class="cont_day">2019. 07. 05(금)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox classic2"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">[티켓할인] 유벨톤 심포니 오케스트라 기획 연주 시리즈1 '헌정음악회-영웅을 기리며'</p>
+                        <p class="cont_day">2019. 07. 06(토)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox cont_margin_top classic3"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">오케스트라 사이엔티아 제9회 정기연주회</p>
+                        <p class="cont_day">2019. 07. 07(일)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox cont_margin_top classic4"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">윤숙 피아노 독주회</p>
+                        <p class="cont_day">2019. 07. 14(일)</p>
+                    </div>
+                </div>
+            </div>
+            <h4 class="cont_more">+ 인기 클래식/오페라 더보기</h4>
+        </div>
+        <div class="contents" id="musical">
+            <h2 class="page_tit">뮤지컬/콘서트/어린이/가족</h2>
+            <div class="cont_wrap">
+                <div class="cont_item">
+                    <div class="cont_imgbox musical1"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">매직컬 코코몽 '신나는 마술상자'</p>
+                        <p class="cont_day">2019.07.13(토)~14(일)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox musical2"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">대전시립무용단 2019 기획공연 IV ‘꾸석꾸석 춤으로 그리는 동화’</p>
+                        <p class="cont_day">2019.07.09(화)~10(수)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox cont_margin_top musical3"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">2019 들썩들썩 원도심 7월 프로그램</p>
+                        <p class="cont_day">2019.07.06,13,20,27(토)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox cont_margin_top musical4"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">어린이 뮤지컬 '미운아기오리'</p>
+                        <p class="cont_day">2019.06.26(수) ~ 07.21(일)</p>
+                    </div>
+                </div>
+            </div>
+            <h4 class="cont_more">+ 인기 뮤지컬/콘서트/어린이/가족 더보기</h4>
+        </div>
+        <div class="contents" id="drama">
+            <h2 class="page_tit">연극/무용/국악</h2>
+            <div class="cont_wrap">
+                <div class="cont_item">
+                    <div class="cont_imgbox drama1"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">[티켓예매할인] 곡하고 노래하리라, 신채호와 의열단, 극단새벽</p>
+                        <p class="cont_day">2019.07.04(목)~6(토)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox drama2"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">2019 공포심리미스터리연극 '흉터'</p>
+                        <p class="cont_day">2019.06.14(금)~08.18(일)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox cont_margin_top drama3"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">대전예술의전당 기획공연, 연극 '그게 아닌데'</p>
+                        <p class="cont_day">2019.08.23(금)~24(토)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox cont_margin_top drama4"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">극단 아라리 제4회 정기공연, '6월 26일'</p>
+                        <p class="cont_day">2019.07.03(수)~14(일)</p>
+                    </div>
+                </div>
+            </div>
+            <h4 class="cont_more">+ 인기 연극/무용/국악 더보기</h4>
+        </div>
+        <div class="contents" id="exhibition">
+            <h2 class="page_tit">전시회</h2>
+            <div class="cont_wrap">
+                <div class="cont_item">
+                    <div class="cont_imgbox exhi1"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">최정훈 개인展</p>
+                        <p class="cont_day">2019.06.20(목)~26(수)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox exhi2"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">2019 빅앤빅 아트페어 展 '2019 BIG &nbsp; BIG ART FAIR'</p>
+                        <p class="cont_day">2019.06.19(수)~08.27(화)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox cont_margin_top exhi3"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">박수경 개인展</p>
+                        <p class="cont_day">2019.06.20(목)~07.03(수)</p>
+                    </div>
+                </div>
+                <div class="cont_item">
+                    <div class="cont_imgbox cont_margin_top exhi4"></div>
+                    <div class="cont_txtbox">
+                        <p class="cont_txt">대전테미예술창작센터 장기 입주예술가 강상우 개인전 '80년대 여성정장 part. 2'</p>
+                        <p class="cont_day">2019.06.27(목)~07.08(월)</p>
+                    </div>
+                </div>
+            </div>
+            <h4 class="cont_more">+ 인기 전시회 더보기</h4>
+        </div>
+        <div id="notice">
+            <h2 class="page_tit">NOTICE</h2>
+            <ul class="notice">
+                <li class="no_item">
+                    <a href="#">
+                        <p class="no_tit">티켓 예매 시 카드결제 기능을 도입했습니다.</p>
+                        <p class="no_com">대전공연전시</p>
+                        <p class="no_day">2019-07-02</p>
+                    </a>
+                </li>
+                <li class="no_item">
+                    <a href="#">
+                        <p class="no_tit">대전공연전시 초대이벤트 선정기준 및 패널티 안내</p>
+                        <p class="no_com">대전공연전시</p>
+                        <p class="no_day">2019-06-28</p>
+                    </a>
+                </li>
+                <li class="no_item">
+                    <a href="#">
+                        <p class="no_tit">[초대이벤트205] 대전시립교향악단 ‘말러, 밤의 노래’</p>
+                        <p class="no_com">대전공연전시</p>
+                        <p class="no_day">2019-06-25</p>
+                    </a>
+                </li>
+                <li class="no_item">
+                    <a href="#">
+                        <p class="no_tit">[초대이벤트204] 제18회 대전 뉴댄스 국제페스티벌</p>
+                        <p class="no_com">대전공연전시</p>
+                        <p class="no_day">2019-06-20</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <footer id="ft">
+            <div class="top_btn"></div>
+            <ul class="f_menu1">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">최근본상품</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">게시판</a></li>
+                <li><a href="#">PC버전</a></li>
+            </ul>
+            <div class="ft_box">
+                <ul class="f_menu2">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="#">이용안내</a></li>
+                </ul>
+                <div class="ft_logo"></div>
+                <p class="ft_info">상호 : 대전공연전시&nbsp;&nbsp;&nbsp;대표전화 : <a href="tel:042-301-1001">042-301-1001</a><br>주소 : 34653 대전광역시 동구 계족로140번길 113<br>사업자등록번호 : 305-11-20703<br>통신판매업신고 : 2010-대전동구-98<br>대표 : 김원덕&nbsp;&nbsp;&nbsp;개인정보관리책임자 : 김원덕</p>
+            </div>
+        </footer>
+        <div class="banner" id="banner1">
+           <a href="">
+             <h2 class="ban_tit">대전공연전시 할인티켓</h2>
+           </a>
+        </div>
+        <div class="banner" id="banner2">
+           <a href="">
+             <h2 class="ban_tit">대전공연전시 무료등록</h2>
+           </a>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
