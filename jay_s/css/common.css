@@ -105,8 +105,8 @@
 
 
     .mob1 { background: url("../img/m2.jpg") no-repeat; background-position: -50px -20px; background-size: 500px auto; }
-    .mob2 { background: url("../img/m3.jpg") no-repeat; background-position: -100px center; background-size: 650px auto; }
-    .mob3 { background: url("../img/pre.jpg") center center/cover no-repeat; }
+    .mob2 { background: url("../img/m3.jpg") no-repeat; background-position: center center; background-size: cover; }
+    .mob3 { background: url("../img/m6.jpg") no-repeat; background-position: -130px -150px; background-size: 800px auto; }
     .res1 { background: url("../img/r9.jpg") center center/cover no-repeat; }
     .res2 { background: url("../img/r1.jpg") center center/cover no-repeat; }
     .res3 { background: url("../img/r3.jpg") center center/cover no-repeat; }
