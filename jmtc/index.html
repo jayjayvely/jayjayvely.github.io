@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>2019 더 크리스천</title>
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+
+<style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%;
+    font-family: 'S-CoreDream-3Light', sans-serif; background-color:#fff; color:#333; box-sizing: border-box; }
+    ul { list-style: none; }
+    a { text-decoration: none; color: #333; }
+    img { padding: 0; }
+    label, input, a, button { 
+    background-color:transparent; background-image:none; border:0; outline:0; user-select:none; }
+    button { font-family: 'S-CoreDream-3Light', sans-serif; cursor: pointer; font-weight: bold; }
+    
+    .wrap { width: 100%; height: auto; }
+    
+    #hd { position: fixed; z-index: 999; width: 100%; height: 150px; background: rgba(17,50,94,.9); padding-top: 54px; box-sizing: border-box; }
+    .logo { display: block; width: 200px; height: 46px; background: url("./img/logo.png") center center/cover no-repeat; margin: 0 auto; }
+    
+    #visual { width: 100%; height: 730px; background: #11325e; padding-top: 150px; box-sizing: border-box; }
+    .vis_wrap { width: 1200px; margin: 0 auto; }
+    .vis_txt_box { float: left; padding-top: 70px; }
+    .vis_txt1 { color: #348bcb; font-size: 19px; line-height: 1.7; }
+    .green_txt { color: #c2d731; font-weight: bold; }
+    .vis_txt2 { color: #f4c51c; font-size: 17px; line-height: 1.5; margin-top: 30px; }
+    .vis_img_box { float: right; margin-top: 30px; width: 406px; height: 472px; background: url("./img/visual_logo.png") center center / cover no-repeat; }
+    .vis_btn { display: inline-block; width: 175px; height: 55px; border: 2px solid #fff; color: #fff; margin-top: 100px; margin-right: 15px; font-size: 15px; }
+    .vis_btn:hover { border: 2px solid #fff; background: #fff; color: #11325e; }
+    
+    #contents { clear: both; width: 1200px; margin: 0 auto; }
+    .cont_big_tit { font-family: 'TmonMonsori'; text-align: center; line-height: 3.5; font-size: 2em; }
+    .cont_box { float: left; margin-right: 37px; margin-bottom: 37px; }
+    .item05, .item10, .item15 { margin-right: 0; }
+    .img_box { width: 210px; height: 150px; background-position: center center; background-size: cover; background-repeat: no-repeat; position: relative; }
+    .item01 .img_box, .item13 .img_box, .item14 .img_box, .item15 .img_box { background-image: url("./img/imgbox_bg.jpg"); }
+    .item02 .img_box { background-image: url("./img/imgbox_bg_01.jpg"); }
+    .item03 .img_box { background-image: url("./img/imgbox_bg_02.jpg"); }
+    .item04 .img_box { background-image: url("./img/imgbox_bg_03.jpg"); }
+    .item05 .img_box { background-image: url("./img/imgbox_bg_04.jpg"); }
+    .item06 .img_box { background-image: url("./img/imgbox_bg_05.jpg"); }
+    .item07 .img_box { background-image: url("./img/imgbox_bg_06.jpg"); }
+    .item08 .img_box { background-image: url("./img/imgbox_bg_07.jpg"); }
+    .item09 .img_box { background-image: url("./img/imgbox_bg_08.jpg"); }
+    .item10 .img_box { background-image: url("./img/imgbox_bg_09.jpg"); }
+    .item11 .img_box { background-image: url("./img/imgbox_bg_10.jpg"); }
+    .item12 .img_box { background-image: url("./img/imgbox_bg_11.jpg"); }
+    .img_txt { font-family: 'S-CoreDream-8Heavy'; color: #fff; text-align: center; font-size: 2.3em; padding-top: 28px; }
+    .item01 .img_txt { font-size: 2em; line-height: 1.5; }
+    .item01 .img_txt::after { content: ''; width: 160px; height: 3px; background: #fff; position: absolute; top: 75px; left: 25px; }
+    .txt_box { width: 210px; height: 132px; background: #fafafa; border: 1px solid #dcdcdc; border-top: none; box-sizing: border-box; text-align: center; padding-top: 10px; }
+    .item01 .txt_box, .item13 .txt_box, .item14 .txt_box, .item15 .txt_box { text-align: left; padding-left: 15px; }
+    .cont_tit { font-weight: bold; font-size: 18px; line-height: 1.5; }
+    .cont_tit span { font-size: 12px; }
+    .cont_date { color: #777; font-weight: bold; font-size: 15px; line-height: 2 }
+    .item01 .cont_date, .item13 .cont_date { margin-top: 27px; }
+    
+    #ft { clear: both; width: 100%; height: 120px; background: #dcdcdc; padding-top: 20px; box-sizing: border-box; }
+    #ft p { text-align: center; line-height: 1.5; font-weight: bold; }
+    .copyright { font-size: 13px; margin-top: 10px;}
+    
+</style>
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <a href="index.html" class="logo"></a>
+        </header>
+        <div id="visual">
+            <div class="vis_wrap">
+                <div class="vis_txt_box">
+                    <p class="vis_txt1">너희가 이것을 알고 이미 있는 진리에 섰으나<br>내가 <span class="green_txt">항상 너희로 생각나게</span> 하려 하노라<br>내가 이 장막에 있을 동안에<br>너희를 <span class="green_txt">일깨워 생각하게</span> 함이 옳은 줄로 여기노니<br>베드로후서 1:12~13</p>
+                    <p class="vis_txt2">2019 주일 저녁 특별 예배<br>6월 2일 ~ 8월 18일 (12주간) 매 주일, 저녁 7시 중문교회 1층 본당</p>
+                    <button type="button" onclick="window.open('http://www.jch.or.kr/') " class="vis_btn">중문교회 홈페이지</button>
+                    <button type="button" onclick="window.open('https://www.youtube.com/channel/UCxftP1TNjY1lhfT-2-ESCIg') " class="vis_btn">유튜브 생방송 보기</button>
+                </div>
+                <div class="vis_img_box"></div>
+            </div>
+        </div>
+        <div id="contents">
+            <h2 class="cont_big_tit">2019 : REFRESH</h2>
+            <div class="cont_wrap">
+                <div class="cont_box item01">
+                    <a href="sub_01.html">
+                        <div class="img_box">
+                            <div class="img_box_txt">
+                                <h3 class="img_txt">2019.06<br>REFRESH</h3>
+                            </div>
+                        </div>
+                        <div class="txt_box">
+                            <p class="cont_tit">2019 더크리스천에<br>초대합니다!</p>
+                            <p class="cont_date">2019.6.2 ~ 2019.8.18</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item02">
+                    <a href="sub_02.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">1주차 "부흥"<br>장경동 목사<br><span>중문교회 담임</span></p>
+                            <p class="cont_date">2019.6.2</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item03">
+                    <a href="sub_03.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">2주차 "다음세대"<br>강은도 목사<br><span>광교푸른교회</span></p>
+                            <p class="cont_date">2019.6.9</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item04">
+                    <a href="sub_04.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">3주차 "회심"<br>최철규 집사<br><span>만화가</span></p>
+                            <p class="cont_date">2019.6.16</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item05">
+                    <a href="sub_05.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">4주차 "찬양"<br>박세연 사모<br><span>세연미니스트리</span></p>
+                            <p class="cont_date">2019.6.23</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item06">
+                    <a href="sub_06.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">5주차 "기도"<br>고봉준 목사<br><span>아홉길교회</span></p>
+                            <p class="cont_date">2019.6.30</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item07">
+                    <a href="sub_07.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">6주차 "선교"<br>이만석 목사<br><span>무슬림선교훈련원</span></p>
+                            <p class="cont_date">2019.7.7</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item08">
+                    <a href="sub_08.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">7주차 "섭리"<br>안재우 소장<br><span>안재우복화술연구소</span></p>
+                            <p class="cont_date">2019.7.14</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item09">
+                    <a href="sub_09.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">8주차 "전도"<br>지용훈 목사<br><span>여호사밧복음사관학교</span></p>
+                            <p class="cont_date">2019.7.21</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item10">
+                    <a href="sub_10.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">9주차 "이단"<br>김강림 전도사<br><span>초대교회</span></p>
+                            <p class="cont_date">2019.7.28</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item11">
+                    <a href="sub_11.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">10주차 "사명"<br>안호성 목사<br><span>울산 온양순복음교회</span></p>
+                            <p class="cont_date">2019.8.4</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item12">
+                    <a href="sub_12.html">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">11-12주차 "성경"<br>이애실 사모<br><span>사단법인 생터사역연구원</span></p>
+                            <p class="cont_date">2019.8.11</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item13">
+                    <a href="http://jch.or.kr/sub/news_gallery_view.php?NewsType=4" target="_blank">
+                        <div class="img_box">
+                            <div class="img_box_txt">
+                                <h3 class="img_txt">기념사진<br>확인하기</h3>
+                            </div></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">기념사진 촬영시간은<br>18:20 ~ 19:00 입니다</p>
+                            <p class="cont_date">2019.6.2 ~ 2019.8.18</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item14">
+                    <a href="https://www.youtube.com/playlist?list=PLnm-KbN5lOG6SrLRd8RApNTYiBS3mbQpx" target="_blank">
+                        <div class="img_box">
+                            <div class="img_box_txt">
+                                <h3 class="img_txt">지난집회<br>다시보기</h3>
+                            </div></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">강사의 요청에 따라<br>일부 공개되지 않을 수<br>있습니다</p>
+                        </div>
+                    </a></div>
+                <div class="cont_box item15">
+                    <a href="#">
+                        <div class="img_box">
+                            <div class="img_box_txt">
+                                <h3 class="img_txt">집회관련<br>공지사항</h3>
+                            </div></div>
+                        <div class="txt_box">
+                            <p class="cont_tit">출석, 유아케어 등<br>더크리스천 공지사항은<br>이곳에서 확인해주세요</p>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+        <footer id="ft">
+            <p class="ft_txt">중문교회가 제공하는 모든 영상 및 콘텐츠는 관련법의 보호를 받습니다.<br>중문교회의 콘텐츠를 사전허가 없이 전재, 방송하거나 무단으로 복사, 배포, 전시, 개작할 경우 민형사상 책임이 따를 수 있습니다.</p>
+            <p class="copyright">Copyright(c) 2019 대전중문교회. All right reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

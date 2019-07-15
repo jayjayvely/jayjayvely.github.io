@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>2019 더 크리스천</title>
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+
+<style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%;
+    font-family: 'S-CoreDream-3Light', sans-serif; background-color:#fff; color:#333; box-sizing: border-box; }
+    ul { list-style: none; }
+    a { text-decoration: none; color: #333; }
+    img { padding: 0; }
+    label, input, a, button { 
+    background-color:transparent; background-image:none; border:0; outline:0; user-select:none; }
+    button { font-family: 'S-CoreDream-3Light', sans-serif; cursor: pointer; font-weight: bold; }
+    
+    .wrap { width: 100%; height: auto; }
+    
+    #hd { position: fixed; z-index: 999; width: 100%; height: 150px; background: rgba(17,50,94,.9); padding-top: 54px; box-sizing: border-box; }
+    .logo { display: block; width: 200px; height: 46px; background: url("./img/logo.png") center center/cover no-repeat; margin: 0 auto; }
+    
+    #contents { clear: both; width: 900px; padding-top: 150px; margin: 0 auto; }
+    .cont_big_tit { font-family: 'TmonMonsori'; text-align: center; line-height: 3.5; font-size: 2em; }
+    .cont_videobox { width: 900px; height: 600px; margin: 0 auto; }
+    .cont_titbox { widows: 500px; height: 50px; background: #dcdcdc; margin-top: 50px; }
+    .cont_tit { text-align: center; line-height: 50px; font-size: 1.5em; font-weight: bold; }
+    .cont_txtbox { width: 100%; position: relative; }
+    .cont_txt { font-size: 17px; line-height: 1.5; text-align: justify;/* text-indent: 1em; */font-weight: bold; margin: 30px 0 150px; }    
+    .cont_btn { display: inline-block; width: 160px; height: 55px; border: 2px solid #11325e; color: #11325e; font-size: 15px; position: absolute; bottom: -80px; left: calc(50% - 80px); }
+    .cont_btn:hover { border: 2px solid #11325e; background: #11325e; color: #fff; }
+    
+    #ft { clear: both; width: 100%; height: 120px; background: #dcdcdc; padding-top: 20px; box-sizing: border-box; }
+    #ft p { text-align: center; line-height: 1.5; font-weight: bold; }
+    .copyright { font-size: 13px; margin-top: 10px; }
+    
+</style>
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <a href="index.html" class="logo"></a>
+        </header>
+
+        <div id="contents">
+            <h2 class="cont_big_tit">[5주차] "기도" 고봉준 목사</h2>
+            <div class="cont_wrap">
+                <div class="cont_videobox">
+                    <iframe width="900" height="600" src="https://www.youtube.com/embed/7BCxDuCCngI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="cont_txtbox">
+                    <div class="cont_titbox">
+                        <p class="cont_tit">강사프로필(약력 및 소개)</p>
+                    </div>
+                    <p class="cont_txt">기독교 대한 하나님의 성회 (여의도순복음 성회) 소속 목사<br><br>아홉길사랑교회(김봉준목사) 협동목사<br><br>사마리아 교정선교회 대표목사<br><br>법무부 교정위원<br><br>의정부교도소 종교위원<br><br>교도소 집회 25년간 1,500여회<br><br>유치인 설교 5년간 500회 설교<br><br>해외부흥회 강사로 55차 200여 교회 부흥회 인도<br><br>국대 부흥회 강사로 100여 교회 설교<br><br><br>저서<br>⟪꼴통목사의 전도행전 1⟫ <br>⟪꼴통목사의 전도행전 2⟫<br>⟪결코 포기하지 않으시는 하나님⟫(미국 교도소 전도용)<br>법무부장관 표창 수상<br>기독교세진회 세진대상 수상<br>⟨신앙계⟩ 간증 장려상</p>
+                    <button type="button" onclick="window.open('https://youtu.be/dzILNC5ndhA?list=PLnm-KbN5lOG6SrLRd8RApNTYiBS3mbQpx') " class="cont_btn">특강 다시보기</button>
+                </div>
+            </div>
+        </div>
+        <footer id="ft">
+            <p class="ft_txt">중문교회가 제공하는 모든 영상 및 콘텐츠는 관련법의 보호를 받습니다.<br>중문교회의 콘텐츠를 사전허가 없이 전재, 방송하거나 무단으로 복사, 배포, 전시, 개작할 경우 민형사상 책임이 따를 수 있습니다.</p>
+            <p class="copyright">Copyright(c) 2019 대전중문교회. All right reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
