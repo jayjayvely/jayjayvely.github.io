@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="copyright" content="" />
+
+    <!-- Chrome, Safari, IE -->
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="apple-touch-icon-precomposed" href="#">
+
+    <link rel="stylesheet" href="/resources/css/style.css">
+    <script src="/resources/js/prefixfree.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <title>Deliverit</title>
+
+</head>
+
+<body>
+    <div class="wrapper scroll-g">
+        <div class="wrap">
+            <div class="bg-area"></div>
+            <section>
+                <header>
+                    <a href="index.html" class="logo">
+                        LOGO
+                    </a>
+                    <div class="header-group">
+                        <nav>
+                            <div class="menu on"><a href="index.html">User Management</a></div>
+                            <div class="menu"><a href="payment_history.html">Payment History</a></div>
+                        </nav>
+                        <div class="btn-logout"></div>
+                    </div>
+                </header>
+                <div class="title-group">
+                    <h1 class="menu-title menu-01">User Management</h1><!-- payment history일 때는 menu-02로 변경 -->
+                    <button class="btn-lg btn-list" onclick="location.href='index.html'"><span>User List</span></button><!-- btn-add / btn-list -->
+                </div>
+                <div class="content-wrap">
+                    <div class="content-area">
+                        <h3 class="content-tit-01">New User</h3>
+                        <div class="space-25"></div>
+                        <h3 class="content-tit-03">Store</h3>
+                        <div class="content-flex-group">
+                            <div class="input-group">
+                                <span>ID</span>
+                                <input class="w-100 pass" type="text">
+                            </div>
+                            <div class="input-group">
+                                <span>Password</span>
+                                <input class="w-100" type="text">
+                            </div>
+                            <div class="input-group">
+                                <span>Confirm Password</span>
+                                <input class="w-100 error" type="text">
+                            </div>
+                            <div class="input-group">
+                                <span>Store Name</span>
+                                <input class="w-100" type="text">
+                            </div>
+                            <div class="input-group">
+                                <span>Store Phone Number</span>
+                                <input class="w-100" type="text">
+                            </div>
+                            <div class="input-group">
+                                <span>E-mail</span>
+                                <input class="w-100" type="text">
+                            </div>
+                            <div class="input-group col">
+                                <span>Store Address</span>
+                                <input class="w-100" type="text">
+                            </div>
+                            <div class="input-group">
+                                <span>Store Detail Address</span>
+                                <input class="w-100" type="text">
+                            </div>
+                        </div>
+
+                        <div class="space-30"></div>
+
+                        <h3 class="content-tit-03">Manager</h3>
+                        <div class="content-flex-group">
+                            <div class="input-group">
+                                <span>Manager Name</span>
+                                <input class="w-100" type="text">
+                            </div>
+                            <div class="input-group">
+                                <span>Manager E-mail</span>
+                                <input class="w-100" type="text">
+                            </div>
+                        </div>
+
+                        <div class="space-30"></div>
+
+                        <h3 class="content-tit-03">Order</h3>
+                        <div class="content-flex-group">
+                            <div class="input-group">
+                                <span>Order Mail</span>
+                                <input class="w-100" type="text">
+                            </div>
+                            <div class="input-group">
+                                <span>Order Mail Password</span>
+                                <input class="flex-1 error" type="text">
+                                <button class="btn b-blue btn-confirm"><span></span></button>
+                            </div>
+                        </div>
+
+                        <div class="space-30"></div>
+
+                        <h3 class="content-tit-03">Report</h3>
+                        <div class="content-flex-group">
+                            <div class="input-group">
+                                <span>Report Mail</span>
+                                <input class="w-100" type="text">
+                            </div>
+                            <div class="input-group">
+                                <span>Period</span>
+                                <div class="checkbox-group">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="n102" name="check">
+                                        <label for="n102" class="check"></label>
+                                        <span>Day</span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="n102" name="check">
+                                        <label for="n102" class="check"></label>
+                                        <span>Week</span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="n102" name="check">
+                                        <label for="n102" class="check"></label>
+                                        <span>Month</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-30"></div>
+
+                        <div class="btn-area mt-auto">
+                            <button class="btn b-gray">Cancel</button>
+                            <button class="btn b-blue">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

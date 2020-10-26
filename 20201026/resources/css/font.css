@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+/*Ubuntu*/
+@font-face {
+ font-family: 'Ubuntu';
+ font-weight: normal;
+ src: url(../font/Ubuntu-Regular.eot);
+ src: url(../font/Ubuntu-Regular.eot?#iefix) format('embedded-opentype'),
+      url(../font/Ubuntu-Regular.woff) format('woff'),
+      url(../font/Ubuntu-Regular.ttf) format('truetype');
+}
+
+@font-face {
+ font-family: 'Ubuntu';
+ font-weight: bold;
+ src: url(../font/Ubuntu-Bold.eot);
+ src: url(../font/Ubuntu-Bold.eot?#iefix) format('embedded-opentype'),
+      url(../font/Ubuntu-Bold.woff) format('woff'),
+      url(../font/Ubuntu-Bold.ttf) format('truetype');
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="copyright" content="" />
+
+    <!-- Chrome, Safari, IE -->
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="apple-touch-icon-precomposed" href="#">
+
+    <link rel="stylesheet" href="/resources/css/style.css">
+    <script src="/resources/js/prefixfree.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <title>Deliverit</title>
+
+</head>
+
+<body>
+    <div class="wrapper scroll-g">
+        <div class="wrap">
+            <div class="bg-area"></div>
+            <section>
+                <header>
+                    <a href="index.html" class="logo">
+                        LOGO
+                    </a>
+                    <div class="header-group">
+                        <nav>
+                            <div class="menu"><a href="index.html">User Management</a></div>
+                            <div class="menu on"><a href="payment_history.html">Payment History</a></div>
+                        </nav>
+                        <div class="btn-logout"></div>
+                    </div>
+                </header>
+                <div class="title-group">
+                    <h1 class="menu-title menu-02">Payment History</h1>
+                </div>
+                <div class="content-wrap">
+                    <div class="multi-content-area left">
+                        <h3 class="content-tit-01">Users</h3>
+                        <div class="space-20"></div>
+                        <div class="search-area">
+                            <input class="search w-100" type="text" placeholder="Search">
+                        </div>
+                        <div class="space-15"></div>
+                        <div class="table-area">
+                            <table class="fixed-tb">
+                                <tr>
+                                    <td>
+                                        <div class="fixed-thead-wrap">
+                                            <table class="fixed-thead">
+                                                <colgroup>
+                                                    <col style="width: 50%">
+                                                    <col style="width: 50%">
+                                                    <col style="width: 0.5em"><!-- 이 부분에만 col style 이 하나 더 있습니다. 아래 tbody에는 넣으시면 안됩니다 -->
+                                                </colgroup>
+                                                <tr>
+                                                    <th>
+                                                        Store Name
+                                                    </th>
+                                                    <th>
+                                                        Client Name
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="fixed-tbody-wrap scroll-g">
+                                            <table class="fixed-tbody">
+                                                <colgroup>
+                                                    <col style="width: 50%">
+                                                    <col style="width: 50%">
+                                                </colgroup>
+                                                <tr>
+                                                    <td>Storeeeeeeeeeeeee eeeeee</td>
+                                                    <td>JY LEE eeeeeeeee eeeee</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr class="on">
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Store</td>
+                                                    <td>JY LEE</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="multi-content-area right">
+                        <div class="content-group">
+                            <h3 class="content-tit-02">Payment History</h3>
+                            <div class="space-20"></div>
+                            <div class="table-area">
+                                <table class="fixed-tb history"><!-- history -->
+                                    <tr>
+                                        <td>
+                                            <div class="fixed-thead-wrap">
+                                                <table class="fixed-thead">
+                                                    <colgroup>
+                                                        <col style="width: 30%">
+                                                        <col style="width: 30%">
+                                                        <col style="width: 25%">
+                                                        <col style="width: 15%">
+                                                        <col style="width: 0.5em"><!-- 이 부분에만 col style 이 하나 더 있습니다. 아래 tbody에는 넣으시면 안됩니다 -->
+                                                    </colgroup>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Method of Payment</th>
+                                                        <th>Service Plan</th>
+                                                        <th>Price($)</th>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="fixed-tbody-wrap scroll-g">
+                                                <table class="fixed-tbody">
+                                                    <colgroup>
+                                                        <col style="width: 30%">
+                                                        <col style="width: 30%">
+                                                        <col style="width: 25%">
+                                                        <col style="width: 15%">
+                                                    </colgroup>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>08/16/2020 13:35:27</td>
+                                                        <td>Payment (Offline)</td>
+                                                        <td>Product 001</td>
+                                                        <td>20.00</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
