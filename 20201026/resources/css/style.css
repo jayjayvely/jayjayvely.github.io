@@ -139,13 +139,13 @@ input.disable {
 }
 
 .pass {
-    background: url(/resources/image/bg-alert-01.svg) no-repeat right 10px center / 15px!important;
+    background: url(resources/image/bg-alert-01.svg) no-repeat right 10px center / 15px!important;
 }
 
 
 .error {
     border: 1px solid #ff0000!important;
-    background: rgba(255, 0, 0, .01) url(/resources/image/bg-alert-02.svg) no-repeat right 10px center / 15px!important;
+    background: rgba(255, 0, 0, .01) url(resources/image/bg-alert-02.svg) no-repeat right 10px center / 15px!important;
 }
 
 
@@ -159,7 +159,7 @@ select {
     width: 100%;
     height: 30px;
     border-radius: 5px;
-    background: url(/resources/image/bg-arrow-down.svg) right 13px center / 8px auto no-repeat;
+    background: url(resources/image/bg-arrow-down.svg) right 13px center / 8px auto no-repeat;
     appearance: none;
     -webkit-appearance: none;
 }
@@ -169,7 +169,7 @@ select::-ms-expand {
 }
 
 select.on {
-    background: url(/resources/image/bg-arrow-up.svg) right 13px center / 8px auto no-repeat;
+    background: url(resources/image/bg-arrow-up.svg) right 13px center / 8px auto no-repeat;
 }
 
 textarea {
@@ -552,14 +552,14 @@ input[type="checkbox"] + .check {
     display: inline-block;
     width: 19px;
     height: 16px;
-    background: url(/resources/image/bg-checkbox-off.svg) no-repeat left center / contain;
+    background: url(resources/image/bg-checkbox-off.svg) no-repeat left center / contain;
     border-radius: 3px;
     cursor: pointer;
 
 }
 
 input[type="checkbox"]:checked + .check {
-    background: url(/resources/image/bg-checkbox-on.svg) no-repeat left center / contain;
+    background: url(resources/image/bg-checkbox-on.svg) no-repeat left center / contain;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -638,7 +638,7 @@ header {
     content: '';
     width: 28px;
     height: 40px;
-    background: url(/resources/image/bg-logo.svg) center center / contain no-repeat;
+    background: url(resources/image/bg-logo.svg) center center / contain no-repeat;
     position: absolute;
     left: 0;
     top: 0;
@@ -695,7 +695,7 @@ nav {
 
 .btn-logout:hover {
     background-color: #1a7cff;
-    background-image: url(/resources/image/btn-logout-hover.svg);
+    background-image: url(resources/image/btn-logout-hover.svg);
 }
 
 .title-group {
@@ -725,11 +725,11 @@ nav {
 }
 
 .menu-01:before {
-    background: url(/resources/image/ic-menu-01.svg) left center / auto 28px no-repeat;
+    background: url(resources/image/ic-menu-01.svg) left center / auto 28px no-repeat;
 }
 
 .menu-02:before {
-    background: url(/resources/image/ic-menu-02.svg) left center / auto 28px no-repeat;
+    background: url(resources/image/ic-menu-02.svg) left center / auto 28px no-repeat;
 }
 
 button,
@@ -784,15 +784,15 @@ button > span {
 }
 
 .btn-add > span:before {
-    background: url(/resources/image/btn-add.svg) center center / contain no-repeat;
+    background: url(resources/image/btn-add.svg) center center / contain no-repeat;
 }
 
 .btn-list > span:before {
-    background: url(/resources/image/btn-list.svg) center center / contain no-repeat;
+    background: url(resources/image/btn-list.svg) center center / contain no-repeat;
 }
 
 .btn-confirm > span:before {
-    background: url(/resources/image/btn-confirm.svg) center center / contain no-repeat;
+    background: url(resources/image/btn-confirm.svg) center center / contain no-repeat;
 }
 
 .btn-blank {
@@ -801,7 +801,7 @@ button > span {
 }
 
 .btn-blank > span:before {
-    background: url(/resources/image/btn-blank.svg) center center / contain no-repeat;
+    background: url(resources/image/btn-blank.svg) center center / contain no-repeat;
 }
 
 .content-wrap {
@@ -907,7 +907,7 @@ button > span {
     height: 30px;
     border: none;
     padding-left: 40px;
-    background: url(/resources/image/bg-search.svg) left 15px center / 15px auto no-repeat #f0f1f5;
+    background: url(resources/image/bg-search.svg) left 15px center / 15px auto no-repeat #f0f1f5;
 }
 
 
@@ -1193,7 +1193,7 @@ button > span {
 }
 
 .login .wrap {
-    background: url(/resources/image/bg-login.png) center center / cover no-repeat;
+    background: url(resources/image/bg-login.png) center center / cover no-repeat;
     height: 100%;
     min-height: 100%;
     display: flex;
@@ -1244,11 +1244,11 @@ button > span {
 
 .login-id {
     margin-bottom: 10px;
-    background: url(/resources/image/bg-login-id.svg) left 20px center / auto 20px no-repeat;
+    background: url(resources/image/bg-login-id.svg) left 20px center / auto 20px no-repeat;
 }
 
 .login-pw {
-    background: url(/resources/image/bg-login-pw.svg) left 20px center / auto 20px no-repeat;
+    background: url(resources/image/bg-login-pw.svg) left 20px center / auto 20px no-repeat;
 }
 
 .login-wrap button {
@@ -1270,7 +1270,7 @@ button > span {
     top: 0;
     width: 17px;
     height: 100%;
-    background: url(/resources/image/bg-arrow-right.svg) center center / contain no-repeat;
+    background: url(resources/image/bg-arrow-right.svg) center center / contain no-repeat;
     transition: .1s;
 }
 
@@ -1335,14 +1335,14 @@ button > span {
     top: 22px;
     width: 30px;
     height: 30px;
-    background: url(/resources/image/bg-close-gray.svg) center center/ 13px 13px no-repeat;
+    background: url(resources/image/bg-close-gray.svg) center center/ 13px 13px no-repeat;
     cursor: pointer;
     transition: .5s;
     opacity: .7;
 }
 
 .pop-close:hover {
-    background: url(/resources/image/bg-close-gray-hover.svg) center/ 13px 13px no-repeat;
+    background: url(resources/image/bg-close-gray-hover.svg) center/ 13px 13px no-repeat;
     opacity: 1;
 }
 
@@ -1366,7 +1366,7 @@ button > span {
     position: absolute;
     width: 10px;
     height: 10px;
-    background: url(/resources/image/ic-list-normal.svg) no-repeat left center / 10px;
+    background: url(resources/image/ic-list-normal.svg) no-repeat left center / 10px;
     top: 6px;
     left: 0px;
 }
@@ -1430,7 +1430,7 @@ button > span {
     -webkit-box-shadow: 1px 1px 5px rgba(222, 222, 230, .9);
     -moz-box-shadow: 1px 1px 5px rgba(222, 222, 230, .9);
     box-shadow: 1px 1px 5px rgba(222, 222, 230, .9);
-    background: url(/resources/image/bg-select.svg) no-repeat right top / 30px;
+    background: url(resources/image/bg-select.svg) no-repeat right top / 30px;
 }
 
 .pop-product-select .click:hover {
@@ -1517,7 +1517,7 @@ button > span {
     border: 5px solid #fff;
     border-radius: 50%;
     left: calc(50% - 38px);
-    background-image: url(/resources/image/bg-alert-01.svg);
+    background-image: url(resources/image/bg-alert-01.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -1538,7 +1538,7 @@ button > span {
 }
 
 .alert-wrap.lykeit .alert-title:before {
-    background-image: url(/resources/image/bg-logo.svg);
+    background-image: url(resources/image/bg-logo.svg);
     background-size: 40px auto;
     background-color: #fff;
     -webkit-box-shadow: 0 5px 10px rgba(222, 222, 230, .2);
@@ -1547,24 +1547,24 @@ button > span {
 }
 
 .alert-wrap.info .alert-title:before {
-    background-image: url(/resources/image/bg-alert-05.svg);
+    background-image: url(resources/image/bg-alert-05.svg);
 }
 
 .alert-wrap.alert .alert-title:before {
-    background-image: url(/resources/image/bg-alert-04.svg);
+    background-image: url(resources/image/bg-alert-04.svg);
 }
 
 .alert-wrap.error-alert .alert-title:before {
-    background-image: url(/resources/image/bg-alert-02.svg);
+    background-image: url(resources/image/bg-alert-02.svg);
 }
 
 .alert-wrap.info-sm .alert-title:before {
-    background-image: url(/resources/image/bg-alert-05.svg);
+    background-image: url(resources/image/bg-alert-05.svg);
 }
 
 
 .alert-wrap.warning .alert-title:before {
-    background: url(/resources/image/bg-alert-03.svg) no-repeat center center / contain;
+    background: url(resources/image/bg-alert-03.svg) no-repeat center center / contain;
 }
 
 .alert-content {
